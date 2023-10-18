@@ -43,6 +43,17 @@ Public Class frmUbicacionMapa
         TXTDOM.Text = DCLI
         Latitud = vLatitud
         Longitud = vLongitud
+        If Latitud <> 0 And Longitud <> 0 Then
+            Dim ULT As Integer
+            DGV.Rows.Add(1)
+            ULT = DGV.Rows.Count - 1
+            DGV.Item(0, ULT).Value = Latitud
+            DGV.Item(1, ULT).Value = Longitud
+            MARCAR()
+            Me.Cursor = Cursors.Default
+        End If
+
+
         Me.ShowDialog()
     End Sub
     Private Sub Inicializar()
@@ -245,146 +256,6 @@ Public Class frmUbicacionMapa
         LDIR.Clear()
         LLAT.Clear()
         LLONG.Clear()
-        'Dim xDoc As XmlDocument
-        'Dim xNodo As XmlNodeList
-        'Dim xAtt As XmlElement
-        'Dim IND As Integer
-        'Dim A, B, C As String
-        ''xDoc = New XmlDocument
-        'xDoc.Load("C:/DIRECCION2.XML")
-        'Try
-
-        '    Dim xmlConfig As XmlDocument
-        '    Dim m_nodelist As XmlNodeList
-        '    Dim m_node As XmlNode
-        '    'Creamos el “XML Document”
-        '    xmlConfig = New XmlDocument()
-        '    'Cargamos el archivo
-        '    xmlConfig.Load("C:/DIRECCION2.XML")
-        '    'Obtenemos la lista de los nodos “id”
-        '    m_nodelist = xmlConfig.GetElementsByTagName("lat")
-        '    'Iniciamos el ciclo de lectura
-        '    For Each m_node In m_nodelist
-        '        'Obtenemos el atributo del codigo
-        '        'Dim mCodigo As String = m_node.Attributes.GetNamedItem("location").Value
-        '        'Obtenemos el Elemento Hora
-        '        LLAT.Add(m_node.ChildNodes.Item(0).InnerText)
-        '        'Obtenemos el Elemento Minuto
-        '        'LLONG.Add(m_node.ChildNodes.Item(1).InnerText)
-        '    Next
-        '    m_nodelist = xmlConfig.GetElementsByTagName("lng")
-        '    'Iniciamos el ciclo de lectura
-        '    For Each m_node In m_nodelist
-        '        'Obtenemos el atributo del codigo
-        '        'Dim mCodigo As String = m_node.Attributes.GetNamedItem("location").Value
-        '        'Obtenemos el Elemento Hora
-        '        LLONG.Add(m_node.ChildNodes.Item(0).InnerText)
-        '        'Obtenemos el Elemento Minuto
-        '        'LLONG.Add(m_node.ChildNodes.Item(1).InnerText)
-        '    Next
-        '    m_nodelist = xmlConfig.GetElementsByTagName("formatted_address")
-        '    'Iniciamos el ciclo de lectura
-        '    For Each m_node In m_nodelist
-        '        'Obtenemos el atributo del codigo
-        '        'Dim mCodigo As String = m_node.Attributes.GetNamedItem("location").Value
-        '        'Obtenemos el Elemento Hora
-        '        LDIR.Add(m_node.ChildNodes.Item(0).InnerText)
-        '        'Obtenemos el Elemento Minuto
-        '        'LLONG.Add(m_node.ChildNodes.Item(1).InnerText)
-        '    Next
-        'Catch ex As Exception
-        'End Try
-
-        'Dim m_xmlr As XmlTextReader
-
-        ''Creamos el XML Reader
-        'm_xmlr = New XmlTextReader("C:/DIRECCION2.XML")
-        ''Desabilitamos las lineas en blanco, 
-        ''ya no las necesitamos
-        'm_xmlr.WhitespaceHandling = WhitespaceHandling.None
-        ''Leemos el archivo y avanzamos al tag de usuarios
-        'm_xmlr.Read()
-        ''Leemos el tag usuarios
-        'm_xmlr.Read()
-        ''Creamos la secuancia que nos permite 
-        ''leer el archivo
-        'While Not m_xmlr.EOF
-        '    'Avanzamos al siguiente tag
-        '    m_xmlr.Read()
-        '    'si no tenemos el elemento inicial 
-        '    'debemos salir del ciclo
-        '    If Not m_xmlr.IsStartElement() Then
-        '        Exit While
-        '    End If
-        '    'Obtenemos el elemento codigo
-        '    LLAT.Add(m_xmlr.GetAttribute("lat"))
-        '    'Read elements firstname and lastname
-        '    m_xmlr.Read()
-        '    'Obtenemos el elemento del Nombre del Usuario
-        '    LLONG.Add(m_xmlr.ReadElementString("lng"))
-        '    'Obtenemos el elemento del Apellido del Usuario
-        '    LDIR.Add(m_xmlr.ReadElementString("formatted_address"))
-        'End While
-        ''Cerramos la lactura del archivo
-        'm_xmlr.Close()
-        ''xDoc = New XmlDocument
-        'xDoc.Load("C:/DIRECCION2.XML")
-
-
-        'xNodo = xDoc.GetElementsByTagName("lat")
-        'If xNodo.Count > 0 Then
-        '    For Each xAtt In xNodo
-        '        A = xAtt.Value
-        '        LLAT.Add(A)
-        '    Next
-        'End If
-        'xNodo = xDoc.GetElementsByTagName("lng")
-        'If xNodo.Count > 0 Then
-        '    For Each xAtt In xNodo
-        '        B = xAtt.Value
-        '        LLONG.Add(B)
-        '    Next
-        'End If
-        'xNodo = xDoc.GetElementsByTagName("formatted_address")
-        'If xNodo.Count > 0 Then
-        '    For Each xAtt In xNodo
-        '        C = xAtt.Value
-        '        LDIR.Add(C)
-        '    Next
-        'End If
-
-        'Dim reader As XmlTextReader = New XmlTextReader("C:/DIRECCION2.XML")
-
-        'Do While (reader.Read())
-        '    If reader.Name = "formatted_address" Then
-        '        LDIR.Add(reader.Value)
-        '    End If
-        '    If reader.Name = "lat" Then
-        '        LLAT.Add(reader.Value)
-        '    End If
-        '    If reader.Name = "lng" Then
-        '        LLONG.Add(reader.Value)
-        '    End If
-        '    Select Case reader.NodeType
-        '        Case XmlNodeType.Element 'Mostrar comienzo del elemento.
-
-        '            If reader.HasAttributes Then 'If attributes exist
-
-        '                While reader.MoveToNextAttribute()
-
-        '                End While
-        '            End If
-        '        Case XmlNodeType.Text 'Mostrar el texto de cada elemento.
-        '        Case XmlNodeType.EndElement 'Mostrar final del elemento.
-
-        '    End Select
-        'Loop
-
-
-
-
-
-
         Dim TH As Boolean
         TH = False
         Dim TEM As String
@@ -448,6 +319,15 @@ Public Class frmUbicacionMapa
         PLG.Lat = LLAT(CBDIR.SelectedIndex)
         PLG.Lng = LLONG(CBDIR.SelectedIndex)
         MARCAR()
+    End Sub
+
+    Private Sub BTNGUARDAR_Click(sender As Object, e As EventArgs) Handles BTNGUARDAR.Click
+        If DGV.RowCount <= 0 Then
+            Return
+        Else
+            Latitud = DGV.Item(0, DGV.CurrentRow.Index).Value
+            Longitud = DGV.Item(1, DGV.CurrentRow.Index).Value
+        End If
     End Sub
 
     Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click

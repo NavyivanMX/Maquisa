@@ -63,8 +63,8 @@
             Exit Sub
         End If
         ACTIVAR(False)
-        LATITUD = 25.792519
-        LONGITUD = -108.980947
+        LATITUD = 0
+        LONGITUD = 0
         Dim SQLSELECT As New SqlClient.SqlCommand("SELECT CLAVE,NOMBRE,DIRECCION,TELEFONO,CELULAR,MAIL,CREDITO,DIASCREDITO,ACTIVO,LATITUD,LONGITUD FROM CLIENTES WHERE CLAVE=" + TXTCLA.Text, frmPrincipal.CONX)
         Dim LECTOR As SqlClient.SqlDataReader
         LECTOR = SQLSELECT.ExecuteReader
@@ -231,6 +231,10 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim VDCLI As New frmUbicacionMapa
         VDCLI.Mostrar(TXTNOM.Text, TXTDIR.Text, LATITUD, LONGITUD)
+        If VDCLI.DialogResult = DialogResult.Yes Then
+            LATITUD = VDCLI.Latitud
+            LONGITUD = VDCLI.Longitud
+        End If
     End Sub
 
     Private Sub TXTCRED_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTCRED.KeyPress
