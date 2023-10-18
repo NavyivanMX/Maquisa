@@ -33,7 +33,7 @@
             frmPrincipal.Empresa = LECUSER(0)
             frmPrincipal.Ciudad = LECUSER(4)
             frmPrincipal.Usuario = LECUSER(5)
-
+            'test de cambios
             LECUSER.Close()
             Dim myProcesses() As Process
             Dim myProcess As Process
