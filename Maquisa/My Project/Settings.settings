@@ -5,5 +5,11 @@
     <Setting Name="GoogleMapProviderApiKey" Type="System.String" Scope="User">
       <Value Profile="(Default)">AIzaSyD_icUxCs-Zr_K14L8rzrP7KabR1t0weyg</Value>
     </Setting>
+    <Setting Name="EmpresaLatitud" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">23.2405771605838</Value>
+    </Setting>
+    <Setting Name="EmpresaLongitud" Type="System.Double" Scope="User">
+      <Value Profile="(Default)">-106.432907581329</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

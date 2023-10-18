@@ -198,8 +198,13 @@ Module MONICA
                 End Try
                 Try
                     If TypeOf c Is Label Then
-                        c.BackColor = Color.Transparent
-                        c.ForeColor = COLORDEFAULT
+                        If (c.Tag Is Nothing Or c.Tag <> "") Then
+                            c.BackColor = Color.Transparent
+                        Else
+                            c.BackColor = Color.Transparent
+                            c.ForeColor = COLORDEFAULT
+                        End If
+
                     End If
                 Catch ex As Exception
 

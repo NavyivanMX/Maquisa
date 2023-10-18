@@ -65,6 +65,30 @@ Namespace My
                 Me("GoogleMapProviderApiKey") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("23.2405771605838")>  _
+        Public Property EmpresaLatitud() As Double
+            Get
+                Return CType(Me("EmpresaLatitud"),Double)
+            End Get
+            Set
+                Me("EmpresaLatitud") = value
+            End Set
+        End Property
+        
+        <Global.System.Configuration.UserScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("-106.432907581329")>  _
+        Public Property EmpresaLongitud() As Double
+            Get
+                Return CType(Me("EmpresaLongitud"),Double)
+            End Get
+            Set
+                Me("EmpresaLongitud") = value
+            End Set
+        End Property
     End Class
 End Namespace
 

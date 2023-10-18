@@ -26,15 +26,17 @@ Public Class frmUbicacionMapa
         MARCADO = False
         TXTDOM.Text = DCLI
         LBLCLI.Text = NCLI
-        OVERLAYRUTAS.Routes.Clear()
-        OLCLIENTE.Markers.Clear()
-        Inicializar()
+
+        PosicionaEmpresa()
         CBTV.SelectedIndex = 0
         MAPA.ShowCenter = False
         MAPA.ReloadMap()
         MAPA.Refresh()
-        MARCAR()
+        If Latitud <> 0 And Longitud <> 0 Then
+            MARCAR(Latitud, Longitud)
+        End If
     End Sub
+
     Dim LDIR As New List(Of String)
     Dim LLAT As New List(Of String)
     Dim LLONG As New List(Of String)
@@ -50,52 +52,38 @@ Public Class frmUbicacionMapa
             ULT = DGV.Rows.Count - 1
             DGV.Item(0, ULT).Value = Latitud
             DGV.Item(1, ULT).Value = Longitud
-            Me.Cursor = Cursors.Default
         End If
 
 
         Me.ShowDialog()
     End Sub
-    Private Sub Inicializar()
-        Dim LAT, LON As Double
-        LAT = 25.792519
-        LON = -108.980947
-        ''OLINICIO.Markers.Add(New GMap.NET.WindowsForms.Markers.GMapMarkerGoogleRed(New PointLatLng(LAT, LON)))
-        OLINICIO.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(LAT, LON), GMarkerGoogleType.red_dot))
+    Private Sub PosicionaEmpresa()
+        OLINICIO.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(My.Settings.EmpresaLatitud, My.Settings.EmpresaLongitud), GMarkerGoogleType.red_dot))
         MAPA.Overlays.Add(OLINICIO)
         MAPA.Overlays.Add(OLCLIENTE)
         MAPA.Overlays.Add(OVERLAYRUTAS)
     End Sub
-    Private Sub MARCAR()
+    Private Sub MARCAR(ByVal Lat As Double, ByVal Lng As Double)
         OLCLIENTE.Markers.Clear()
-        Inicializar()
-        'Dim cde As New PointLatLng
-        'cde.Lat = 1
-        'cde.Lng = 2
-        'Dim abc As GMapMarker
-        'abc = New GMapMarker(New PointLatLng(1, 2))
-        'abc.Position = cde
-
-        'PUNTOCLIENTE = New GMapMarkerGoogleGreen(PLG)
-        'OLCLIENTE.Markers.Add(PUNTOCLIENTE)
-        OLCLIENTE.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(PLG.Lat, PLG.Lng), GMarkerGoogleType.green_dot))
-
+        OLCLIENTE.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(Lat, Lng), GMarkerGoogleType.green_dot))
         MARCADO = True
         Try
-            ENRUTAR()
+            ENRUTAR(OLINICIO.Markers(0).Position, New PointLatLng(Lat, Lng))
         Catch ex As Exception
 
         End Try
 
     End Sub
-    Private Sub ENRUTAR()
-        'Dim ss As New GDirections
-        'GoogleMapProvider.Instance.ApiKey = My.Settings.GoogleMapProviderApiKey
-        'GMapProviders.GoogleMap.GetDirections(ss, OLINICIO.Markers(0).Position, OLCLIENTE.Markers(OLCLIENTE.Markers.Count - 1).Position, False, False, False, False, False)
-        'Dim GMR As New GMapRoute(ss.Route, "Mi Ruta")
-        'GMR.Duration = ss.DurationValue
-        'OVERLAYRUTAS.Routes.Clear()
-        'OVERLAYRUTAS.Routes.Add(GMR)
+    Private Sub ENRUTAR(ByVal Inicio As PointLatLng, ByVal Fin As PointLatLng)
+        OVERLAYRUTAS.Routes.Clear()
+
+        Dim ss As New GDirections
+        GoogleMapProvider.Instance.ApiKey = My.Settings.GoogleMapProviderApiKey
+        GMapProviders.GoogleMap.GetDirections(ss, Inicio, Fin, False, False, False, False, False)
+        Dim GMR As New GMapRoute(ss.Route, "Mi Ruta")
+        GMR.Duration = ss.DurationValue
+        OVERLAYRUTAS.Routes.Clear()
+        OVERLAYRUTAS.Routes.Add(GMR)
         MAPA.ZoomAndCenterRoutes("Mi Ruta")
         MAPA.RoutesEnabled = True
         MAPA.Refresh()
@@ -148,8 +136,8 @@ Public Class frmUbicacionMapa
         MAPA.Zoom = ZOOM
         MAPA.CanDragMap = True
         MAPA.Manager.Mode = AccessMode.ServerAndCache
-        MAPA.Position = New PointLatLng(25.792519, -108.980947)
-        Inicializar()
+        MAPA.Position = New PointLatLng(My.Settings.EmpresaLatitud, My.Settings.EmpresaLongitud)
+        PosicionaEmpresa()
     End Sub
 
     Private Sub CBTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBTV.SelectedIndexChanged
@@ -172,24 +160,24 @@ Public Class frmUbicacionMapa
             ULT = DGV.Rows.Count - 1
             DGV.Item(0, ULT).Value = PLG.Lat
             DGV.Item(1, ULT).Value = PLG.Lng
-            MARCAR()
+            MARCAR(PLG.Lat, PLG.Lng)
             Me.Cursor = Cursors.Default
         End If
     End Sub
     Private Sub GUARDARIMAGEN(ByVal NM As Integer)
-        Dim bmp As Bitmap
-        Dim c, d As Control
-        c = MAPA
-        d = LBLIMG
-        bmp = New System.Drawing.Bitmap(c.Width, c.Height)
-        c.DrawToBitmap(bmp, c.ClientRectangle)
-        If NM = 1 Then
-            LBLIMG.Image = bmp
-            LBLIMG.SizeMode = PictureBoxSizeMode.StretchImage
-        Else
-            LBLIMG2.Image = bmp
-            LBLIMG2.SizeMode = PictureBoxSizeMode.StretchImage
-        End If
+        'Dim bmp As Bitmap
+        'Dim c, d As Control
+        'c = MAPA
+        'd = LBLIMG
+        'bmp = New System.Drawing.Bitmap(c.Width, c.Height)
+        'c.DrawToBitmap(bmp, c.ClientRectangle)
+        'If NM = 1 Then
+        '    LBLIMG.Image = bmp
+        '    LBLIMG.SizeMode = PictureBoxSizeMode.StretchImage
+        'Else
+        '    LBLIMG2.Image = bmp
+        '    LBLIMG2.SizeMode = PictureBoxSizeMode.StretchImage
+        'End If
     End Sub
 
     Private Sub TXTDOM_KeyPress(sender As Object, e As KeyPressEventArgs) Handles TXTDOM.KeyPress
@@ -206,28 +194,8 @@ Public Class frmUbicacionMapa
         Dim LEC As SqlClient.SqlDataReader
         Try
             MAPA.ReloadMap()
-            'Dim url As String
-            'url = "https://maps.googleapis.com/maps/api/geocode/xml?key=GOOGLEPROYECTOAPIKEY=" & DOM
-            'url = "https://maps.googleapis.com/maps/api/geocode/xml?key=GOOGLEPROYECTOAPIKEY=" & DOM
-            'Dim request As System.Net.WebRequest = WebRequest.Create(url)
-            'Dim response As HttpWebResponse = request.GetResponse()
             Dim R As String
             R = 0
-            'Dim postData As String
-            'postData = ""
-            'Dim encodingUTF8 As New System.Text.UTF8Encoding
-            'Dim postreq As HttpWebRequest = DirectCast(WebRequest.Create(url), HttpWebRequest) 'original
-            'postreq.Timeout = 3000
-            'postreq.Method = "POST"
-            'postreq.KeepAlive = True
-            'Dim postreqstream As Stream = postreq.GetRequestStream
-            'postreqstream.Write(encodingUTF8.GetBytes(postData), 0, postData.Length)
-            'postreqstream.Close()
-            'Dim postResponse As HttpWebResponse
-            'postResponse = DirectCast(postreq.GetResponse(), HttpWebResponse)
-            'Dim posrreqreader As New StreamReader(postResponse.GetResponseStream())
-            'Dim response2 As String = posrreqreader.ReadToEnd
-            'R = response2
             Dim SQL As New SqlClient.SqlCommand("SELECT DBO.DGG(@URL)", frmPrincipal.CONX)
             SQL.Parameters.Add("@URL", SqlDbType.VarChar).Value = DOM
 
@@ -238,7 +206,6 @@ Public Class frmUbicacionMapa
                 Else
                     R = LEC(0)
                 End If
-                'R = LEC(0)
             End If
             LEC.Close()
             SACARRESULTADOS(R)
@@ -318,7 +285,7 @@ Public Class frmUbicacionMapa
         OLCLIENTE.Markers.Clear()
         PLG.Lat = LLAT(CBDIR.SelectedIndex)
         PLG.Lng = LLONG(CBDIR.SelectedIndex)
-        MARCAR()
+        MARCAR(PLG.Lat, PLG.Lng)
     End Sub
 
     Private Sub BTNGUARDAR_Click(sender As Object, e As EventArgs) Handles BTNGUARDAR.Click
@@ -327,14 +294,16 @@ Public Class frmUbicacionMapa
         Else
             Latitud = DGV.Item(0, DGV.CurrentRow.Index).Value
             Longitud = DGV.Item(1, DGV.CurrentRow.Index).Value
+            Me.DialogResult = DialogResult.Yes
+            Me.Close()
         End If
     End Sub
 
-    Private Sub Button16_Click(sender As Object, e As EventArgs) Handles Button16.Click
+    Private Sub Button16_Click(sender As Object, e As EventArgs)
         GUARDARIMAGEN(1)
     End Sub
 
-    Private Sub Button8_Click(sender As Object, e As EventArgs) Handles Button8.Click
+    Private Sub Button8_Click(sender As Object, e As EventArgs)
         GUARDARIMAGEN(2)
     End Sub
 End Class
