@@ -26,6 +26,7 @@
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ciudad = "Mazatlán, Sin."
         IP = "structureserver2.noip.me"
+        Empresa = 1
         VERSION = "BETA"
         Sistema = "Maquisa"
         CadenaConexion = "Data Source=" + IP + ",1433;Network Library=DBMSSOCN;Initial Catalog=MAQUISA;User ID=MarosILocal;Password=Loco*1234"
@@ -57,6 +58,10 @@
 
     Private Sub frmPrincipal_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
         CentrarLogo(PBCNC.Width, PBCNC.Height)
+    End Sub
+
+    Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
+        frmEmpresa.ShowDialog()
     End Sub
 
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick

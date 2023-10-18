@@ -22,11 +22,6 @@ Partial Class frmClientes
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmClientes))
-        Me.CBDC = New System.Windows.Forms.ComboBox()
-        Me.Label12 = New System.Windows.Forms.Label()
-        Me.TXTCRED = New System.Windows.Forms.TextBox()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.CBACT = New System.Windows.Forms.ComboBox()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.TXTMAIL = New System.Windows.Forms.TextBox()
@@ -42,56 +37,13 @@ Partial Class frmClientes
         Me.TXTCLA = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.BTNCANCELAR = New System.Windows.Forms.Button()
         Me.BTNBUSCAR = New System.Windows.Forms.Button()
+        Me.BTNCANCELAR = New System.Windows.Forms.Button()
         Me.BTNELIMINAR = New System.Windows.Forms.Button()
         Me.BTNGUARDAR = New System.Windows.Forms.Button()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.VERMAP = New System.Windows.Forms.Button()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
-        '
-        'CBDC
-        '
-        Me.CBDC.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CBDC.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBDC.FormattingEnabled = True
-        Me.CBDC.Items.AddRange(New Object() {"7", "15", "20", "30"})
-        Me.CBDC.Location = New System.Drawing.Point(120, 236)
-        Me.CBDC.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.CBDC.Name = "CBDC"
-        Me.CBDC.Size = New System.Drawing.Size(130, 25)
-        Me.CBDC.TabIndex = 6
-        '
-        'Label12
-        '
-        Me.Label12.AutoSize = True
-        Me.Label12.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label12.Location = New System.Drawing.Point(12, 244)
-        Me.Label12.Name = "Label12"
-        Me.Label12.Size = New System.Drawing.Size(98, 17)
-        Me.Label12.TabIndex = 35
-        Me.Label12.Text = "Dias Credito"
-        '
-        'TXTCRED
-        '
-        Me.TXTCRED.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXTCRED.Location = New System.Drawing.Point(128, 172)
-        Me.TXTCRED.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.TXTCRED.MaxLength = 8
-        Me.TXTCRED.Name = "TXTCRED"
-        Me.TXTCRED.Size = New System.Drawing.Size(264, 25)
-        Me.TXTCRED.TabIndex = 5
-        Me.TXTCRED.Text = "1.00"
-        '
-        'Label11
-        '
-        Me.Label11.AutoSize = True
-        Me.Label11.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(60, 180)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(62, 17)
-        Me.Label11.TabIndex = 33
-        Me.Label11.Text = "Credito"
         '
         'CBACT
         '
@@ -237,11 +189,7 @@ Partial Class frmClientes
         '
         'GroupBox1
         '
-        Me.GroupBox1.Controls.Add(Me.Button1)
-        Me.GroupBox1.Controls.Add(Me.CBDC)
-        Me.GroupBox1.Controls.Add(Me.Label12)
-        Me.GroupBox1.Controls.Add(Me.TXTCRED)
-        Me.GroupBox1.Controls.Add(Me.Label11)
+        Me.GroupBox1.Controls.Add(Me.VERMAP)
         Me.GroupBox1.Controls.Add(Me.CBACT)
         Me.GroupBox1.Controls.Add(Me.Label6)
         Me.GroupBox1.Controls.Add(Me.TXTMAIL)
@@ -263,26 +211,11 @@ Partial Class frmClientes
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = " "
         '
-        'BTNCANCELAR
-        '
-        Me.BTNCANCELAR.BackColor = System.Drawing.Color.White
-        Me.BTNCANCELAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNCANCELAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNCANCELAR.Image = CType(resources.GetObject("BTNCANCELAR.Image"), System.Drawing.Image)
-        Me.BTNCANCELAR.Location = New System.Drawing.Point(395, 439)
-        Me.BTNCANCELAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BTNCANCELAR.Name = "BTNCANCELAR"
-        Me.BTNCANCELAR.Size = New System.Drawing.Size(80, 80)
-        Me.BTNCANCELAR.TabIndex = 3
-        Me.BTNCANCELAR.Text = "&c"
-        Me.BTNCANCELAR.UseVisualStyleBackColor = False
-        '
         'BTNBUSCAR
         '
         Me.BTNBUSCAR.BackColor = System.Drawing.Color.White
         Me.BTNBUSCAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNBUSCAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNBUSCAR.Image = CType(resources.GetObject("BTNBUSCAR.Image"), System.Drawing.Image)
         Me.BTNBUSCAR.Location = New System.Drawing.Point(518, 15)
         Me.BTNBUSCAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNBUSCAR.Name = "BTNBUSCAR"
@@ -291,12 +224,24 @@ Partial Class frmClientes
         Me.BTNBUSCAR.Text = "&b"
         Me.BTNBUSCAR.UseVisualStyleBackColor = False
         '
+        'BTNCANCELAR
+        '
+        Me.BTNCANCELAR.BackColor = System.Drawing.Color.White
+        Me.BTNCANCELAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNCANCELAR.ForeColor = System.Drawing.Color.Transparent
+        Me.BTNCANCELAR.Location = New System.Drawing.Point(395, 439)
+        Me.BTNCANCELAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BTNCANCELAR.Name = "BTNCANCELAR"
+        Me.BTNCANCELAR.Size = New System.Drawing.Size(80, 80)
+        Me.BTNCANCELAR.TabIndex = 3
+        Me.BTNCANCELAR.Text = "&c"
+        Me.BTNCANCELAR.UseVisualStyleBackColor = False
+        '
         'BTNELIMINAR
         '
         Me.BTNELIMINAR.BackColor = System.Drawing.Color.White
         Me.BTNELIMINAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNELIMINAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNELIMINAR.Image = CType(resources.GetObject("BTNELIMINAR.Image"), System.Drawing.Image)
         Me.BTNELIMINAR.Location = New System.Drawing.Point(274, 439)
         Me.BTNELIMINAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNELIMINAR.Name = "BTNELIMINAR"
@@ -310,7 +255,6 @@ Partial Class frmClientes
         Me.BTNGUARDAR.BackColor = System.Drawing.SystemColors.Control
         Me.BTNGUARDAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNGUARDAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNGUARDAR.Image = CType(resources.GetObject("BTNGUARDAR.Image"), System.Drawing.Image)
         Me.BTNGUARDAR.Location = New System.Drawing.Point(149, 439)
         Me.BTNGUARDAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNGUARDAR.Name = "BTNGUARDAR"
@@ -319,19 +263,19 @@ Partial Class frmClientes
         Me.BTNGUARDAR.Text = "&G"
         Me.BTNGUARDAR.UseVisualStyleBackColor = False
         '
-        'Button1
+        'VERMAP
         '
-        Me.Button1.BackColor = System.Drawing.SystemColors.Control
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Transparent
-        Me.Button1.Image = CType(resources.GetObject("Button1.Image"), System.Drawing.Image)
-        Me.Button1.Location = New System.Drawing.Point(468, 217)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(80, 80)
-        Me.Button1.TabIndex = 32
-        Me.Button1.Text = "&G"
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.VERMAP.BackColor = System.Drawing.SystemColors.Control
+        Me.VERMAP.BackgroundImage = Global.Maquisa.My.Resources.Resources.autorizar100X100
+        Me.VERMAP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.VERMAP.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VERMAP.ForeColor = System.Drawing.Color.Transparent
+        Me.VERMAP.Location = New System.Drawing.Point(468, 217)
+        Me.VERMAP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.VERMAP.Name = "VERMAP"
+        Me.VERMAP.Size = New System.Drawing.Size(80, 80)
+        Me.VERMAP.TabIndex = 32
+        Me.VERMAP.UseVisualStyleBackColor = False
         '
         'frmClientes
         '
@@ -352,7 +296,7 @@ Partial Class frmClientes
         Me.Name = "frmClientes"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
-        Me.Text = " Clientes"
+        Me.Text = "CLIENTES"
         Me.GroupBox1.ResumeLayout(False)
         Me.GroupBox1.PerformLayout()
         Me.ResumeLayout(False)
@@ -360,8 +304,6 @@ Partial Class frmClientes
 
     End Sub
     Friend WithEvents BTNBUSCAR As System.Windows.Forms.Button
-    Friend WithEvents CBDC As System.Windows.Forms.ComboBox
-    Friend WithEvents Label12 As System.Windows.Forms.Label
     Friend WithEvents CBACT As System.Windows.Forms.ComboBox
     Friend WithEvents Label6 As System.Windows.Forms.Label
     Friend WithEvents TXTMAIL As System.Windows.Forms.TextBox
@@ -376,11 +318,9 @@ Partial Class frmClientes
     Friend WithEvents Label3 As System.Windows.Forms.Label
     Friend WithEvents TXTCLA As System.Windows.Forms.TextBox
     Friend WithEvents Label2 As System.Windows.Forms.Label
-    Friend WithEvents TXTCRED As System.Windows.Forms.TextBox
-    Friend WithEvents Label11 As System.Windows.Forms.Label
     Private WithEvents BTNCANCELAR As System.Windows.Forms.Button
     Friend WithEvents BTNELIMINAR As System.Windows.Forms.Button
     Friend WithEvents BTNGUARDAR As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As GroupBox
-    Friend WithEvents Button1 As Button
+    Friend WithEvents VERMAP As Button
 End Class

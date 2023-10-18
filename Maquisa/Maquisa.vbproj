@@ -144,6 +144,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmBotones.Designer.vb">
+      <DependentUpon>frmBotones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBotones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmClientes.designer.vb">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </Compile>
@@ -154,6 +160,24 @@
       <DependentUpon>frmClsBusqueda.vb</DependentUpon>
     </Compile>
     <Compile Include="frmClsBusqueda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpresa.designer.vb">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin2.Designer.vb">
+      <DependentUpon>frmLogin2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMensaje.designer.vb">
+      <DependentUpon>frmMensaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMensaje.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmUbicacionMapa.Designer.vb">
@@ -183,11 +207,23 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmBotones.resx">
+      <DependentUpon>frmBotones.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClsBusqueda.resx">
       <DependentUpon>frmClsBusqueda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin2.resx">
+      <DependentUpon>frmLogin2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMensaje.resx">
+      <DependentUpon>frmMensaje.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmUbicacionMapa.resx">
       <DependentUpon>frmUbicacionMapa.vb</DependentUpon>
@@ -223,6 +259,19 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MaquisaIcon.ico" />
+    <None Include="Resources\StructureSmall.JPG" />
+    <None Include="Resources\KEY.jpg" />
+    <None Include="Resources\autorizar100X100.png" />
+    <None Include="Resources\BTNACTUALIZAR.png" />
+    <None Include="Resources\BTNCANCELAR.png" />
+    <None Include="Resources\BTNACEPTAR.png" />
+    <None Include="Resources\BTNCORREO.png" />
+    <None Include="Resources\BTNQUITAR.png" />
+    <None Include="Resources\BTNBUSCAR.png" />
+    <None Include="Resources\BTNELIMINAR.png" />
+    <None Include="Resources\BTNIMPRIMIR.png" />
+    <None Include="Resources\BTNAGREGAR.png" />
+    <None Include="Resources\BTNGUARDAR.png" />
     <None Include="Resources\MaquisaFondo.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />

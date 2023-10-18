@@ -14,7 +14,7 @@ Public Class frmUbicacionMapa
     Public Latitud, Longitud As Double
     Private Sub frmUbicacionMapa_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OPVisualizacionForm(Me)
-        Me.Icon = frmPrincipal.Icon
+        PonerImagenesBotones(Me)
         OLINICIO = New GMapOverlay("MARCAS")
         OLCLIENTE = New GMapOverlay("CLIENTE")
         OVERLAYRUTAS = New GMapOverlay("CLIENTE")

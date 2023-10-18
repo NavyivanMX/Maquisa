@@ -128,6 +128,7 @@ Module MONICA
         Try
             FRM.BackgroundImage = frmPrincipal.BackgroundImage
             FRM.BackgroundImageLayout = ImageLayout.Stretch
+            FRM.Icon = frmPrincipal.Icon
         Catch ex As Exception
 
         End Try
@@ -356,6 +357,126 @@ Module MONICA
 
         End Try
 
+    End Sub
+
+    Public Function mensaje_informacion(ByVal mensaje As String)
+        MessageBox.Show(mensaje, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information)
+    End Function
+
+    Public Function mensaje_advertencia(ByVal mensaje As String)
+        MessageBox.Show(mensaje, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+    End Function
+
+    Public Function mensaje_error(ByVal mensaje As String)
+        MessageBox.Show(mensaje, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+    End Function
+
+    Public Function mensaje_confirmacion(ByVal mensaje As String) As Short
+        Dim respuesta As Short
+        respuesta = MessageBox.Show(mensaje, "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
+        Return respuesta
+    End Function
+    Public Sub PonerImagenesBotones(ByRef FRM As Windows.Forms.Form)
+        For Each c As Control In FRM.Controls
+            Try
+                If TypeOf c Is TextBox Then
+                    c.BackColor = Color.Transparent
+                End If
+            Catch ex As Exception
+
+            End Try
+            Try
+                If TypeOf c Is Button Then
+
+                    c.BackgroundImageLayout = ImageLayout.Stretch '' todos los botones su imagen de fondo sera strech
+                    If (c.Tag Is Nothing Or c.Tag <> "") Then
+                    Else
+
+
+                    End If
+                    If c.Name = "BTNBUSCAR" Then
+
+                        c.BackgroundImage = My.Resources.BTNBUSCAR
+
+                    End If
+                    If c.Name = "BTNCANCELAR" Then
+                        c.BackgroundImage = Nothing
+                        c.BackgroundImage = My.Resources.BTNCANCELAR
+                    End If
+
+                    'If c.Name = "BTNCOBRAR" Then
+                    '    c.BackgroundImage = Nothing
+                    '    c.BackgroundImage = My.Resources.PAGAR
+                    'End If
+
+                    If c.Name = "GUARDAR" Then
+                        c.BackgroundImage = Nothing
+                        c.BackgroundImage = My.Resources.BTNGUARDAR
+                    End If
+
+                    If c.Name = "BTNGUARDAR" Then
+                        c.BackgroundImage = Nothing
+                        c.BackgroundImage = My.Resources.BTNGUARDAR
+                    End If
+
+                    If c.Name = "BTNACEPTAR" Then
+                        c.BackgroundImage = Nothing
+                        c.BackgroundImage = My.Resources.BTNACEPTAR
+                    End If
+
+
+                    'If c.Name = "BTNORDEN" Then
+                    '    c.BackgroundImage = Nothing
+                    '    c.BackgroundImage = My.Resources.ORDEN
+                    'End If
+
+
+                    'If c.Name = "BTNCUENTA" Then
+                    '    c.BackgroundImage = Nothing
+                    '    c.BackgroundImage = My.Resources.CALCULAR
+                    ''End If
+
+                    'If c.Name = "BTNANT" Then
+                    '    c.BackgroundImage = Nothing
+                    '    c.BackgroundImage = My.Resources.ATRAZ
+                    'End If
+
+                    'If c.Name = "BTNSIG" Then
+                    '    c.BackgroundImage = Nothing
+                    '    c.BackgroundImage = My.Resources.ADELANTE
+                    'End If
+
+                    If c.Name = "BTNQUITAR" Then
+                        c.BackgroundImage = Nothing
+                        c.BackgroundImage = My.Resources.BTNQUITAR
+                    End If
+
+                    If c.Name = "BTNAGREGAR" Then
+                        c.BackgroundImage = Nothing
+                        c.BackgroundImage = My.Resources.BTNAGREGAR
+                    End If
+
+                    If c.Name = "BTNELIMINAR" Then
+                        c.BackgroundImage = Nothing
+                        c.BackgroundImage = My.Resources.BTNELIMINAR
+                    End If
+
+                    If c.Name = "BTNACTUALIZAR" Then
+                        c.BackgroundImage = Nothing
+                        c.BackgroundImage = My.Resources.BTNACTUALIZAR
+                    End If
+
+                    If c.Name = "" Then
+                        c.BackgroundImage = My.Resources.BTNGUARDAR
+                    End If
+
+
+                End If
+
+            Catch ex As Exception
+
+            End Try
+        Next
     End Sub
     Public Enum MsgsOk
 

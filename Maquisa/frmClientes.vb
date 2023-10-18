@@ -1,11 +1,12 @@
 ﻿Public Class frmClientes
     Private Sub frmClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-        Me.Icon = frmPrincipal.Icon
+
         OPVisualizacionForm(Me)
+        PonerImagenesBotones(Me)
         CBACT.SelectedIndex = 0
         ACTIVAR(True)
         TXTCLA.Text = CARGACLI()
-        CBDC.SelectedIndex = 0
+
     End Sub
     Dim LATITUD, LONGITUD As Double
     Private Function CARGACLI() As Integer
@@ -35,8 +36,7 @@
         TXTTEL.Enabled = Not V
         TXTCEL.Enabled = Not V
         TXTMAIL.Enabled = Not V
-        TXTCRED.Enabled = Not V
-        CBDC.Enabled = Not V
+
         CBACT.Enabled = Not V
         BTNGUARDAR.Enabled = Not V
         BTNELIMINAR.Enabled = False
@@ -54,7 +54,6 @@
         TXTTEL.Text = ""
         TXTCEL.Text = ""
         TXTMAIL.Text = ""
-        CBDC.SelectedIndex = 0
         CBACT.Text = ""
         TXTCLA.Text = CARGACLI()
     End Sub
@@ -65,7 +64,7 @@
         ACTIVAR(False)
         LATITUD = 0
         LONGITUD = 0
-        Dim SQLSELECT As New SqlClient.SqlCommand("SELECT CLAVE,NOMBRE,DIRECCION,TELEFONO,CELULAR,MAIL,CREDITO,DIASCREDITO,ACTIVO,LATITUD,LONGITUD FROM CLIENTES WHERE CLAVE=" + TXTCLA.Text, frmPrincipal.CONX)
+        Dim SQLSELECT As New SqlClient.SqlCommand("SELECT CLAVE,NOMBRE,DIRECCION,TELEFONO,CELULAR,MAIL,ACTIVO,LATITUD,LONGITUD FROM CLIENTES WHERE CLAVE=" + TXTCLA.Text, frmPrincipal.CONX)
         Dim LECTOR As SqlClient.SqlDataReader
         LECTOR = SQLSELECT.ExecuteReader
         If LECTOR.Read Then
@@ -74,8 +73,7 @@
             TXTTEL.Text = LECTOR(3).ToString
             TXTCEL.Text = LECTOR(4).ToString
             TXTMAIL.Text = LECTOR(5).ToString
-            TXTCRED.Text = LECTOR(6).ToString
-            CBDC.Text = LECTOR(7).ToString
+
             If LECTOR(8) = 1 Then
                 CBACT.SelectedIndex = 1
             Else
@@ -89,7 +87,7 @@
         LECTOR.Close()
     End Sub
 
-    Private Sub TXTNOM_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTNOM.KeyPress, TXTDIR.KeyPress, TXTTEL.KeyPress, TXTCEL.KeyPress, TXTMAIL.KeyPress, CBDC.KeyPress, CBACT.KeyPress, TXTCRED.KeyPress
+    Private Sub TXTNOM_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTNOM.KeyPress, TXTDIR.KeyPress, TXTTEL.KeyPress, TXTCEL.KeyPress, TXTMAIL.KeyPress, CBACT.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
             SendKeys.Send("{TAB}")
@@ -121,12 +119,7 @@
             MessageBox.Show("Falta ingresar infomación importante del cliente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
-        If TXTCRED.Text <= 0 Then
-            MessageBox.Show("El limite de credito del cliente debe ser mayor a 0", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-            TXTCRED.Focus()
-            TXTCRED.SelectAll()
-            Exit Sub
-        End If
+
         Dim xyz As Short
         xyz = MessageBox.Show("¿Desea guardar la información?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
         If xyz <> 6 Then
@@ -146,8 +139,7 @@
         SQLGUARDAR.Parameters.Add("@TEL", SqlDbType.VarChar, 200).Value = TXTTEL.Text
         SQLGUARDAR.Parameters.Add("@CEL", SqlDbType.VarChar, 200).Value = TXTCEL.Text
         SQLGUARDAR.Parameters.Add("@MAIL", SqlDbType.VarChar, 50).Value = TXTMAIL.Text
-        SQLGUARDAR.Parameters.Add("@CRED", SqlDbType.Float).Value = TXTCRED.Text
-        SQLGUARDAR.Parameters.Add("@DC", SqlDbType.Int).Value = CBDC.Text
+
         SQLGUARDAR.Parameters.Add("@ACT", SqlDbType.Bit)
         SQLGUARDAR.Parameters.Add("@FA", SqlDbType.Bit)
 
@@ -228,7 +220,7 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles VERMAP.Click
         Dim VDCLI As New frmUbicacionMapa
         VDCLI.Mostrar(TXTNOM.Text, TXTDIR.Text, LATITUD, LONGITUD)
         If VDCLI.DialogResult = DialogResult.Yes Then
@@ -237,13 +229,5 @@
         End If
     End Sub
 
-    Private Sub TXTCRED_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTCRED.KeyPress
-        If Char.IsDigit(e.KeyChar) Then
-            e.Handled = False
-        ElseIf Char.IsControl(e.KeyChar) Then
-            e.Handled = False
-        Else
-            e.Handled = True
-        End If
-    End Sub
+
 End Class
