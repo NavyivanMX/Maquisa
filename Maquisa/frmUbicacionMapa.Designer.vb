@@ -62,8 +62,7 @@ Partial Class frmUbicacionMapa
         Me.MAPA.GrayScaleMode = False
         Me.MAPA.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow
         Me.MAPA.LevelsKeepInMemory = 5
-        Me.MAPA.Location = New System.Drawing.Point(12, 155)
-        Me.MAPA.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MAPA.Location = New System.Drawing.Point(49, 91)
         Me.MAPA.MarkersEnabled = True
         Me.MAPA.MaxZoom = 2
         Me.MAPA.MinZoom = 2
@@ -77,7 +76,7 @@ Partial Class frmUbicacionMapa
         Me.MAPA.ScaleMode = GMap.NET.WindowsForms.ScaleModes.[Integer]
         Me.MAPA.SelectedAreaFillColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.MAPA.ShowTileGridLines = False
-        Me.MAPA.Size = New System.Drawing.Size(1110, 794)
+        Me.MAPA.Size = New System.Drawing.Size(651, 390)
         Me.MAPA.TabIndex = 1343
         Me.MAPA.Zoom = 0R
         '
@@ -87,10 +86,9 @@ Partial Class frmUbicacionMapa
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label6.Location = New System.Drawing.Point(694, 1045)
-        Me.Label6.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label6.Location = New System.Drawing.Point(920, 941)
         Me.Label6.Name = "Label6"
-        Me.Label6.Size = New System.Drawing.Size(434, 27)
+        Me.Label6.Size = New System.Drawing.Size(283, 17)
         Me.Label6.TabIndex = 1342
         Me.Label6.Text = "Click para establecer ubicación - ruta"
         '
@@ -100,10 +98,9 @@ Partial Class frmUbicacionMapa
         Me.Label5.AutoSize = True
         Me.Label5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label5.Location = New System.Drawing.Point(694, 1017)
-        Me.Label5.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label5.Location = New System.Drawing.Point(920, 923)
         Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(535, 27)
+        Me.Label5.Size = New System.Drawing.Size(350, 17)
         Me.Label5.TabIndex = 1341
         Me.Label5.Text = "Zoom con la rueda o la barra superior derecha"
         '
@@ -113,10 +110,9 @@ Partial Class frmUbicacionMapa
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Label4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(64, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.Label4.Location = New System.Drawing.Point(694, 991)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(716, 1053)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(467, 27)
+        Me.Label4.Size = New System.Drawing.Size(303, 17)
         Me.Label4.TabIndex = 1340
         Me.Label4.Text = "Botón derecho de mouse mueve el mapa" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10)
         '
@@ -126,10 +122,9 @@ Partial Class frmUbicacionMapa
         Me.LBLCLI.AutoSize = True
         Me.LBLCLI.Font = New System.Drawing.Font("Arial Rounded MT Bold", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLCLI.ForeColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer))
-        Me.LBLCLI.Location = New System.Drawing.Point(12, 1029)
-        Me.LBLCLI.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LBLCLI.Location = New System.Drawing.Point(8, 931)
         Me.LBLCLI.Name = "LBLCLI"
-        Me.LBLCLI.Size = New System.Drawing.Size(354, 28)
+        Me.LBLCLI.Size = New System.Drawing.Size(244, 18)
         Me.LBLCLI.TabIndex = 1339
         Me.LBLCLI.Text = "Narciso Ivan Cisneros Acosta"
         '
@@ -140,10 +135,9 @@ Partial Class frmUbicacionMapa
         Me.BTNGUARDAR.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNGUARDAR.ForeColor = System.Drawing.Color.Black
         Me.BTNGUARDAR.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BTNGUARDAR.Location = New System.Drawing.Point(1222, 957)
-        Me.BTNGUARDAR.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BTNGUARDAR.Location = New System.Drawing.Point(1272, 884)
         Me.BTNGUARDAR.Name = "BTNGUARDAR"
-        Me.BTNGUARDAR.Size = New System.Drawing.Size(153, 100)
+        Me.BTNGUARDAR.Size = New System.Drawing.Size(102, 65)
         Me.BTNGUARDAR.TabIndex = 1338
         Me.BTNGUARDAR.Text = "GUARDAR"
         Me.BTNGUARDAR.UseVisualStyleBackColor = True
@@ -157,8 +151,7 @@ Partial Class frmUbicacionMapa
         Me.DGV.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.Column1, Me.Column2})
-        Me.DGV.Location = New System.Drawing.Point(1138, 103)
-        Me.DGV.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.DGV.Location = New System.Drawing.Point(1133, 25)
         Me.DGV.Name = "DGV"
         Me.DGV.ReadOnly = True
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -169,7 +162,7 @@ Partial Class frmUbicacionMapa
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DGV.Size = New System.Drawing.Size(338, 305)
+        Me.DGV.Size = New System.Drawing.Size(225, 198)
         Me.DGV.TabIndex = 1337
         '
         'Column1
@@ -191,10 +184,9 @@ Partial Class frmUbicacionMapa
         Me.Button16.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button16.ForeColor = System.Drawing.Color.Black
         Me.Button16.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button16.Location = New System.Drawing.Point(1138, 417)
-        Me.Button16.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button16.Location = New System.Drawing.Point(1133, 229)
         Me.Button16.Name = "Button16"
-        Me.Button16.Size = New System.Drawing.Size(153, 52)
+        Me.Button16.Size = New System.Drawing.Size(102, 34)
         Me.Button16.TabIndex = 1334
         Me.Button16.Text = "Mapa 1"
         Me.Button16.UseVisualStyleBackColor = True
@@ -206,10 +198,9 @@ Partial Class frmUbicacionMapa
         Me.Button8.Font = New System.Drawing.Font("Arial Rounded MT Bold", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button8.ForeColor = System.Drawing.Color.Black
         Me.Button8.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.Button8.Location = New System.Drawing.Point(1332, 417)
-        Me.Button8.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.Button8.Location = New System.Drawing.Point(1262, 229)
         Me.Button8.Name = "Button8"
-        Me.Button8.Size = New System.Drawing.Size(144, 52)
+        Me.Button8.Size = New System.Drawing.Size(96, 34)
         Me.Button8.TabIndex = 1333
         Me.Button8.Text = "Mapa 2"
         Me.Button8.UseVisualStyleBackColor = True
@@ -218,10 +209,9 @@ Partial Class frmUbicacionMapa
         '
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.Location = New System.Drawing.Point(12, 109)
-        Me.Label3.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label3.Location = New System.Drawing.Point(8, 71)
         Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(137, 27)
+        Me.Label3.Size = New System.Drawing.Size(89, 17)
         Me.Label3.TabIndex = 1332
         Me.Label3.Text = "Resultados"
         '
@@ -231,40 +221,37 @@ Partial Class frmUbicacionMapa
         Me.CBDIR.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBDIR.FormattingEnabled = True
         Me.CBDIR.Items.AddRange(New Object() {"Camino", "Satelite", "Hibrido", "Terreno"})
-        Me.CBDIR.Location = New System.Drawing.Point(154, 106)
-        Me.CBDIR.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.CBDIR.Location = New System.Drawing.Point(103, 69)
+        Me.CBDIR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CBDIR.Name = "CBDIR"
-        Me.CBDIR.Size = New System.Drawing.Size(974, 35)
+        Me.CBDIR.Size = New System.Drawing.Size(651, 25)
         Me.CBDIR.TabIndex = 1331
         '
         'Label2
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(28, 22)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(19, 14)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(862, 27)
+        Me.Label2.Size = New System.Drawing.Size(565, 17)
         Me.Label2.TabIndex = 1330
         Me.Label2.Text = "Domicilio (Calle, Colonia, Locacion, No Exterior. No incluir Nte,Sur,Ote,Pte)  "
         '
         'TXTDOM
         '
         Me.TXTDOM.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXTDOM.Location = New System.Drawing.Point(12, 52)
-        Me.TXTDOM.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TXTDOM.Location = New System.Drawing.Point(8, 34)
         Me.TXTDOM.Name = "TXTDOM"
-        Me.TXTDOM.Size = New System.Drawing.Size(901, 35)
+        Me.TXTDOM.Size = New System.Drawing.Size(602, 26)
         Me.TXTDOM.TabIndex = 1329
         '
         'Label1
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(920, 22)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(613, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(156, 27)
+        Me.Label1.Size = New System.Drawing.Size(101, 17)
         Me.Label1.TabIndex = 1328
         Me.Label1.Text = "Tipo de Vista"
         '
@@ -274,60 +261,56 @@ Partial Class frmUbicacionMapa
         Me.CBTV.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBTV.FormattingEnabled = True
         Me.CBTV.Items.AddRange(New Object() {"Camino", "Satelite", "Hibrido", "Terreno"})
-        Me.CBTV.Location = New System.Drawing.Point(924, 54)
-        Me.CBTV.Margin = New System.Windows.Forms.Padding(4, 6, 4, 6)
+        Me.CBTV.Location = New System.Drawing.Point(616, 35)
+        Me.CBTV.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CBTV.Name = "CBTV"
-        Me.CBTV.Size = New System.Drawing.Size(253, 35)
+        Me.CBTV.Size = New System.Drawing.Size(170, 25)
         Me.CBTV.TabIndex = 1327
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(1200, 22)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(800, 14)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(75, 27)
+        Me.Label9.Size = New System.Drawing.Size(49, 17)
         Me.Label9.TabIndex = 1326
         Me.Label9.Text = "Zoom"
         '
         'TBZOOM
         '
         Me.TBZOOM.LargeChange = 1
-        Me.TBZOOM.Location = New System.Drawing.Point(1190, 52)
-        Me.TBZOOM.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.TBZOOM.Location = New System.Drawing.Point(793, 34)
         Me.TBZOOM.Maximum = 17
         Me.TBZOOM.Minimum = 3
         Me.TBZOOM.Name = "TBZOOM"
-        Me.TBZOOM.Size = New System.Drawing.Size(286, 69)
+        Me.TBZOOM.Size = New System.Drawing.Size(191, 45)
         Me.TBZOOM.TabIndex = 1325
         Me.TBZOOM.Value = 16
         '
         'LBLIMG2
         '
         Me.LBLIMG2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LBLIMG2.Location = New System.Drawing.Point(1138, 723)
-        Me.LBLIMG2.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.LBLIMG2.Location = New System.Drawing.Point(1133, 428)
         Me.LBLIMG2.Name = "LBLIMG2"
-        Me.LBLIMG2.Size = New System.Drawing.Size(338, 225)
+        Me.LBLIMG2.Size = New System.Drawing.Size(225, 146)
         Me.LBLIMG2.TabIndex = 1336
         Me.LBLIMG2.TabStop = False
         '
         'LBLIMG
         '
         Me.LBLIMG.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LBLIMG.Location = New System.Drawing.Point(1138, 489)
-        Me.LBLIMG.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.LBLIMG.Location = New System.Drawing.Point(1133, 276)
         Me.LBLIMG.Name = "LBLIMG"
-        Me.LBLIMG.Size = New System.Drawing.Size(338, 225)
+        Me.LBLIMG.Size = New System.Drawing.Size(225, 146)
         Me.LBLIMG.TabIndex = 1335
         Me.LBLIMG.TabStop = False
         '
         'frmUbicacionMapa
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(9.0!, 20.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1490, 1092)
+        Me.ClientSize = New System.Drawing.Size(1370, 749)
         Me.Controls.Add(Me.MAPA)
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.Label5)
@@ -347,7 +330,7 @@ Partial Class frmUbicacionMapa
         Me.Controls.Add(Me.CBTV)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.TBZOOM)
-        Me.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.MinimumSize = New System.Drawing.Size(1364, 726)
         Me.Name = "frmUbicacionMapa"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Ubicación Mapa"

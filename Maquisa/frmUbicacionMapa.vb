@@ -33,6 +33,7 @@ Public Class frmUbicacionMapa
         MAPA.ShowCenter = False
         MAPA.ReloadMap()
         MAPA.Refresh()
+        MARCAR()
     End Sub
     Dim LDIR As New List(Of String)
     Dim LLAT As New List(Of String)
@@ -49,7 +50,6 @@ Public Class frmUbicacionMapa
             ULT = DGV.Rows.Count - 1
             DGV.Item(0, ULT).Value = Latitud
             DGV.Item(1, ULT).Value = Longitud
-            MARCAR()
             Me.Cursor = Cursors.Default
         End If
 
