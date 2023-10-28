@@ -74,13 +74,13 @@
             TXTCEL.Text = LECTOR(4).ToString
             TXTMAIL.Text = LECTOR(5).ToString
 
-            If LECTOR(8) = 1 Then
+            If LECTOR(6) = 1 Then
                 CBACT.SelectedIndex = 1
             Else
                 CBACT.SelectedIndex = 0
             End If
-            LATITUD = LECTOR(9).ToString
-            LONGITUD = LECTOR(10).ToString
+            LATITUD = LECTOR(7).ToString
+            LONGITUD = LECTOR(8).ToString
 
             BTNELIMINAR.Enabled = True
         End If
@@ -132,16 +132,20 @@
         SQLGUARDAR.Connection = frmPrincipal.CONX
         SQLGUARDAR.CommandTimeout = 300
         SQLGUARDAR.CommandType = CommandType.StoredProcedure
-        SQLGUARDAR.Parameters.Add("@TI", SqlDbType.VarChar).Value = frmPrincipal.SucursalBase
+
         SQLGUARDAR.Parameters.Add("@CLA", SqlDbType.Int).Value = CType(TXTCLA.Text, Integer)
+        SQLGUARDAR.Parameters.Add("@TIPO", SqlDbType.Int).Value = 1
         SQLGUARDAR.Parameters.Add("@NOM", SqlDbType.VarChar, 100).Value = TXTNOM.Text
         SQLGUARDAR.Parameters.Add("@DIR", SqlDbType.VarChar, 200).Value = TXTDIR.Text
         SQLGUARDAR.Parameters.Add("@TEL", SqlDbType.VarChar, 200).Value = TXTTEL.Text
         SQLGUARDAR.Parameters.Add("@CEL", SqlDbType.VarChar, 200).Value = TXTCEL.Text
         SQLGUARDAR.Parameters.Add("@MAIL", SqlDbType.VarChar, 50).Value = TXTMAIL.Text
 
+        SQLGUARDAR.Parameters.Add("@LAT", SqlDbType.Float).Value = LATITUD
+        SQLGUARDAR.Parameters.Add("@LON", SqlDbType.Float).Value = LONGITUD
+
         SQLGUARDAR.Parameters.Add("@ACT", SqlDbType.Bit)
-        SQLGUARDAR.Parameters.Add("@FA", SqlDbType.Bit)
+
 
         If CBACT.SelectedIndex = 0 Then
             SQLGUARDAR.Parameters("@ACT").Value = 1
