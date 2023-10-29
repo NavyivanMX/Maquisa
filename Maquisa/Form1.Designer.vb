@@ -32,22 +32,12 @@ Partial Class frmPrincipal
         Me.MenuStrip1 = New System.Windows.Forms.MenuStrip()
         Me.MM1 = New System.Windows.Forms.ToolStripMenuItem()
         Me.S1 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.S2 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.S3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.S4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem3 = New System.Windows.Forms.ToolStripSeparator()
+        Me.S2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.S5 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.S7 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripMenuItem1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.S8 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.S9 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.S10 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.S11 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.S12 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
-        Me.S14 = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.S21 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.RutaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM4 = New System.Windows.Forms.ToolStripMenuItem()
@@ -58,9 +48,17 @@ Partial Class frmPrincipal
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
         Me.PBCNC = New System.Windows.Forms.PictureBox()
+        Me.LBLPRU = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.LBLV = New System.Windows.Forms.Label()
+        Me.PBS = New System.Windows.Forms.PictureBox()
+        Me.LBLP = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PBCNC, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PBS, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SB
@@ -68,9 +66,9 @@ Partial Class frmPrincipal
         Me.SB.GripStyle = System.Windows.Forms.ToolStripGripStyle.Visible
         Me.SB.ImageScalingSize = New System.Drawing.Size(20, 20)
         Me.SB.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ToolStripStatusLabel7, Me.ToolStripStatusLabel8, Me.ToolStripStatusLabel1, Me.ToolStripStatusLabel2})
-        Me.SB.Location = New System.Drawing.Point(0, 441)
+        Me.SB.Location = New System.Drawing.Point(0, 536)
         Me.SB.Name = "SB"
-        Me.SB.Size = New System.Drawing.Size(628, 22)
+        Me.SB.Size = New System.Drawing.Size(1030, 22)
         Me.SB.TabIndex = 47
         Me.SB.Text = "StatusStrip1"
         '
@@ -104,13 +102,13 @@ Partial Class frmPrincipal
         Me.MenuStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MM1, Me.MM2, Me.MM3, Me.MM4, Me.AyudaToolStripMenuItem})
         Me.MenuStrip1.Location = New System.Drawing.Point(0, 0)
         Me.MenuStrip1.Name = "MenuStrip1"
-        Me.MenuStrip1.Size = New System.Drawing.Size(628, 28)
+        Me.MenuStrip1.Size = New System.Drawing.Size(1030, 28)
         Me.MenuStrip1.TabIndex = 48
         Me.MenuStrip1.Text = "MenuStrip1"
         '
         'MM1
         '
-        Me.MM1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.S1, Me.S2, Me.S3, Me.S4, Me.ToolStripMenuItem3, Me.S5, Me.S7, Me.ToolStripMenuItem1, Me.S8, Me.S9, Me.S10, Me.S11, Me.S12, Me.ToolStripMenuItem2, Me.S14, Me.ToolStripSeparator1, Me.S21})
+        Me.MM1.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.S1, Me.S4, Me.ToolStripMenuItem3, Me.S2, Me.S5, Me.ToolStripMenuItem2, Me.RutaToolStripMenuItem})
         Me.MM1.Name = "MM1"
         Me.MM1.Size = New System.Drawing.Size(75, 24)
         Me.MM1.Text = "&Archivo"
@@ -118,100 +116,42 @@ Partial Class frmPrincipal
         'S1
         '
         Me.S1.Name = "S1"
-        Me.S1.Size = New System.Drawing.Size(267, 24)
+        Me.S1.Size = New System.Drawing.Size(160, 24)
         Me.S1.Text = "Empresa"
-        '
-        'S2
-        '
-        Me.S2.Name = "S2"
-        Me.S2.Size = New System.Drawing.Size(267, 24)
-        Me.S2.Text = "Empleados"
-        '
-        'S3
-        '
-        Me.S3.Name = "S3"
-        Me.S3.Size = New System.Drawing.Size(267, 24)
-        Me.S3.Text = "Cajeras"
         '
         'S4
         '
         Me.S4.Name = "S4"
-        Me.S4.Size = New System.Drawing.Size(267, 24)
+        Me.S4.Size = New System.Drawing.Size(160, 24)
         Me.S4.Text = "Usuarios"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(264, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(157, 6)
+        '
+        'S2
+        '
+        Me.S2.Name = "S2"
+        Me.S2.Size = New System.Drawing.Size(160, 24)
+        Me.S2.Text = "Vendedores"
         '
         'S5
         '
         Me.S5.Name = "S5"
-        Me.S5.Size = New System.Drawing.Size(267, 24)
+        Me.S5.Size = New System.Drawing.Size(160, 24)
         Me.S5.Text = "Clientes"
-        '
-        'S7
-        '
-        Me.S7.Name = "S7"
-        Me.S7.Size = New System.Drawing.Size(267, 24)
-        Me.S7.Text = "Precios Clientes"
-        '
-        'ToolStripMenuItem1
-        '
-        Me.ToolStripMenuItem1.Name = "ToolStripMenuItem1"
-        Me.ToolStripMenuItem1.Size = New System.Drawing.Size(264, 6)
-        '
-        'S8
-        '
-        Me.S8.Name = "S8"
-        Me.S8.Size = New System.Drawing.Size(267, 24)
-        Me.S8.Text = "Unidades"
-        '
-        'S9
-        '
-        Me.S9.Name = "S9"
-        Me.S9.Size = New System.Drawing.Size(267, 24)
-        Me.S9.Text = "Grupos"
-        '
-        'S10
-        '
-        Me.S10.Name = "S10"
-        Me.S10.Size = New System.Drawing.Size(267, 24)
-        Me.S10.Text = "Sub Grupos"
-        '
-        'S11
-        '
-        Me.S11.Name = "S11"
-        Me.S11.Size = New System.Drawing.Size(267, 24)
-        Me.S11.Text = "Productos"
-        '
-        'S12
-        '
-        Me.S12.Name = "S12"
-        Me.S12.Size = New System.Drawing.Size(267, 24)
-        Me.S12.Text = "Equivalencias de productos"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(264, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(157, 6)
         '
-        'S14
+        'RutaToolStripMenuItem
         '
-        Me.S14.Name = "S14"
-        Me.S14.Size = New System.Drawing.Size(267, 24)
-        Me.S14.Text = "Proveedores"
-        '
-        'ToolStripSeparator1
-        '
-        Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
-        Me.ToolStripSeparator1.Size = New System.Drawing.Size(264, 6)
-        '
-        'S21
-        '
-        Me.S21.Name = "S21"
-        Me.S21.Size = New System.Drawing.Size(267, 24)
-        Me.S21.Text = "Deshabilitar usuarios"
+        Me.RutaToolStripMenuItem.Name = "RutaToolStripMenuItem"
+        Me.RutaToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
+        Me.RutaToolStripMenuItem.Text = "Ruta"
         '
         'MM2
         '
@@ -261,6 +201,7 @@ Partial Class frmPrincipal
         Me.AyudaToolStripMenuItem.Name = "AyudaToolStripMenuItem"
         Me.AyudaToolStripMenuItem.Size = New System.Drawing.Size(66, 24)
         Me.AyudaToolStripMenuItem.Text = "Ayuda"
+        Me.AyudaToolStripMenuItem.Visible = False
         '
         'Timer1
         '
@@ -270,25 +211,128 @@ Partial Class frmPrincipal
         'PBCNC
         '
         Me.PBCNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PBCNC.Image = Global.Maquisa.My.Resources.Resources.MaquisaFondo
-        Me.PBCNC.Location = New System.Drawing.Point(191, 70)
+        Me.PBCNC.Image = Global.Maquisa.My.Resources.Resources.logo2
+        Me.PBCNC.Location = New System.Drawing.Point(202, 99)
         Me.PBCNC.Margin = New System.Windows.Forms.Padding(4)
         Me.PBCNC.Name = "PBCNC"
-        Me.PBCNC.Size = New System.Drawing.Size(217, 329)
+        Me.PBCNC.Size = New System.Drawing.Size(143, 113)
         Me.PBCNC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PBCNC.TabIndex = 354
         Me.PBCNC.TabStop = False
+        '
+        'LBLPRU
+        '
+        Me.LBLPRU.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LBLPRU.AutoSize = True
+        Me.LBLPRU.BackColor = System.Drawing.Color.Transparent
+        Me.LBLPRU.Font = New System.Drawing.Font("Arial", 29.75!)
+        Me.LBLPRU.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.LBLPRU.Location = New System.Drawing.Point(79, 382)
+        Me.LBLPRU.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LBLPRU.Name = "LBLPRU"
+        Me.LBLPRU.Size = New System.Drawing.Size(377, 45)
+        Me.LBLPRU.TabIndex = 394
+        Me.LBLPRU.Text = "VERSION PRUEBA"
+        Me.LBLPRU.Visible = False
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
+        Me.Label1.Font = New System.Drawing.Font("Arial", 29.75!)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label1.Location = New System.Drawing.Point(133, 253)
+        Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(268, 45)
+        Me.Label1.TabIndex = 395
+        Me.Label1.Text = "Control Flotilla"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Arial", 29.75!)
+        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.Label2.Location = New System.Drawing.Point(29, 307)
+        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(477, 45)
+        Me.Label2.TabIndex = 396
+        Me.Label2.Text = "Bernal y Valdez SA de CV"
+        '
+        'LBLV
+        '
+        Me.LBLV.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LBLV.AutoSize = True
+        Me.LBLV.BackColor = System.Drawing.Color.Transparent
+        Me.LBLV.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLV.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.LBLV.Location = New System.Drawing.Point(209, 448)
+        Me.LBLV.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LBLV.Name = "LBLV"
+        Me.LBLV.Size = New System.Drawing.Size(116, 24)
+        Me.LBLV.TabIndex = 397
+        Me.LBLV.Text = "Versión 1.1"
+        '
+        'PBS
+        '
+        Me.PBS.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.PBS.BackColor = System.Drawing.Color.Transparent
+        Me.PBS.Image = CType(resources.GetObject("PBS.Image"), System.Drawing.Image)
+        Me.PBS.Location = New System.Drawing.Point(795, 414)
+        Me.PBS.Name = "PBS"
+        Me.PBS.Size = New System.Drawing.Size(61, 66)
+        Me.PBS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PBS.TabIndex = 1338
+        Me.PBS.TabStop = False
+        '
+        'LBLP
+        '
+        Me.LBLP.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LBLP.AutoSize = True
+        Me.LBLP.BackColor = System.Drawing.Color.Transparent
+        Me.LBLP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLP.ForeColor = System.Drawing.Color.White
+        Me.LBLP.Location = New System.Drawing.Point(778, 483)
+        Me.LBLP.Name = "LBLP"
+        Me.LBLP.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.LBLP.Size = New System.Drawing.Size(95, 20)
+        Me.LBLP.TabIndex = 1337
+        Me.LBLP.Text = "Powered by "
+        '
+        'Label3
+        '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label3.AutoSize = True
+        Me.Label3.BackColor = System.Drawing.Color.Transparent
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(747, 508)
+        Me.Label3.Name = "Label3"
+        Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
+        Me.Label3.Size = New System.Drawing.Size(157, 20)
+        Me.Label3.TabIndex = 1336
+        Me.Label3.Text = "Structure Soluciones"
         '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.BackgroundImage = Global.Maquisa.My.Resources.Resources.FondoForms
+        Me.BackgroundImage = Global.Maquisa.My.Resources.Resources.wallpaper1
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.ClientSize = New System.Drawing.Size(628, 463)
+        Me.ClientSize = New System.Drawing.Size(1030, 558)
+        Me.Controls.Add(Me.PBS)
+        Me.Controls.Add(Me.LBLP)
+        Me.Controls.Add(Me.Label3)
+        Me.Controls.Add(Me.LBLV)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.LBLPRU)
         Me.Controls.Add(Me.PBCNC)
         Me.Controls.Add(Me.SB)
         Me.Controls.Add(Me.MenuStrip1)
+        Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(644, 502)
@@ -301,6 +345,7 @@ Partial Class frmPrincipal
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
         CType(Me.PBCNC, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PBS, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -315,20 +360,9 @@ Partial Class frmPrincipal
     Friend WithEvents MM1 As ToolStripMenuItem
     Friend WithEvents S1 As ToolStripMenuItem
     Friend WithEvents S2 As ToolStripMenuItem
-    Friend WithEvents S3 As ToolStripMenuItem
     Friend WithEvents S4 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem3 As ToolStripSeparator
-    Friend WithEvents S7 As ToolStripMenuItem
-    Friend WithEvents ToolStripMenuItem1 As ToolStripSeparator
-    Friend WithEvents S8 As ToolStripMenuItem
-    Friend WithEvents S9 As ToolStripMenuItem
-    Friend WithEvents S10 As ToolStripMenuItem
-    Friend WithEvents S11 As ToolStripMenuItem
-    Friend WithEvents S12 As ToolStripMenuItem
     Friend WithEvents ToolStripMenuItem2 As ToolStripSeparator
-    Friend WithEvents S14 As ToolStripMenuItem
-    Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents S21 As ToolStripMenuItem
     Friend WithEvents MM2 As ToolStripMenuItem
     Friend WithEvents MM3 As ToolStripMenuItem
     Friend WithEvents MM4 As ToolStripMenuItem
@@ -340,4 +374,12 @@ Partial Class frmPrincipal
     Friend WithEvents Timer1 As Timer
     Friend WithEvents S5 As ToolStripMenuItem
     Friend WithEvents PBCNC As PictureBox
+    Friend WithEvents LBLPRU As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label2 As Label
+    Friend WithEvents LBLV As Label
+    Friend WithEvents PBS As PictureBox
+    Friend WithEvents LBLP As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents RutaToolStripMenuItem As ToolStripMenuItem
 End Class

@@ -50,6 +50,15 @@ Module MONICA
         Return cadenaMD5
     End Function
 
+    Public Function CENTRAR(ByVal NOMBRELOGO As PictureBox)
+        NOMBRELOGO.Left = (frmPrincipal.Width - NOMBRELOGO.Width) / 2
+        NOMBRELOGO.Top = (frmPrincipal.Height - NOMBRELOGO.Height) / 2
+    End Function
+
+    Public Function CENTRARHORIZONTALABEL(ByVal NOMBRELABEL As Label)
+        NOMBRELABEL.Left = (frmPrincipal.Width - NOMBRELABEL.Width) / 2
+    End Function
+
     Public Function OpSeleccionarDirectorio() As String
         Dim Folder As New FolderBrowserDialog
         If Folder.ShowDialog = Windows.Forms.DialogResult.OK Then

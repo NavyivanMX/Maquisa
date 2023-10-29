@@ -12,7 +12,7 @@
     Public Ciudad As String
     Public PagoTarjeta As Boolean
     Public CorteXX As Boolean
-    Dim VERSION As String
+    Dim VERSION, BD, USER, PASS As String
     Dim LIGA As String
     Public IP As String
     Public DTRIFA As New DataTable
@@ -23,14 +23,150 @@
     Public Direccion As String
     Public Perfil As Integer
 
+
+    Public COLORFUENTE As System.Drawing.Color
+
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ciudad = "Mazatlán, Sin."
         IP = "structureserver2.noip.me"
+        BD = "MAQUISA"
+        USER = "MAROSILOCAL"
+        PASS = "Loco*1234"
         Empresa = 1
-        VERSION = "BETA"
+        VERSION = "1.0"
         Sistema = "Maquisa"
-        CadenaConexion = "Data Source=" + IP + ",1433;Network Library=DBMSSOCN;Initial Catalog=MAQUISA;User ID=MarosILocal;Password=Loco*1234"
+        COLORFUENTE = My.Settings.COLORDEFAULT
+
+        If BD <> "Maquisa" Then
+            LBLPRU.Visible = True
+            '    CENTRARHORIZONTALABEL(LBLPRU)
+        End If
+
+
+
+        CadenaConexion = "Data Source=" + IP + ",1433;Network Library=DBMSSOCN;Initial Catalog=" + BD + ";User ID=" + USER + ";Password=" + PASS + ""
         CONX.ConnectionString = CadenaConexion
+
+
+
+        If Not CHECACONX() Then
+            Dim VAYU As New frmAyuda
+            VAYU.Show()
+            MessageBox.Show("No se puede Conectar con el Servidor, Intente en un Momento Por Favor", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Me.Close()
+        Else
+            INICIAR()
+        End If
+
+    End Sub
+
+
+
+
+    Private Sub INICIAR()
+        If VERIFICAVERSION() Then
+            If Not VERIFICAUBICACION() Then
+                Me.Close()
+                Exit Sub
+            End If
+            Dim vSes As New frmLogin2
+            vSes.ShowDialog()
+            If vSes.DialogResult = Windows.Forms.DialogResult.Yes Then
+                MessageBox.Show("Bienvenido al Sistema Control de Flotilla MAQUISA Bernal y Valdez: " + Usuario, "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+
+
+
+            Else
+                Me.Close()
+            End If
+        Else
+            frmLigaVersion.MOSTRAR(LIGA, "C:\NUEVAVERSION\MAQUISA.RAR", "Actualización MAQUISA")
+            Me.Close()
+        End If
+    End Sub
+
+
+    Private Function VERIFICAVERSION() As Boolean
+        Try
+            Dim VER As String
+            Dim SQL As New SqlClient.SqlCommand("Select VERSION,LIGA FROM VERSIONES WHERE SISTEMA='WIN'", Me.CONX)
+            Dim LEC As SqlClient.SqlDataReader
+            LEC = SQL.ExecuteReader
+            If LEC.Read Then
+                VER = LEC(0)
+                LIGA = LEC(1)
+                LEC.Close()
+                If VER = VERSION Then
+                    Return True
+                Else
+                    Return False
+                End If
+            Else
+                LEC.Close()
+                Return False
+            End If
+        Catch ex As Exception
+            Return True
+        End Try
+    End Function
+    Private Function VERIFICAUBICACION() As Boolean
+        Return True
+        Dim FL As New System.IO.FileInfo(Application.ExecutablePath)
+        Dim ORIGEN As String
+
+        ORIGEN = FL.DirectoryName + "\MAQUISA.exe"
+        If FL.DirectoryName <> "C:\" Then
+            MessageBox.Show("El archivo NO se encuentra en la unidad disco local C: se creará una copia, favor de cerrar todas las aplicaciones", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+            Try
+
+                System.IO.File.Delete("C:\MAQUISA.exe")
+            Catch ex As Exception
+
+            End Try
+
+            System.IO.File.Copy(ORIGEN, "C:\MAQUISA.exe")
+            Try
+                System.IO.File.Delete(ORIGEN)
+            Catch ex As Exception
+
+            End Try
+
+            CreateShortCut("Acceso Directo a Camaronera", "C:\MAQUISA.exe", True)
+            Return False
+        End If
+        Return True
+    End Function
+    Private Sub CreateShortCut(ByVal strLinkName_ As String, ByVal strTargetPath_ As String _
+              , ByVal blnDesktop_ As Boolean, Optional ByVal strPath_ As String = "" _
+              , Optional ByVal strArguments_ As String = "" _
+              , Optional ByVal strDescription_ As String = "" _
+              , Optional ByVal strHotKey_ As String = "" _
+              , Optional ByVal strIconLocation_ As String = "" _
+              , Optional ByVal strWorkingDirectory_ As String = "")
+
+        Dim shell As Object = CreateObject("WScript.shell")
+        Dim link As Object
+
+        If blnDesktop_ Then
+            Dim DesktopPath As Object = shell.SpecialFolders("Desktop")
+            link = shell.CreateShortcut _
+               (DesktopPath & "\" & strLinkName_ & ".lnk")
+        Else
+            link = shell.CreateShortcut _
+               (strPath_ & "\" & strLinkName_ & ".lnk")
+        End If
+        Try
+            With link
+                ' Argumentos
+                .Description = strLinkName_              ' Nombre del Acceso directo
+                .TargetPath = strTargetPath_             ' Destino
+                .WindowStyle = 1                         ' Ejecutar
+                .Save()
+            End With
+        Catch ex As Exception
+
+        End Try
+
     End Sub
 
     Private Sub AyudaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AyudaToolStripMenuItem.Click
@@ -57,7 +193,7 @@
     End Sub
 
     Private Sub frmPrincipal_Resize(sender As Object, e As EventArgs) Handles MyBase.Resize
-        CentrarLogo(PBCNC.Width, PBCNC.Height)
+        'CentrarLogo(PBCNC.Width, PBCNC.Height)    ****POR LO PRONTO NO CENTRAREMOS LOGO
     End Sub
 
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
@@ -67,6 +203,9 @@
     Private Sub Timer1_Tick(sender As Object, e As EventArgs) Handles Timer1.Tick
         SB.Items(1).Text = "Maquisa   " + Format(Now, "hh:mm:ss tt")
     End Sub
+
+
+
     Public Function CHECACONX() As Boolean
         If Me.CONX.State = ConnectionState.Closed Or Me.CONX.State = ConnectionState.Broken Then
             Try
@@ -78,4 +217,16 @@
         End If
         Return True
     End Function
+
+    Private Sub S2_Click(sender As Object, e As EventArgs) Handles S2.Click
+        Dim AVEND As New frmVendedor
+        AVEND.ShowDialog()
+    End Sub
+
+
+
+    Private Sub S4_Click(sender As Object, e As EventArgs) Handles S4.Click
+        Dim AUSU As New frmUsuarios
+        AUSU.ShowDialog()
+    End Sub
 End Class

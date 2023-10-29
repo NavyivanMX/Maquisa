@@ -144,6 +144,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAyuda.designer.vb">
+      <DependentUpon>frmAyuda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyuda.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmBotones.Designer.vb">
       <DependentUpon>frmBotones.vb</DependentUpon>
     </Compile>
@@ -168,6 +174,12 @@
     <Compile Include="frmEmpresa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmLigaVersion.designer.vb">
+      <DependentUpon>frmLigaVersion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLigaVersion.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmLogin2.Designer.vb">
       <DependentUpon>frmLogin2.vb</DependentUpon>
     </Compile>
@@ -184,6 +196,18 @@
       <DependentUpon>frmUbicacionMapa.vb</DependentUpon>
     </Compile>
     <Compile Include="frmUbicacionMapa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmUsuarios.designer.vb">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVendedor.Designer.vb">
+      <DependentUpon>frmVendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVendedor.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MONICA.vb" />
@@ -207,6 +231,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAyuda.resx">
+      <DependentUpon>frmAyuda.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmBotones.resx">
       <DependentUpon>frmBotones.vb</DependentUpon>
     </EmbeddedResource>
@@ -219,6 +246,9 @@
     <EmbeddedResource Include="frmEmpresa.resx">
       <DependentUpon>frmEmpresa.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLigaVersion.resx">
+      <DependentUpon>frmLigaVersion.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin2.resx">
       <DependentUpon>frmLogin2.vb</DependentUpon>
     </EmbeddedResource>
@@ -227,6 +257,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmUbicacionMapa.resx">
       <DependentUpon>frmUbicacionMapa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVendedor.resx">
+      <DependentUpon>frmVendedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
@@ -259,6 +295,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MaquisaIcon.ico" />
+    <None Include="Resources\wallpaper1.PNG" />
+    <None Include="Resources\logo2.jpg" />
     <None Include="Resources\StructureSmall.JPG" />
     <None Include="Resources\KEY.jpg" />
     <None Include="Resources\autorizar100X100.png" />

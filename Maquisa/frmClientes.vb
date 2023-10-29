@@ -1,7 +1,7 @@
 ﻿Public Class frmClientes
     Private Sub frmClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        OPVisualizacionForm(Me)
+        OPVisualizacionForm(Me, frmPrincipal.COLORFUENTE)
         PonerImagenesBotones(Me)
         CBACT.SelectedIndex = 0
         ACTIVAR(True)

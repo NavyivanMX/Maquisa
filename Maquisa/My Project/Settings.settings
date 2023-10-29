@@ -11,5 +11,8 @@
     <Setting Name="EmpresaLongitud" Type="System.Double" Scope="User">
       <Value Profile="(Default)">-106.432907581329</Value>
     </Setting>
+    <Setting Name="COLORDEFAULT" Type="System.Drawing.Color" Scope="User">
+      <Value Profile="(Default)">White</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

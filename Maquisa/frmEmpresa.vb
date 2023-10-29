@@ -4,7 +4,7 @@ Public Class frmEmpresa
      
     Private Sub frmEmpresa_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        OPVisualizacionForm(Me)
+        OPVisualizacionForm(Me, frmPrincipal.COLORFUENTE)
         PonerImagenesBotones(Me)
         Me.CLAVE = frmPrincipal.Empresa
         CARGARDATOS()
