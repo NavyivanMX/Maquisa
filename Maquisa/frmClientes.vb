@@ -1,4 +1,5 @@
 ﻿Public Class frmClientes
+    Dim LTIPO As New List(Of String)
     Private Sub frmClientes_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         OPVisualizacionForm(Me, frmPrincipal.COLORFUENTE)
@@ -6,6 +7,7 @@
         CBACT.SelectedIndex = 0
         ACTIVAR(True)
         TXTCLA.Text = CARGACLI()
+        OPLlenaComboBox(CBTIPO, LTIPO, "SELECT CLAVE,NOMBRE FROM  TIPOCLIENTE WHERE ACTIVO=1 ORDER BY NOMBRE", frmPrincipal.CadenaConexion, "Favor de Seleccionar", "")
 
     End Sub
     Dim LATITUD, LONGITUD As Double
@@ -36,7 +38,7 @@
         TXTTEL.Enabled = Not V
         TXTCEL.Enabled = Not V
         TXTMAIL.Enabled = Not V
-
+        CBTIPO.Enabled = Not V
         CBACT.Enabled = Not V
         BTNGUARDAR.Enabled = Not V
         BTNELIMINAR.Enabled = False
@@ -64,7 +66,7 @@
         ACTIVAR(False)
         LATITUD = 0
         LONGITUD = 0
-        Dim SQLSELECT As New SqlClient.SqlCommand("SELECT CLAVE,NOMBRE,DIRECCION,TELEFONO,CELULAR,MAIL,ACTIVO,LATITUD,LONGITUD FROM CLIENTES WHERE CLAVE=" + TXTCLA.Text, frmPrincipal.CONX)
+        Dim SQLSELECT As New SqlClient.SqlCommand("SELECT CLAVE,NOMBRE,DIRECCION,TELEFONO,CELULAR,MAIL,ACTIVO,LATITUD,LONGITUD,TIPO FROM CLIENTES WHERE CLAVE=" + TXTCLA.Text, frmPrincipal.CONX)
         Dim LECTOR As SqlClient.SqlDataReader
         LECTOR = SQLSELECT.ExecuteReader
         If LECTOR.Read Then
@@ -81,7 +83,7 @@
             End If
             LATITUD = LECTOR(7).ToString
             LONGITUD = LECTOR(8).ToString
-
+            OPCargaX(LTIPO, CBTIPO, LECTOR(9).ToString)
             BTNELIMINAR.Enabled = True
         End If
         LECTOR.Close()
@@ -119,7 +121,10 @@
             MessageBox.Show("Falta ingresar infomación importante del cliente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
             Exit Sub
         End If
-
+        If CBTIPO.SelectedIndex = 0 Then
+            OPMsgError("Favor de seleccionar tipo de cliente")
+            Return
+        End If
         Dim xyz As Short
         xyz = MessageBox.Show("¿Desea guardar la información?", "Aviso", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button1)
         If xyz <> 6 Then
@@ -134,7 +139,7 @@
         SQLGUARDAR.CommandType = CommandType.StoredProcedure
 
         SQLGUARDAR.Parameters.Add("@CLA", SqlDbType.Int).Value = CType(TXTCLA.Text, Integer)
-        SQLGUARDAR.Parameters.Add("@TIPO", SqlDbType.Int).Value = 1
+        SQLGUARDAR.Parameters.Add("@TIPO", SqlDbType.Int).Value = LTIPO(CBTIPO.SelectedIndex)
         SQLGUARDAR.Parameters.Add("@NOM", SqlDbType.VarChar, 100).Value = TXTNOM.Text
         SQLGUARDAR.Parameters.Add("@DIR", SqlDbType.VarChar, 200).Value = TXTDIR.Text
         SQLGUARDAR.Parameters.Add("@TEL", SqlDbType.VarChar, 200).Value = TXTTEL.Text
