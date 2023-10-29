@@ -100,7 +100,7 @@
         End If
     End Sub
 
-    Private Sub TXTCEL_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTPWD.KeyPress
+    Private Sub TXTCEL_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -110,7 +110,7 @@
         End If
     End Sub
 
-    Private Sub TXTNOM_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTNOM.KeyPress, TXTPWD.KeyPress, CBACT.KeyPress
+    Private Sub TXTNOM_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTPWD.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
             SendKeys.Send("{TAB}")

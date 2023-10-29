@@ -85,7 +85,7 @@ Public Class frmEmpresa
 
         Return False
     End Function
-    Private Sub TXTRFC_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTRFC.KeyPress
+    Private Sub TXTRFC_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) 
         If e.KeyChar = Chr(13) Then
             If String.IsNullOrEmpty(TXTRFC.Text) Then
             Else
@@ -143,7 +143,7 @@ Public Class frmEmpresa
 
         Return True
     End Function
-    Private Sub TXTTELEFONO_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTTELEFONO.KeyPress
+    Private Sub TXTTELEFONO_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) 
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -152,13 +152,13 @@ Public Class frmEmpresa
             e.Handled = True
         End If
     End Sub
-    Private Sub TXTNOMBRECOMERCIAL_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTNOMBRECOMERCIAL.KeyPress, TXTNOMBREFISCAL.KeyPress, TXTCALLE.KeyPress, TXTCOLONIA.KeyPress, TXTESTADO.KeyPress, TXTPAIS.KeyPress, TXTTELEFONO.KeyPress, TXTCIUDAD.KeyPress, CBACTIVO.KeyPress
+    Private Sub TXTNOMBRECOMERCIAL_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles   TXTTELEFONO.KeyPress
         If e.KeyChar = Chr(13) Then
             e.Handled = True
             SendKeys.Send("{TAB}")
         End If
     End Sub
-    Private Sub TXTNUMEROINT_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTNUMEROINT.KeyPress
+    Private Sub TXTNUMEROINT_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) 
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -167,7 +167,7 @@ Public Class frmEmpresa
             e.Handled = True
         End If
     End Sub
-    Private Sub TXTNUMEROEXT_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTNUMEROEXT.KeyPress
+    Private Sub TXTNUMEROEXT_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) 
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then
@@ -177,7 +177,7 @@ Public Class frmEmpresa
         End If
     End Sub
 
-    Private Sub TXTCP_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTCP.KeyPress
+    Private Sub TXTCP_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) 
         If Char.IsDigit(e.KeyChar) Then
             e.Handled = False
         ElseIf Char.IsControl(e.KeyChar) Then

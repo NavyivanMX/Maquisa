@@ -222,7 +222,7 @@
 
     End Sub
 
-    Private Sub TXTANT_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTANT.KeyPress, TXTNVA.KeyPress, TXTPWD.KeyPress, CBNIV.KeyPress
+    Private Sub TXTANT_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs)
         If e.KeyChar = Chr(13) Then
             e.Handled = True
             SendKeys.Send("{TAB}")

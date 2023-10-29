@@ -196,6 +196,11 @@
         'CentrarLogo(PBCNC.Width, PBCNC.Height)    ****POR LO PRONTO NO CENTRAREMOS LOGO
     End Sub
 
+    Private Sub RutaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RutaToolStripMenuItem.Click
+        Dim ARUTA As New frmRutas
+        ARUTA.ShowDialog()
+    End Sub
+
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
         frmEmpresa.ShowDialog()
     End Sub

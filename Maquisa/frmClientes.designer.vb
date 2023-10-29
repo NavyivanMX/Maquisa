@@ -37,11 +37,12 @@ Partial Class frmClientes
         Me.TXTCLA = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.VERMAP = New System.Windows.Forms.Button()
         Me.BTNBUSCAR = New System.Windows.Forms.Button()
         Me.BTNCANCELAR = New System.Windows.Forms.Button()
         Me.BTNELIMINAR = New System.Windows.Forms.Button()
         Me.BTNGUARDAR = New System.Windows.Forms.Button()
-        Me.VERMAP = New System.Windows.Forms.Button()
+        Me.Label1 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -51,7 +52,7 @@ Partial Class frmClientes
         Me.CBACT.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBACT.FormattingEnabled = True
         Me.CBACT.Items.AddRange(New Object() {"Si", "No"})
-        Me.CBACT.Location = New System.Drawing.Point(120, 269)
+        Me.CBACT.Location = New System.Drawing.Point(286, 218)
         Me.CBACT.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CBACT.Name = "CBACT"
         Me.CBACT.Size = New System.Drawing.Size(72, 25)
@@ -61,7 +62,7 @@ Partial Class frmClientes
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label6.Location = New System.Drawing.Point(59, 274)
+        Me.Label6.Location = New System.Drawing.Point(225, 223)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(54, 17)
         Me.Label6.TabIndex = 25
@@ -180,15 +181,16 @@ Partial Class frmClientes
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label2.Location = New System.Drawing.Point(93, 61)
+        Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.Location = New System.Drawing.Point(85, 53)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(49, 17)
+        Me.Label2.Size = New System.Drawing.Size(61, 22)
         Me.Label2.TabIndex = 31
         Me.Label2.Text = "Clave"
         '
         'GroupBox1
         '
+        Me.GroupBox1.Controls.Add(Me.Label1)
         Me.GroupBox1.Controls.Add(Me.VERMAP)
         Me.GroupBox1.Controls.Add(Me.CBACT)
         Me.GroupBox1.Controls.Add(Me.Label6)
@@ -206,17 +208,31 @@ Partial Class frmClientes
         Me.GroupBox1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.GroupBox1.Name = "GroupBox1"
         Me.GroupBox1.Padding = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.GroupBox1.Size = New System.Drawing.Size(583, 320)
+        Me.GroupBox1.Size = New System.Drawing.Size(583, 293)
         Me.GroupBox1.TabIndex = 29
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = " "
+        '
+        'VERMAP
+        '
+        Me.VERMAP.BackColor = System.Drawing.SystemColors.Control
+        Me.VERMAP.BackgroundImage = Global.Maquisa.My.Resources.Resources.autorizar100X100
+        Me.VERMAP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.VERMAP.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VERMAP.ForeColor = System.Drawing.Color.Transparent
+        Me.VERMAP.Location = New System.Drawing.Point(468, 177)
+        Me.VERMAP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.VERMAP.Name = "VERMAP"
+        Me.VERMAP.Size = New System.Drawing.Size(80, 80)
+        Me.VERMAP.TabIndex = 32
+        Me.VERMAP.UseVisualStyleBackColor = False
         '
         'BTNBUSCAR
         '
         Me.BTNBUSCAR.BackColor = System.Drawing.Color.White
         Me.BTNBUSCAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNBUSCAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNBUSCAR.Location = New System.Drawing.Point(518, 15)
+        Me.BTNBUSCAR.Location = New System.Drawing.Point(514, 15)
         Me.BTNBUSCAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNBUSCAR.Name = "BTNBUSCAR"
         Me.BTNBUSCAR.Size = New System.Drawing.Size(85, 77)
@@ -229,7 +245,7 @@ Partial Class frmClientes
         Me.BTNCANCELAR.BackColor = System.Drawing.Color.White
         Me.BTNCANCELAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNCANCELAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNCANCELAR.Location = New System.Drawing.Point(395, 439)
+        Me.BTNCANCELAR.Location = New System.Drawing.Point(395, 404)
         Me.BTNCANCELAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNCANCELAR.Name = "BTNCANCELAR"
         Me.BTNCANCELAR.Size = New System.Drawing.Size(80, 80)
@@ -242,7 +258,7 @@ Partial Class frmClientes
         Me.BTNELIMINAR.BackColor = System.Drawing.Color.White
         Me.BTNELIMINAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNELIMINAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNELIMINAR.Location = New System.Drawing.Point(274, 439)
+        Me.BTNELIMINAR.Location = New System.Drawing.Point(274, 404)
         Me.BTNELIMINAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNELIMINAR.Name = "BTNELIMINAR"
         Me.BTNELIMINAR.Size = New System.Drawing.Size(80, 80)
@@ -252,10 +268,10 @@ Partial Class frmClientes
         '
         'BTNGUARDAR
         '
-        Me.BTNGUARDAR.BackColor = System.Drawing.SystemColors.Control
+        Me.BTNGUARDAR.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BTNGUARDAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNGUARDAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNGUARDAR.Location = New System.Drawing.Point(149, 439)
+        Me.BTNGUARDAR.Location = New System.Drawing.Point(149, 404)
         Me.BTNGUARDAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNGUARDAR.Name = "BTNGUARDAR"
         Me.BTNGUARDAR.Size = New System.Drawing.Size(80, 80)
@@ -263,25 +279,21 @@ Partial Class frmClientes
         Me.BTNGUARDAR.Text = "&G"
         Me.BTNGUARDAR.UseVisualStyleBackColor = False
         '
-        'VERMAP
+        'Label1
         '
-        Me.VERMAP.BackColor = System.Drawing.SystemColors.Control
-        Me.VERMAP.BackgroundImage = Global.Maquisa.My.Resources.Resources.autorizar100X100
-        Me.VERMAP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.VERMAP.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.VERMAP.ForeColor = System.Drawing.Color.Transparent
-        Me.VERMAP.Location = New System.Drawing.Point(468, 217)
-        Me.VERMAP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.VERMAP.Name = "VERMAP"
-        Me.VERMAP.Size = New System.Drawing.Size(80, 80)
-        Me.VERMAP.TabIndex = 32
-        Me.VERMAP.UseVisualStyleBackColor = False
+        Me.Label1.AutoSize = True
+        Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.Location = New System.Drawing.Point(446, 261)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(125, 17)
+        Me.Label1.TabIndex = 33
+        Me.Label1.Text = "Geolocalizacion"
         '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(624, 542)
+        Me.ClientSize = New System.Drawing.Size(624, 499)
         Me.Controls.Add(Me.BTNCANCELAR)
         Me.Controls.Add(Me.BTNBUSCAR)
         Me.Controls.Add(Me.BTNELIMINAR)
@@ -323,4 +335,5 @@ Partial Class frmClientes
     Friend WithEvents BTNGUARDAR As System.Windows.Forms.Button
     Friend WithEvents GroupBox1 As GroupBox
     Friend WithEvents VERMAP As Button
+    Friend WithEvents Label1 As Label
 End Class
