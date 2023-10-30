@@ -102,14 +102,13 @@
         Dim SQLGUARDAR As New SqlClient.SqlCommand
         SQLGUARDAR.Connection = frmPrincipal.CONX
         SQLGUARDAR.CommandType = CommandType.StoredProcedure
-        SQLGUARDAR.Parameters.Add("@EMP", SqlDbType.VarChar).Value = frmPrincipal.Empresa
+        '  SQLGUARDAR.Parameters.Add("@EMP", SqlDbType.VarChar).Value = frmPrincipal.Empresa
         SQLGUARDAR.Parameters.Add("@SUC", SqlDbType.VarChar).Value = frmPrincipal.SucursalBase
         SQLGUARDAR.Parameters.Add("@CLA", SqlDbType.Int).Value = TXTCLA.Text
         SQLGUARDAR.Parameters.Add("@NOM", SqlDbType.VarChar).Value = TXTNOM.Text
         SQLGUARDAR.Parameters.Add("@ACT", SqlDbType.Bit)
-        SQLGUARDAR.Parameters.Add("@COB", SqlDbType.VarChar).Value = 1
-        SQLGUARDAR.Parameters.Add("@VEN", SqlDbType.VarChar).Value = CBVEN.Text
-
+        ' SQLGUARDAR.Parameters.Add("@COB", SqlDbType.VarChar).Value = 1
+        SQLGUARDAR.Parameters.Add("@VEN", SqlDbType.VarChar).Value = CLAVEN(CBVEN.SelectedIndex)
         If CBACT.SelectedIndex = 0 Then
             SQLGUARDAR.Parameters("@ACT").Value = 1
         Else

@@ -201,6 +201,11 @@
         ARUTA.ShowDialog()
     End Sub
 
+    Private Sub ItinerarioRutasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItinerarioRutasToolStripMenuItem.Click
+        Dim MITINERARIO As New frmItinerarioRuta
+        MITINERARIO.ShowDialog()
+    End Sub
+
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
         frmEmpresa.ShowDialog()
     End Sub

@@ -55,6 +55,7 @@ Partial Class frmPrincipal
         Me.PBS = New System.Windows.Forms.PictureBox()
         Me.LBLP = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
+        Me.ItinerarioRutasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PBCNC, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -155,6 +156,7 @@ Partial Class frmPrincipal
         '
         'MM2
         '
+        Me.MM2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItinerarioRutasToolStripMenuItem})
         Me.MM2.Name = "MM2"
         Me.MM2.Size = New System.Drawing.Size(113, 24)
         Me.MM2.Text = "&Movimientos"
@@ -315,6 +317,12 @@ Partial Class frmPrincipal
         Me.Label3.TabIndex = 1336
         Me.Label3.Text = "Structure Soluciones"
         '
+        'ItinerarioRutasToolStripMenuItem
+        '
+        Me.ItinerarioRutasToolStripMenuItem.Name = "ItinerarioRutasToolStripMenuItem"
+        Me.ItinerarioRutasToolStripMenuItem.Size = New System.Drawing.Size(187, 24)
+        Me.ItinerarioRutasToolStripMenuItem.Text = "Itinerario Rutas"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -382,4 +390,5 @@ Partial Class frmPrincipal
     Friend WithEvents LBLP As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents RutaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents ItinerarioRutasToolStripMenuItem As ToolStripMenuItem
 End Class
