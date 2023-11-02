@@ -1968,50 +1968,50 @@ Module MONICA
         Next
 
         FileClose(1)
-        TextToExcel(vFileName)
+        'TextToExcel(vFileName)
 
     End Sub
 
-    Public Sub TextToExcel(ByVal pFileName As String)
+    'Public Sub TextToExcel(ByVal pFileName As String)
 
-        Dim vFormato As Excel.XlRangeAutoFormat
+    '    Dim vFormato As Excel.XlRangeAutoFormat
 
-        Dim vCultura As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture()
+    '    Dim vCultura As System.Globalization.CultureInfo = System.Threading.Thread.CurrentThread.CurrentCulture()
 
-        'Es importante definirle la cultura al sistema
-        'ya que podria generar errores
-        System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US")
+    '    'Es importante definirle la cultura al sistema
+    '    'ya que podria generar errores
+    '    System.Threading.Thread.CurrentThread.CurrentCulture = System.Globalization.CultureInfo.CreateSpecificCulture("en-US")
 
-        Dim Exc As Excel.Application = New Excel.Application
-        Exc.Workbooks.OpenText(pFileName, , , , Excel.XlTextQualifier.xlTextQualifierNone, , True)
+    '    Dim Exc As Excel.Application = New Excel.Application
+    '    Exc.Workbooks.OpenText(pFileName, , , , Excel.XlTextQualifier.xlTextQualifierNone, , True)
 
-        Dim Wb As Excel.Workbook = Exc.ActiveWorkbook
-        Dim Ws As Excel.Worksheet = Wb.ActiveSheet
+    '    Dim Wb As Excel.Workbook = Exc.ActiveWorkbook
+    '    Dim Ws As Excel.Worksheet = Wb.ActiveSheet
 
-        vFormato = Excel.XlRangeAutoFormat.xlRangeAutoFormatSimple
-        'En el ejemplo vienen otros formatos posibles
+    '    vFormato = Excel.XlRangeAutoFormat.xlRangeAutoFormatSimple
+    '    'En el ejemplo vienen otros formatos posibles
 
-        Ws.Range(Ws.Cells(1, 1), Ws.Cells(Ws.UsedRange.Rows.Count, Ws.UsedRange.Columns.Count)).AutoFormat(vFormato)
+    '    Ws.Range(Ws.Cells(1, 1), Ws.Cells(Ws.UsedRange.Rows.Count, Ws.UsedRange.Columns.Count)).AutoFormat(vFormato)
 
-        pFileName = Path.GetTempFileName.Replace("tmp", "xls")
-        File.Delete(pFileName)
+    '    pFileName = Path.GetTempFileName.Replace("tmp", "xls")
+    '    File.Delete(pFileName)
 
-        Exc.ActiveWorkbook.SaveAs(pFileName, Excel.XlTextQualifier.xlTextQualifierNone - 1)
+    '    Exc.ActiveWorkbook.SaveAs(pFileName, Excel.XlTextQualifier.xlTextQualifierNone - 1)
 
-        Exc.Quit()
+    '    Exc.Quit()
 
-        Ws = Nothing
-        Wb = Nothing
-        Exc = Nothing
+    '    Ws = Nothing
+    '    Wb = Nothing
+    '    Exc = Nothing
 
-        GC.Collect()
-        'If valor > -1 Then
-        Dim p As System.Diagnostics.Process = New System.Diagnostics.Process
-        p.EnableRaisingEvents = False
-        p.Start("Excel.exe", pFileName)
-        ' End If
-        System.Threading.Thread.CurrentThread.CurrentCulture = vCultura
-    End Sub
+    '    GC.Collect()
+    '    'If valor > -1 Then
+    '    Dim p As System.Diagnostics.Process = New System.Diagnostics.Process
+    '    p.EnableRaisingEvents = False
+    '    p.Start("Excel.exe", pFileName)
+    '    ' End If
+    '    System.Threading.Thread.CurrentThread.CurrentCulture = vCultura
+    'End Sub
 
 
     Private Function RangoExcel(ByVal COLUMNAS As Integer, ByVal RENGLON As Integer, ByVal INICIO As Boolean) As String
@@ -2086,284 +2086,284 @@ Module MONICA
         End Select
 
     End Function
-    Public Function ExportarExcel(ByVal DT As DataTable, ByVal NombreArchivo As String, ByVal Abrirlo As Boolean, Optional ConEncabezado As Boolean = False, Optional SubEncabezado As String = "") As Boolean
-        If Not InfoEsAdministrador() Then
-            MessageBox.Show("Se recomienda correr el sistema modo Administrador (Click en el botón derecho, ejecutar como administrador) en caso de no funcionar correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
-        End If
-        Dim SFD As New System.Windows.Forms.SaveFileDialog
-        SFD.FileName = NombreArchivo
-        SFD.Filter = "Archivos de Excel (*.xls)|*.xls|" + Chr(34) + "All files (*.*)|*.*;"
-        If SFD.ShowDialog = DialogResult.OK Then
-            Try
-                If System.IO.File.Exists(SFD.FileName) = True Then
-                    System.IO.File.Delete(SFD.FileName)
-                End If
-                '' ESTA PARTE MUESTRA UNA VENTANA DE PROGRESO
-                Dim FRM As New System.Windows.Forms.Form
-                FRM.Width = 400
-                FRM.Height = 250
-                FRM.Text = "Procesando..."
-                Dim PB As New ProgressBar
-                PB.Minimum = 1
-                PB.Maximum = DT.Rows.Count
-                PB.Value = 1
+    'Public Function ExportarExcel(ByVal DT As DataTable, ByVal NombreArchivo As String, ByVal Abrirlo As Boolean, Optional ConEncabezado As Boolean = False, Optional SubEncabezado As String = "") As Boolean
+    '    If Not InfoEsAdministrador() Then
+    '        MessageBox.Show("Se recomienda correr el sistema modo Administrador (Click en el botón derecho, ejecutar como administrador) en caso de no funcionar correctamente", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Asterisk)
+    '    End If
+    '    Dim SFD As New System.Windows.Forms.SaveFileDialog
+    '    SFD.FileName = NombreArchivo
+    '    SFD.Filter = "Archivos de Excel (*.xls)|*.xls|" + Chr(34) + "All files (*.*)|*.*;"
+    '    If SFD.ShowDialog = DialogResult.OK Then
+    '        Try
+    '            If System.IO.File.Exists(SFD.FileName) = True Then
+    '                System.IO.File.Delete(SFD.FileName)
+    '            End If
+    '            '' ESTA PARTE MUESTRA UNA VENTANA DE PROGRESO
+    '            Dim FRM As New System.Windows.Forms.Form
+    '            FRM.Width = 400
+    '            FRM.Height = 250
+    '            FRM.Text = "Procesando..."
+    '            Dim PB As New ProgressBar
+    '            PB.Minimum = 1
+    '            PB.Maximum = DT.Rows.Count
+    '            PB.Value = 1
 
-                Dim PUNTO As System.Drawing.Point
-                PUNTO.X = 10
-                PUNTO.Y = 100
-                PB.Width = 360
-                PB.Height = 50
-                PB.Location = PUNTO
-
-
-                Dim LBL As New Label
-                LBL.Height = 20
-                LBL.Width = 380
-                LBL.TextAlign = ContentAlignment.MiddleCenter
-                LBL.BackColor = Color.Transparent
-                PUNTO.X = 10
-                PUNTO.Y = 15
-                LBL.Location = PUNTO
-
-                Dim LBL2 As New Label
-                LBL2.Height = 20
-                LBL2.Width = 380
-                LBL2.TextAlign = ContentAlignment.MiddleCenter
-                LBL2.BackColor = Color.Transparent
-                PUNTO.X = 10
-                PUNTO.Y = 40
-                LBL2.Location = PUNTO
-                LBL2.BringToFront()
-
-                FRM.Controls.Add(LBL)
-                FRM.Controls.Add(LBL2)
-                FRM.Controls.Add(PB)
-                FRM.MinimizeBox = False
-                FRM.MaximizeBox = False
-                FRM.StartPosition = FormStartPosition.CenterScreen
-                FRM.Icon = frmPrincipal.Icon
-                OPVisualizacionForm(FRM)
-                FRM.Show()
-                'Dim xls As New Microsoft.Office.Interop.Excel.
-                Dim excel As New Excel.Application()
-                Dim wBook As Microsoft.Office.Interop.Excel.Workbook
-                Dim wSheet As Microsoft.Office.Interop.Excel.Worksheet
-
-                wBook = excel.Workbooks.Add()
-                wSheet = wBook.ActiveSheet()
-
-                Dim dc As System.Data.DataColumn
-                Dim dr As System.Data.DataRow
-                Dim colIndex As Integer = 0
-                Dim rowIndex As Integer = 0
-                Dim NCOL As Integer
-                NCOL = DT.Columns.Count
-                Dim ESPACIOS As Integer
-                ESPACIOS = 0
-                If ConEncabezado Then
-                    excel.Range(RangoExcel(DT.Columns.Count, 1, True), RangoExcel(DT.Columns.Count, 1, False)).Merge(True)
-                    excel.Cells(1, 1) = frmPrincipal.NombreComun
-                    excel.Range(RangoExcel(DT.Columns.Count, 1, True), RangoExcel(DT.Columns.Count, 1, False)).Columns.AutoFit()
-                    excel.Range(RangoExcel(DT.Columns.Count, 2, True), RangoExcel(DT.Columns.Count, 2, False)).Merge(True)
-                    excel.Range(RangoExcel(DT.Columns.Count + 1, 1, False), RangoExcel(DT.Columns.Count + 1, 2, False)).Merge(True)
-                    excel.Cells(2, 1) = SubEncabezado
-                    excel.Cells(3, 1) = Now.ToShortDateString
-                    excel.Cells(3, 2) = Now.ToShortTimeString
-                    ESPACIOS = 3
-
-                    'INSERTAR IMAGEN EN EXCEL
-                    Dim Celda As Object = excel.Cells(1, DT.Columns.Count)
-                    Dim Izquierda As Single
-                    Dim Arriba As Single
-                    Dim Ancho As Double = Celda.Offset(1, DT.Columns.Count).Left - Celda.Left
-                    Izquierda = Celda.Left + Ancho / 2 - 340 / 2.0F
-                    Izquierda = Celda.Left
-                    If Izquierda < 1 Then Izquierda = 1
-                    Dim Alto As Double = Celda.Offset(1, DT.Columns.Count).Top - Celda.Top
-                    Arriba = Celda.Top + Alto / 2 - 255 / 2
-                    If Arriba < 1 Then Arriba = 1S
-                    Dim ImageFileName As String = IO.Path.Combine(Application.StartupPath, "Imagen.JPG")
-                    Try
-                        System.IO.File.Delete(ImageFileName)
-                        My.Resources.MaquisaFondo.Save(ImageFileName)
-                    Catch ex As Exception
-
-                    End Try
-                    excel.Sheets(1).Shapes.AddPicture(ImageFileName, False, True, Izquierda, Arriba, 40, 40)
-                End If
-
-                For Each dc In DT.Columns
-                    colIndex = colIndex + 1
-                    excel.Cells(ESPACIOS + 1, colIndex) = dc.ColumnName
-                    excel.Cells(ESPACIOS + 1, colIndex).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue)
-                    excel.Cells(ESPACIOS + 1, colIndex).Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White)
-                Next
+    '            Dim PUNTO As System.Drawing.Point
+    '            PUNTO.X = 10
+    '            PUNTO.Y = 100
+    '            PB.Width = 360
+    '            PB.Height = 50
+    '            PB.Location = PUNTO
 
 
-                For Each dr In DT.Rows
+    '            Dim LBL As New Label
+    '            LBL.Height = 20
+    '            LBL.Width = 380
+    '            LBL.TextAlign = ContentAlignment.MiddleCenter
+    '            LBL.BackColor = Color.Transparent
+    '            PUNTO.X = 10
+    '            PUNTO.Y = 15
+    '            LBL.Location = PUNTO
 
-                    rowIndex = rowIndex + 1
-                    LBL.Text = rowIndex.ToString + " de " + DT.Rows.Count.ToString
-                    LBL2.Text = FormatNumber((rowIndex / DT.Rows.Count * 100), 2).ToString + " %"
+    '            Dim LBL2 As New Label
+    '            LBL2.Height = 20
+    '            LBL2.Width = 380
+    '            LBL2.TextAlign = ContentAlignment.MiddleCenter
+    '            LBL2.BackColor = Color.Transparent
+    '            PUNTO.X = 10
+    '            PUNTO.Y = 40
+    '            LBL2.Location = PUNTO
+    '            LBL2.BringToFront()
 
+    '            FRM.Controls.Add(LBL)
+    '            FRM.Controls.Add(LBL2)
+    '            FRM.Controls.Add(PB)
+    '            FRM.MinimizeBox = False
+    '            FRM.MaximizeBox = False
+    '            FRM.StartPosition = FormStartPosition.CenterScreen
+    '            FRM.Icon = frmPrincipal.Icon
+    '            OPVisualizacionForm(FRM)
+    '            FRM.Show()
+    '            'Dim xls As New Microsoft.Office.Interop.Excel.
+    '            Dim excel As New Excel.Application()
+    '            Dim wBook As Microsoft.Office.Interop.Excel.Workbook
+    '            Dim wSheet As Microsoft.Office.Interop.Excel.Worksheet
 
-                    PB.Value = rowIndex
-                    PB.Refresh()
-                    colIndex = 0
-                    For Each dc In DT.Columns
-                        colIndex = colIndex + 1
-                        excel.Cells(rowIndex + ESPACIOS + 1, colIndex) = dr(dc.ColumnName)
+    '            wBook = excel.Workbooks.Add()
+    '            wSheet = wBook.ActiveSheet()
 
-                    Next
-                Next
-                FRM.Close()
-                'Titulo en negrita, Alineado al centro y que el tamaño de la columna seajuste al texto
-                wSheet.Name = "Navysoluciones"
-                wSheet.Rows.Item(1).Font.Bold = 1
-                wSheet.Rows.Item(1).HorizontalAlignment = 3
-                If ConEncabezado Then
-                    wSheet.Rows.Item(2).Font.Bold = 1
-                    wSheet.Rows.Item(2).HorizontalAlignment = 3
-                End If
+    '            Dim dc As System.Data.DataColumn
+    '            Dim dr As System.Data.DataRow
+    '            Dim colIndex As Integer = 0
+    '            Dim rowIndex As Integer = 0
+    '            Dim NCOL As Integer
+    '            NCOL = DT.Columns.Count
+    '            Dim ESPACIOS As Integer
+    '            ESPACIOS = 0
+    '            If ConEncabezado Then
+    '                excel.Range(RangoExcel(DT.Columns.Count, 1, True), RangoExcel(DT.Columns.Count, 1, False)).Merge(True)
+    '                excel.Cells(1, 1) = frmPrincipal.NombreComun
+    '                excel.Range(RangoExcel(DT.Columns.Count, 1, True), RangoExcel(DT.Columns.Count, 1, False)).Columns.AutoFit()
+    '                excel.Range(RangoExcel(DT.Columns.Count, 2, True), RangoExcel(DT.Columns.Count, 2, False)).Merge(True)
+    '                excel.Range(RangoExcel(DT.Columns.Count + 1, 1, False), RangoExcel(DT.Columns.Count + 1, 2, False)).Merge(True)
+    '                excel.Cells(2, 1) = SubEncabezado
+    '                excel.Cells(3, 1) = Now.ToShortDateString
+    '                excel.Cells(3, 2) = Now.ToShortTimeString
+    '                ESPACIOS = 3
 
-                wSheet.Rows.Item(ESPACIOS + 1).Font.Bold = 1
-                wSheet.Rows.Item(ESPACIOS + 1).HorizontalAlignment = 3
-                'wSheet.Rows.Item(ESPACIOS + 1).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gainsboro)
-                wSheet.Columns.AutoFit()
-                wSheet.Columns.AutoFit()
-                Dim strFileName As String = SFD.FileName
-                Dim blnFileOpen As Boolean = False
-                Try
-                    Dim fileTemp As System.IO.FileStream = System.IO.File.OpenWrite(strFileName)
-                    fileTemp.Close()
-                Catch ex As Exception
-                    blnFileOpen = False
-                End Try
+    '                'INSERTAR IMAGEN EN EXCEL
+    '                Dim Celda As Object = excel.Cells(1, DT.Columns.Count)
+    '                Dim Izquierda As Single
+    '                Dim Arriba As Single
+    '                Dim Ancho As Double = Celda.Offset(1, DT.Columns.Count).Left - Celda.Left
+    '                Izquierda = Celda.Left + Ancho / 2 - 340 / 2.0F
+    '                Izquierda = Celda.Left
+    '                If Izquierda < 1 Then Izquierda = 1
+    '                Dim Alto As Double = Celda.Offset(1, DT.Columns.Count).Top - Celda.Top
+    '                Arriba = Celda.Top + Alto / 2 - 255 / 2
+    '                If Arriba < 1 Then Arriba = 1S
+    '                Dim ImageFileName As String = IO.Path.Combine(Application.StartupPath, "Imagen.JPG")
+    '                Try
+    '                    System.IO.File.Delete(ImageFileName)
+    '                    My.Resources.MaquisaFondo.Save(ImageFileName)
+    '                Catch ex As Exception
 
-                If System.IO.File.Exists(strFileName) Then
-                    System.IO.File.Delete(strFileName)
-                End If
+    '                End Try
+    '                excel.Sheets(1).Shapes.AddPicture(ImageFileName, False, True, Izquierda, Arriba, 40, 40)
+    '            End If
 
-                wBook.SaveAs(strFileName)
-                excel.Workbooks.Open(strFileName)
-                excel.Visible = True
-                If Abrirlo Then
-                    excel.Workbooks.Open(strFileName)
-                    excel.Visible = True
-                End If
-
-            Catch ex As Exception
-                MessageBox.Show("La información No se puede Guardar, Archivo en Uso. " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                Return False
-                Exit Function
-            End Try
-        End If
-
-    End Function
-    Public Function ExportarExcel(ByVal ElGrid As DataGridView) As Boolean
-        'Creamos las variables
-        Dim exApp As New Microsoft.Office.Interop.Excel.Application
-        Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
-        Dim exHoja As Microsoft.Office.Interop.Excel.Worksheet
-        Try
-            'Añadimos el Libro al programa, y la hoja al libro
-            exLibro = exApp.Workbooks.Add
-            exHoja = exLibro.Worksheets.Add()
-            ' ¿Cuantas columnas y cuantas filas?
-            Dim NCol As Integer = ElGrid.ColumnCount
-            Dim NRow As Integer = ElGrid.RowCount
-            'Aqui recorremos todas las filas, y por cada fila todas las columnas y vamos escribiendo.
-            For i As Integer = 1 To NCol
-                exHoja.Cells.Item(1, i) = ElGrid.Columns(i - 1).Name.ToString
-                exHoja.Cells.Item(1, i).HorizontalAlignment = 3
-            Next
-            For Fila As Integer = 0 To NRow - 1
-                For Col As Integer = 0 To NCol - 1
-                    exHoja.Cells.Item(Fila + 2, Col + 1) = ElGrid.Rows(Fila).Cells(Col).Value.ToString
-
-                Next
-            Next
-            'Titulo en negrita, Alineado al centro y que el tamaño de la columna seajuste al texto
-            exHoja.Name = "Navysoluciones"
-            exHoja.Rows.Item(1).Font.Bold = 1
-            exHoja.Rows.Item(1).HorizontalAlignment = 3
-            exHoja.Columns.AutoFit()
-            'Aplicación visible
-            exApp.Application.WindowState = Microsoft.Office.Interop.Excel.XlWindowState.xlMinimized
-            exApp.Application.Visible = True
-            exHoja = Nothing
-            exLibro = Nothing
-            exApp = Nothing
-        Catch ex As Exception
-            MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel " + ex.Message)
-            Return False
-        End Try
-        Return True
-    End Function
-    Public Function ExportarExcel(ByVal LDT As List(Of DataTable), ByVal NombreArchivo As String, ByVal Abrirlo As Boolean) As Boolean
-        Dim SFD As New System.Windows.Forms.SaveFileDialog
-        SFD.FileName = NombreArchivo
-        SFD.Filter = "Archivos de Excel (*.xls)|*.xls|" + Chr(34) + "All files (*.*)|*.*;"
-        If SFD.ShowDialog = DialogResult.OK Then
-            Try
-                If System.IO.File.Exists(SFD.FileName) = True Then
-                    System.IO.File.Delete(SFD.FileName)
-                End If
-                'Dim xls As New Microsoft.Office.Interop.Excel.
-                Dim excel As New Microsoft.Office.Interop.Excel.ApplicationClass
-                Dim wBook As Microsoft.Office.Interop.Excel.Workbook
-                Dim wSheet As Microsoft.Office.Interop.Excel.Worksheet
-
-                wBook = excel.Workbooks.Add()
-                wSheet = wBook.ActiveSheet()
-                Dim DT As DataTable
-                Dim dc As System.Data.DataColumn
-                Dim dr As System.Data.DataRow
-                Dim colIndex As Integer = 0
-                Dim rowIndex As Integer = 0
-                For Each DT In LDT
-                    For Each dc In DT.Columns
-                        colIndex = colIndex + 1
-                        excel.Cells(1, colIndex) = dc.ColumnName
-                    Next
-
-                    For Each dr In DT.Rows
-                        rowIndex = rowIndex + 1
-                        colIndex = 0
-                        For Each dc In DT.Columns
-                            colIndex = colIndex + 1
-                            excel.Cells(rowIndex + 1, colIndex) = dr(dc.ColumnName)
-                        Next
-                    Next
-
-                    wSheet.Columns.AutoFit()
+    '            For Each dc In DT.Columns
+    '                colIndex = colIndex + 1
+    '                excel.Cells(ESPACIOS + 1, colIndex) = dc.ColumnName
+    '                excel.Cells(ESPACIOS + 1, colIndex).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Blue)
+    '                excel.Cells(ESPACIOS + 1, colIndex).Font.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.White)
+    '            Next
 
 
+    '            For Each dr In DT.Rows
 
-                Next
-                Dim strFileName As String = SFD.FileName
-                Dim blnFileOpen As Boolean = False
-                Try
-                    Dim fileTemp As System.IO.FileStream = System.IO.File.OpenWrite(strFileName)
-                    fileTemp.Close()
-                Catch ex As Exception
-                    blnFileOpen = False
-                End Try
+    '                rowIndex = rowIndex + 1
+    '                LBL.Text = rowIndex.ToString + " de " + DT.Rows.Count.ToString
+    '                LBL2.Text = FormatNumber((rowIndex / DT.Rows.Count * 100), 2).ToString + " %"
 
-                If System.IO.File.Exists(strFileName) Then
-                    System.IO.File.Delete(strFileName)
-                End If
-                wBook.SaveAs(strFileName)
-                If Abrirlo Then
-                    excel.Workbooks.Open(strFileName)
-                    excel.Visible = True
-                End If
-            Catch ex As Exception
-                MessageBox.Show("La información No se puede Guardar, Archivo en Uso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-                Return False
-                Exit Function
-            End Try
-        End If
 
-    End Function
+    '                PB.Value = rowIndex
+    '                PB.Refresh()
+    '                colIndex = 0
+    '                For Each dc In DT.Columns
+    '                    colIndex = colIndex + 1
+    '                    excel.Cells(rowIndex + ESPACIOS + 1, colIndex) = dr(dc.ColumnName)
+
+    '                Next
+    '            Next
+    '            FRM.Close()
+    '            'Titulo en negrita, Alineado al centro y que el tamaño de la columna seajuste al texto
+    '            wSheet.Name = "Navysoluciones"
+    '            wSheet.Rows.Item(1).Font.Bold = 1
+    '            wSheet.Rows.Item(1).HorizontalAlignment = 3
+    '            If ConEncabezado Then
+    '                wSheet.Rows.Item(2).Font.Bold = 1
+    '                wSheet.Rows.Item(2).HorizontalAlignment = 3
+    '            End If
+
+    '            wSheet.Rows.Item(ESPACIOS + 1).Font.Bold = 1
+    '            wSheet.Rows.Item(ESPACIOS + 1).HorizontalAlignment = 3
+    '            'wSheet.Rows.Item(ESPACIOS + 1).Interior.Color = System.Drawing.ColorTranslator.ToOle(System.Drawing.Color.Gainsboro)
+    '            wSheet.Columns.AutoFit()
+    '            wSheet.Columns.AutoFit()
+    '            Dim strFileName As String = SFD.FileName
+    '            Dim blnFileOpen As Boolean = False
+    '            Try
+    '                Dim fileTemp As System.IO.FileStream = System.IO.File.OpenWrite(strFileName)
+    '                fileTemp.Close()
+    '            Catch ex As Exception
+    '                blnFileOpen = False
+    '            End Try
+
+    '            If System.IO.File.Exists(strFileName) Then
+    '                System.IO.File.Delete(strFileName)
+    '            End If
+
+    '            wBook.SaveAs(strFileName)
+    '            excel.Workbooks.Open(strFileName)
+    '            excel.Visible = True
+    '            If Abrirlo Then
+    '                excel.Workbooks.Open(strFileName)
+    '                excel.Visible = True
+    '            End If
+
+    '        Catch ex As Exception
+    '            MessageBox.Show("La información No se puede Guardar, Archivo en Uso. " + ex.Message, "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+    '            Return False
+    '            Exit Function
+    '        End Try
+    '    End If
+
+    'End Function
+    'Public Function ExportarExcel(ByVal ElGrid As DataGridView) As Boolean
+    '    'Creamos las variables
+    '    Dim exApp As New Microsoft.Office.Interop.Excel.Application
+    '    Dim exLibro As Microsoft.Office.Interop.Excel.Workbook
+    '    Dim exHoja As Microsoft.Office.Interop.Excel.Worksheet
+    '    Try
+    '        'Añadimos el Libro al programa, y la hoja al libro
+    '        exLibro = exApp.Workbooks.Add
+    '        exHoja = exLibro.Worksheets.Add()
+    '        ' ¿Cuantas columnas y cuantas filas?
+    '        Dim NCol As Integer = ElGrid.ColumnCount
+    '        Dim NRow As Integer = ElGrid.RowCount
+    '        'Aqui recorremos todas las filas, y por cada fila todas las columnas y vamos escribiendo.
+    '        For i As Integer = 1 To NCol
+    '            exHoja.Cells.Item(1, i) = ElGrid.Columns(i - 1).Name.ToString
+    '            exHoja.Cells.Item(1, i).HorizontalAlignment = 3
+    '        Next
+    '        For Fila As Integer = 0 To NRow - 1
+    '            For Col As Integer = 0 To NCol - 1
+    '                exHoja.Cells.Item(Fila + 2, Col + 1) = ElGrid.Rows(Fila).Cells(Col).Value.ToString
+
+    '            Next
+    '        Next
+    '        'Titulo en negrita, Alineado al centro y que el tamaño de la columna seajuste al texto
+    '        exHoja.Name = "Navysoluciones"
+    '        exHoja.Rows.Item(1).Font.Bold = 1
+    '        exHoja.Rows.Item(1).HorizontalAlignment = 3
+    '        exHoja.Columns.AutoFit()
+    '        'Aplicación visible
+    '        exApp.Application.WindowState = Microsoft.Office.Interop.Excel.XlWindowState.xlMinimized
+    '        exApp.Application.Visible = True
+    '        exHoja = Nothing
+    '        exLibro = Nothing
+    '        exApp = Nothing
+    '    Catch ex As Exception
+    '        MsgBox(ex.Message, MsgBoxStyle.Critical, "Error al exportar a Excel " + ex.Message)
+    '        Return False
+    '    End Try
+    '    Return True
+    'End Function
+    'Public Function ExportarExcel(ByVal LDT As List(Of DataTable), ByVal NombreArchivo As String, ByVal Abrirlo As Boolean) As Boolean
+    '    Dim SFD As New System.Windows.Forms.SaveFileDialog
+    '    SFD.FileName = NombreArchivo
+    '    SFD.Filter = "Archivos de Excel (*.xls)|*.xls|" + Chr(34) + "All files (*.*)|*.*;"
+    '    If SFD.ShowDialog = DialogResult.OK Then
+    '        Try
+    '            If System.IO.File.Exists(SFD.FileName) = True Then
+    '                System.IO.File.Delete(SFD.FileName)
+    '            End If
+    '            'Dim xls As New Microsoft.Office.Interop.Excel.
+    '            Dim excel As New Microsoft.Office.Interop.Excel.ApplicationClass
+    '            Dim wBook As Microsoft.Office.Interop.Excel.Workbook
+    '            Dim wSheet As Microsoft.Office.Interop.Excel.Worksheet
+
+    '            wBook = excel.Workbooks.Add()
+    '            wSheet = wBook.ActiveSheet()
+    '            Dim DT As DataTable
+    '            Dim dc As System.Data.DataColumn
+    '            Dim dr As System.Data.DataRow
+    '            Dim colIndex As Integer = 0
+    '            Dim rowIndex As Integer = 0
+    '            For Each DT In LDT
+    '                For Each dc In DT.Columns
+    '                    colIndex = colIndex + 1
+    '                    excel.Cells(1, colIndex) = dc.ColumnName
+    '                Next
+
+    '                For Each dr In DT.Rows
+    '                    rowIndex = rowIndex + 1
+    '                    colIndex = 0
+    '                    For Each dc In DT.Columns
+    '                        colIndex = colIndex + 1
+    '                        excel.Cells(rowIndex + 1, colIndex) = dr(dc.ColumnName)
+    '                    Next
+    '                Next
+
+    '                wSheet.Columns.AutoFit()
+
+
+
+    '            Next
+    '            Dim strFileName As String = SFD.FileName
+    '            Dim blnFileOpen As Boolean = False
+    '            Try
+    '                Dim fileTemp As System.IO.FileStream = System.IO.File.OpenWrite(strFileName)
+    '                fileTemp.Close()
+    '            Catch ex As Exception
+    '                blnFileOpen = False
+    '            End Try
+
+    '            If System.IO.File.Exists(strFileName) Then
+    '                System.IO.File.Delete(strFileName)
+    '            End If
+    '            wBook.SaveAs(strFileName)
+    '            If Abrirlo Then
+    '                excel.Workbooks.Open(strFileName)
+    '                excel.Visible = True
+    '            End If
+    '        Catch ex As Exception
+    '            MessageBox.Show("La información No se puede Guardar, Archivo en Uso", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+    '            Return False
+    '            Exit Function
+    '        End Try
+    '    End If
+
+    'End Function
 End Module

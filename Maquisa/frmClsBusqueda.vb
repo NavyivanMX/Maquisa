@@ -224,7 +224,7 @@ Public Class frmClsBusqueda
         If DGV.Rows.Count <= 0 Then
             Exit Sub
         End If
-        ExportarExcel(DT, Me.Text + " " + TXTBUS.Text, True)
+        'ExportarExcel(DT, Me.Text + " " + TXTBUS.Text, True)
     End Sub
 
     Private Sub DGV_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles DGV.KeyPress
