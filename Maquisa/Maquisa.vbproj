@@ -313,6 +313,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MaquisaIcon.ico" />
+    <None Include="Resources\Logo Maquisa 2010 Horizontal.PNG" />
     <None Include="Resources\wallpaper1.PNG" />
     <None Include="Resources\logo2.jpg" />
     <None Include="Resources\StructureSmall.JPG" />

@@ -39,6 +39,7 @@ Partial Class frmPrincipal
         Me.ToolStripMenuItem2 = New System.Windows.Forms.ToolStripSeparator()
         Me.RutaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM2 = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ItinerarioRutasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM4 = New System.Windows.Forms.ToolStripMenuItem()
         Me.S61 = New System.Windows.Forms.ToolStripMenuItem()
@@ -47,19 +48,17 @@ Partial Class frmPrincipal
         Me.CambiarFondoToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.AyudaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.Timer1 = New System.Windows.Forms.Timer(Me.components)
-        Me.PBCNC = New System.Windows.Forms.PictureBox()
         Me.LBLPRU = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.LBLV = New System.Windows.Forms.Label()
         Me.PBS = New System.Windows.Forms.PictureBox()
         Me.LBLP = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.ItinerarioRutasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.PBCNC = New System.Windows.Forms.PictureBox()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
-        CType(Me.PBCNC, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PBS, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PBCNC, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'SB
@@ -161,6 +160,12 @@ Partial Class frmPrincipal
         Me.MM2.Size = New System.Drawing.Size(113, 24)
         Me.MM2.Text = "&Movimientos"
         '
+        'ItinerarioRutasToolStripMenuItem
+        '
+        Me.ItinerarioRutasToolStripMenuItem.Name = "ItinerarioRutasToolStripMenuItem"
+        Me.ItinerarioRutasToolStripMenuItem.Size = New System.Drawing.Size(187, 24)
+        Me.ItinerarioRutasToolStripMenuItem.Text = "Itinerario Rutas"
+        '
         'MM3
         '
         Me.MM3.Name = "MM3"
@@ -210,25 +215,13 @@ Partial Class frmPrincipal
         Me.Timer1.Enabled = True
         Me.Timer1.Interval = 1000
         '
-        'PBCNC
-        '
-        Me.PBCNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.PBCNC.Image = Global.Maquisa.My.Resources.Resources.logo2
-        Me.PBCNC.Location = New System.Drawing.Point(202, 99)
-        Me.PBCNC.Margin = New System.Windows.Forms.Padding(4)
-        Me.PBCNC.Name = "PBCNC"
-        Me.PBCNC.Size = New System.Drawing.Size(143, 113)
-        Me.PBCNC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
-        Me.PBCNC.TabIndex = 354
-        Me.PBCNC.TabStop = False
-        '
         'LBLPRU
         '
         Me.LBLPRU.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.LBLPRU.AutoSize = True
         Me.LBLPRU.BackColor = System.Drawing.Color.Transparent
         Me.LBLPRU.Font = New System.Drawing.Font("Arial", 29.75!)
-        Me.LBLPRU.ForeColor = System.Drawing.SystemColors.ButtonFace
+        Me.LBLPRU.ForeColor = System.Drawing.Color.RoyalBlue
         Me.LBLPRU.Location = New System.Drawing.Point(79, 382)
         Me.LBLPRU.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LBLPRU.Name = "LBLPRU"
@@ -242,26 +235,13 @@ Partial Class frmPrincipal
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 29.75!)
-        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label1.Location = New System.Drawing.Point(133, 253)
+        Me.Label1.ForeColor = System.Drawing.Color.RoyalBlue
+        Me.Label1.Location = New System.Drawing.Point(126, 185)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(268, 45)
         Me.Label1.TabIndex = 395
         Me.Label1.Text = "Control Flotilla"
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.BackColor = System.Drawing.Color.Transparent
-        Me.Label2.Font = New System.Drawing.Font("Arial", 29.75!)
-        Me.Label2.ForeColor = System.Drawing.SystemColors.ButtonFace
-        Me.Label2.Location = New System.Drawing.Point(29, 307)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(477, 45)
-        Me.Label2.TabIndex = 396
-        Me.Label2.Text = "Bernal y Valdez SA de CV"
         '
         'LBLV
         '
@@ -269,7 +249,7 @@ Partial Class frmPrincipal
         Me.LBLV.AutoSize = True
         Me.LBLV.BackColor = System.Drawing.Color.Transparent
         Me.LBLV.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLV.ForeColor = System.Drawing.SystemColors.ButtonHighlight
+        Me.LBLV.ForeColor = System.Drawing.Color.RoyalBlue
         Me.LBLV.Location = New System.Drawing.Point(209, 448)
         Me.LBLV.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LBLV.Name = "LBLV"
@@ -317,11 +297,18 @@ Partial Class frmPrincipal
         Me.Label3.TabIndex = 1336
         Me.Label3.Text = "Structure Soluciones"
         '
-        'ItinerarioRutasToolStripMenuItem
+        'PBCNC
         '
-        Me.ItinerarioRutasToolStripMenuItem.Name = "ItinerarioRutasToolStripMenuItem"
-        Me.ItinerarioRutasToolStripMenuItem.Size = New System.Drawing.Size(187, 24)
-        Me.ItinerarioRutasToolStripMenuItem.Text = "Itinerario Rutas"
+        Me.PBCNC.BackColor = System.Drawing.Color.Transparent
+        Me.PBCNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.PBCNC.Image = Global.Maquisa.My.Resources.Resources.Logo_Maquisa_2010_Horizontal
+        Me.PBCNC.Location = New System.Drawing.Point(22, 47)
+        Me.PBCNC.Margin = New System.Windows.Forms.Padding(4)
+        Me.PBCNC.Name = "PBCNC"
+        Me.PBCNC.Size = New System.Drawing.Size(464, 113)
+        Me.PBCNC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
+        Me.PBCNC.TabIndex = 354
+        Me.PBCNC.TabStop = False
         '
         'frmPrincipal
         '
@@ -334,7 +321,6 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.LBLP)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LBLV)
-        Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LBLPRU)
         Me.Controls.Add(Me.PBCNC)
@@ -352,8 +338,8 @@ Partial Class frmPrincipal
         Me.SB.PerformLayout()
         Me.MenuStrip1.ResumeLayout(False)
         Me.MenuStrip1.PerformLayout()
-        CType(Me.PBCNC, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PBS, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PBCNC, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -381,14 +367,13 @@ Partial Class frmPrincipal
     Friend WithEvents AyudaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents Timer1 As Timer
     Friend WithEvents S5 As ToolStripMenuItem
-    Friend WithEvents PBCNC As PictureBox
     Friend WithEvents LBLPRU As Label
     Friend WithEvents Label1 As Label
-    Friend WithEvents Label2 As Label
     Friend WithEvents LBLV As Label
     Friend WithEvents PBS As PictureBox
     Friend WithEvents LBLP As Label
     Friend WithEvents Label3 As Label
     Friend WithEvents RutaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ItinerarioRutasToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PBCNC As PictureBox
 End Class
