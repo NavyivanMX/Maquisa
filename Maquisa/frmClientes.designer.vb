@@ -37,14 +37,14 @@ Partial Class frmClientes
         Me.TXTCLA = New System.Windows.Forms.TextBox()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
+        Me.CBTIPO = New System.Windows.Forms.ComboBox()
+        Me.Label9 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.VERMAP = New System.Windows.Forms.Button()
         Me.BTNBUSCAR = New System.Windows.Forms.Button()
         Me.BTNCANCELAR = New System.Windows.Forms.Button()
         Me.BTNELIMINAR = New System.Windows.Forms.Button()
         Me.BTNGUARDAR = New System.Windows.Forms.Button()
-        Me.CBTIPO = New System.Windows.Forms.ComboBox()
-        Me.Label9 = New System.Windows.Forms.Label()
         Me.GroupBox1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -76,7 +76,7 @@ Partial Class frmClientes
         Me.TXTMAIL.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTMAIL.Location = New System.Drawing.Point(171, 174)
         Me.TXTMAIL.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TXTMAIL.MaxLength = 32
+        Me.TXTMAIL.MaxLength = 199
         Me.TXTMAIL.Name = "TXTMAIL"
         Me.TXTMAIL.Size = New System.Drawing.Size(559, 29)
         Me.TXTMAIL.TabIndex = 4
@@ -97,7 +97,7 @@ Partial Class frmClientes
         Me.TXTCEL.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTCEL.Location = New System.Drawing.Point(171, 139)
         Me.TXTCEL.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TXTCEL.MaxLength = 14
+        Me.TXTCEL.MaxLength = 50
         Me.TXTCEL.Name = "TXTCEL"
         Me.TXTCEL.Size = New System.Drawing.Size(559, 29)
         Me.TXTCEL.TabIndex = 3
@@ -118,7 +118,7 @@ Partial Class frmClientes
         Me.TXTTEL.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTTEL.Location = New System.Drawing.Point(171, 105)
         Me.TXTTEL.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TXTTEL.MaxLength = 14
+        Me.TXTTEL.MaxLength = 50
         Me.TXTTEL.Name = "TXTTEL"
         Me.TXTTEL.Size = New System.Drawing.Size(559, 29)
         Me.TXTTEL.TabIndex = 2
@@ -139,7 +139,7 @@ Partial Class frmClientes
         Me.TXTDIR.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTDIR.Location = New System.Drawing.Point(171, 70)
         Me.TXTDIR.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TXTDIR.MaxLength = 32
+        Me.TXTDIR.MaxLength = 150
         Me.TXTDIR.Name = "TXTDIR"
         Me.TXTDIR.Size = New System.Drawing.Size(559, 29)
         Me.TXTDIR.TabIndex = 1
@@ -160,7 +160,7 @@ Partial Class frmClientes
         Me.TXTNOM.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTNOM.Location = New System.Drawing.Point(171, 36)
         Me.TXTNOM.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TXTNOM.MaxLength = 32
+        Me.TXTNOM.MaxLength = 150
         Me.TXTNOM.Name = "TXTNOM"
         Me.TXTNOM.Size = New System.Drawing.Size(559, 29)
         Me.TXTNOM.TabIndex = 0
@@ -181,7 +181,7 @@ Partial Class frmClientes
         Me.TXTCLA.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.TXTCLA.Location = New System.Drawing.Point(197, 65)
         Me.TXTCLA.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.TXTCLA.MaxLength = 3
+        Me.TXTCLA.MaxLength = 10
         Me.TXTCLA.Name = "TXTCLA"
         Me.TXTCLA.Size = New System.Drawing.Size(105, 29)
         Me.TXTCLA.TabIndex = 0
@@ -223,6 +223,29 @@ Partial Class frmClientes
         Me.GroupBox1.TabIndex = 29
         Me.GroupBox1.TabStop = False
         Me.GroupBox1.Text = " "
+        '
+        'CBTIPO
+        '
+        Me.CBTIPO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
+        Me.CBTIPO.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.CBTIPO.FormattingEnabled = True
+        Me.CBTIPO.Items.AddRange(New Object() {"Si", "No"})
+        Me.CBTIPO.Location = New System.Drawing.Point(170, 213)
+        Me.CBTIPO.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CBTIPO.Name = "CBTIPO"
+        Me.CBTIPO.Size = New System.Drawing.Size(560, 30)
+        Me.CBTIPO.TabIndex = 34
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label9.Location = New System.Drawing.Point(36, 221)
+        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(119, 22)
+        Me.Label9.TabIndex = 35
+        Me.Label9.Text = "Tipo Cliente"
         '
         'Label1
         '
@@ -301,29 +324,6 @@ Partial Class frmClientes
         Me.BTNGUARDAR.Text = "&G"
         Me.BTNGUARDAR.UseVisualStyleBackColor = False
         '
-        'CBTIPO
-        '
-        Me.CBTIPO.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
-        Me.CBTIPO.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.CBTIPO.FormattingEnabled = True
-        Me.CBTIPO.Items.AddRange(New Object() {"Si", "No"})
-        Me.CBTIPO.Location = New System.Drawing.Point(170, 213)
-        Me.CBTIPO.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
-        Me.CBTIPO.Name = "CBTIPO"
-        Me.CBTIPO.Size = New System.Drawing.Size(560, 30)
-        Me.CBTIPO.TabIndex = 34
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(36, 221)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(119, 22)
-        Me.Label9.TabIndex = 35
-        Me.Label9.Text = "Tipo Cliente"
-        '
         'frmClientes
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
@@ -338,7 +338,7 @@ Partial Class frmClientes
         Me.Controls.Add(Me.Label2)
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
         Me.KeyPreview = True
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Margin = New System.Windows.Forms.Padding(4)
         Me.MaximizeBox = False
         Me.MinimizeBox = False
         Me.Name = "frmClientes"
