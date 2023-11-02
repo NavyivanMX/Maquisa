@@ -32,7 +32,7 @@
 
     End Sub
     Private Sub CARGACLIENTES()
-        QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 ORDER BY NOMBRE "
+        QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 AND CLAVE NOT IN (select CLIENTE FROM ITINERARIORUTA WHERE SUCURSAL='" + CLASUC(CBSUC.SelectedIndex) + "' AND RUTA='" + CLARUT(CBR.SelectedIndex) + "' AND DIA='" + (CBD.SelectedIndex + 1).ToString + "') ORDER BY NOMBRE "
         'DT.Clear()
         'DT = BDLlenatabla(QUERY, frmPrincipal.CADENACONEXION)
         OPLlenaComboBox(CBCLI, CLACLI, QUERY, frmPrincipal.CadenaConexion)
@@ -76,7 +76,8 @@
         'CBCLIENTES.Text = ""
     End Sub
     Private Sub AGREGAR()
-
+        Dim POSCLI As Integer
+        POSCLI = CBCLI.SelectedIndex
         Dim SQLGUARDAR As New SqlClient.SqlCommand
         SQLGUARDAR.Connection = frmPrincipal.CONX
         SQLGUARDAR.CommandType = CommandType.StoredProcedure
@@ -84,8 +85,11 @@
         SQLGUARDAR.Parameters.Add("@SUC", SqlDbType.VarChar).Value = CLASUC(CBSUC.SelectedIndex)
         SQLGUARDAR.Parameters.Add("@RUTA", SqlDbType.Int).Value = CLARUT(CBR.SelectedIndex)
         SQLGUARDAR.Parameters.Add("@DIA", SqlDbType.Int).Value = CBD.SelectedIndex + 1
-        SQLGUARDAR.Parameters.Add("@CLIENTE", SqlDbType.Int).Value = CLACLI(CBCLI.SelectedIndex)
+        SQLGUARDAR.Parameters.Add("@CLIENTE", SqlDbType.Int).Value = CLACLI(POSCLI)
         SQLGUARDAR.ExecuteNonQuery()
+
+        CBCLI.Items.RemoveAt(POSCLI)
+        CLACLI.RemoveAt(POSCLI)
 
         CBCLI.Focus()
 
@@ -252,20 +256,28 @@
             MessageBox.Show("Debe seleccionar un cliente", "Aviso", MessageBoxButtons.OK)
             Exit Sub
         End If
+        If CBCLI.Items.Count <= 0 Then
+            Return
+        End If
         AGREGAR()
         CARGAR()
         CHECATABLA()
     End Sub
 
-   
+
+
     Private Sub BTNQUITAR_Click(sender As Object, e As EventArgs) Handles BTNQUITAR.Click
+        CLACLI.Add(DGV3.Item(2, DGV3.CurrentRow.Index).Value.ToString)
+        CBCLI.Items.Add(DGV3.Item(0, DGV3.CurrentRow.Index).Value.ToString)
         DGV3.Rows.RemoveAt(DGV3.CurrentRow.Index)
+        '' estas quitando del dgv3 pero no de la bd aqui...k show?
+
         'QUITAR()
         'CARGAR()
         CHECATABLA()
     End Sub
 
-   
+
     Private Sub BTNGUARDAR_Click(sender As Object, e As EventArgs) Handles BTNGUARDAR.Click
         QUITAR()
         CARGAR()

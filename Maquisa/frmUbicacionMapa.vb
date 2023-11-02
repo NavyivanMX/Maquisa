@@ -285,6 +285,11 @@ Public Class frmUbicacionMapa
         OLCLIENTE.Markers.Clear()
         PLG.Lat = LLAT(CBDIR.SelectedIndex)
         PLG.Lng = LLONG(CBDIR.SelectedIndex)
+        Dim ULT As Integer
+        DGV.Rows.Add(1)
+        ULT = DGV.Rows.Count - 1
+        DGV.Item(0, ULT).Value = PLG.Lat
+        DGV.Item(1, ULT).Value = PLG.Lng
         MARCAR(PLG.Lat, PLG.Lng)
     End Sub
 
