@@ -88,6 +88,7 @@
 
     Private Function VERIFICAVERSION() As Boolean
         Try
+            Return True
             Dim VER As String
             Dim SQL As New SqlClient.SqlCommand("Select VERSION,LIGA FROM VERSIONES WHERE SISTEMA='WIN'", Me.CONX)
             Dim LEC As SqlClient.SqlDataReader
@@ -204,6 +205,32 @@
     Private Sub ItinerarioRutasToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ItinerarioRutasToolStripMenuItem.Click
         Dim MITINERARIO As New frmItinerarioRuta
         MITINERARIO.ShowDialog()
+    End Sub
+
+    Private Sub CambiarFondoToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles CambiarFondoToolStripMenuItem.Click
+        Dim URL As String
+        Dim ofd As New OpenFileDialog
+        ofd.Title = "Buscar archivo de imagen *.png"
+        ofd.DefaultExt = ".png"
+        'ofd.Filter = "Archivo Imagen (*.jpg)|*.jpg"
+        ofd.Filter = "Archivos de Imagen (*.png)|*.png|" + Chr(34) + "Archivos de Imagen (*.jpg)|*.jpg|" + Chr(34) + "Archivos de Imagen (*.jpeg)|*.jpeg|" + Chr(34) + "Todos los archivos(*.*)|*.*;"
+        ofd.FilterIndex = 1
+        ofd.FileName = ""
+        URL = ""
+        If ofd.ShowDialog() = Windows.Forms.DialogResult.OK Then
+            My.Settings.RutaFondo = ofd.FileName
+            My.Settings.Save()
+        End If
+        PonerFondo()
+    End Sub
+    Public Sub PonerFondo()
+        If My.Settings.RutaFondo <> "" Then
+            Try
+                Me.BackgroundImage = Image.FromFile(My.Settings.RutaFondo)
+            Catch ex As Exception
+
+            End Try
+        End If
     End Sub
 
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
