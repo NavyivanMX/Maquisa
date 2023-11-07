@@ -233,6 +233,11 @@
         End If
     End Sub
 
+    Private Sub MapaVendedorRutaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MapaVendedorRutaToolStripMenuItem.Click
+        Dim VMVR As New frmReporteMapa
+        VMVR.ShowDialog()
+    End Sub
+
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
         frmEmpresa.ShowDialog()
     End Sub

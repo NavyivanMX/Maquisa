@@ -198,6 +198,12 @@
     <Compile Include="frmMensaje.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmReporteMapa.Designer.vb">
+      <DependentUpon>frmReporteMapa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteMapa.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmRutas.designer.vb">
       <DependentUpon>frmRutas.vb</DependentUpon>
     </Compile>
@@ -270,6 +276,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMensaje.resx">
       <DependentUpon>frmMensaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteMapa.resx">
+      <DependentUpon>frmReporteMapa.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmRutas.resx">
       <DependentUpon>frmRutas.vb</DependentUpon>

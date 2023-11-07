@@ -55,6 +55,7 @@ Partial Class frmPrincipal
         Me.LBLP = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PBCNC = New System.Windows.Forms.PictureBox()
+        Me.MapaVendedorRutaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PBS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -170,6 +171,7 @@ Partial Class frmPrincipal
         '
         'MM3
         '
+        Me.MM3.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MapaVendedorRutaToolStripMenuItem})
         Me.MM3.Name = "MM3"
         Me.MM3.Size = New System.Drawing.Size(104, 29)
         Me.MM3.Text = "&Reportes"
@@ -263,7 +265,7 @@ Partial Class frmPrincipal
         Me.PBS.BackColor = System.Drawing.Color.Transparent
         Me.PBS.Image = CType(resources.GetObject("PBS.Image"), System.Drawing.Image)
         Me.PBS.Location = New System.Drawing.Point(1060, 510)
-        Me.PBS.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PBS.Margin = New System.Windows.Forms.Padding(4)
         Me.PBS.Name = "PBS"
         Me.PBS.Size = New System.Drawing.Size(81, 81)
         Me.PBS.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -306,13 +308,19 @@ Partial Class frmPrincipal
         Me.PBCNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PBCNC.Image = Global.Maquisa.My.Resources.Resources.Logo_Maquisa_2010_Horizontal
         Me.PBCNC.Location = New System.Drawing.Point(29, 58)
-        Me.PBCNC.Margin = New System.Windows.Forms.Padding(5, 5, 5, 5)
+        Me.PBCNC.Margin = New System.Windows.Forms.Padding(5)
         Me.PBCNC.Name = "PBCNC"
         Me.PBCNC.Size = New System.Drawing.Size(619, 139)
         Me.PBCNC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PBCNC.TabIndex = 354
         Me.PBCNC.TabStop = False
         Me.PBCNC.Visible = False
+        '
+        'MapaVendedorRutaToolStripMenuItem
+        '
+        Me.MapaVendedorRutaToolStripMenuItem.Name = "MapaVendedorRutaToolStripMenuItem"
+        Me.MapaVendedorRutaToolStripMenuItem.Size = New System.Drawing.Size(279, 30)
+        Me.MapaVendedorRutaToolStripMenuItem.Text = "Mapa Vendedor Ruta"
         '
         'frmPrincipal
         '
@@ -380,4 +388,5 @@ Partial Class frmPrincipal
     Friend WithEvents RutaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ItinerarioRutasToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PBCNC As PictureBox
+    Friend WithEvents MapaVendedorRutaToolStripMenuItem As ToolStripMenuItem
 End Class
