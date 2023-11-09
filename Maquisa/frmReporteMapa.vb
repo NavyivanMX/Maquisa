@@ -32,7 +32,7 @@ Public Class frmReporteMapa
         MAPA.Overlays.Add(OLINICIO)
         CBTV.SelectedIndex = 0
         MAPA.ShowCenter = False
-        MAPA.ReloadMap()e 
+        MAPA.ReloadMap()
         MAPA.Refresh()
 
     End Sub

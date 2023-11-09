@@ -6,30 +6,30 @@
         PonerImagenesBotones(Me)
         CBACT.SelectedIndex = 0
         ACTIVAR(True)
-        TXTCLA.Text = CARGACLI()
+        TXTCLA.Text = CARGACLI() ''ESTO SE DESACTIVO
         OPLlenaComboBox(CBTIPO, LTIPO, "SELECT CLAVE,NOMBRE FROM  TIPOCLIENTE WHERE ACTIVO=1 ORDER BY NOMBRE", frmPrincipal.CadenaConexion, "Favor de Seleccionar", "")
-
+        OPCargaX(LTIPO, CBTIPO, 1)
     End Sub
     Dim LATITUD, LONGITUD As Double
     Private Function CARGACLI() As Integer
-        Try
-            frmPrincipal.CHECACONX()
-            Dim NUM As Integer
-            NUM = 1
-            Dim SQLMOV As New SqlClient.SqlCommand("SELECT DBO.SIGCLIENTE()", frmPrincipal.CONX)
-            Dim LECTOR As SqlClient.SqlDataReader
-            LECTOR = SQLMOV.ExecuteReader
-            If LECTOR.Read Then
-                NUM = LECTOR(0)
-                LECTOR.Close()
-                Return NUM
-            Else
-                LECTOR.Close()
-                Return NUM
-            End If
-        Catch ex As Exception
-            Exit Function
-        End Try
+        'Try
+        '    frmPrincipal.CHECACONX()
+        '    Dim NUM As Integer
+        '    NUM = 1
+        '    Dim SQLMOV As New SqlClient.SqlCommand("SELECT DBO.SIGCLIENTE()", frmPrincipal.CONX)
+        '    Dim LECTOR As SqlClient.SqlDataReader
+        '    LECTOR = SQLMOV.ExecuteReader
+        '    If LECTOR.Read Then
+        '        NUM = LECTOR(0)
+        '        LECTOR.Close()
+        '        Return NUM
+        '    Else
+        '        LECTOR.Close()
+        '        Return NUM
+        '    End If
+        'Catch ex As Exception
+        '    Exit Function
+        'End Try
     End Function
     Private Sub ACTIVAR(ByVal V As Boolean)
         TXTCLA.Enabled = V
@@ -115,6 +115,7 @@
         If e.KeyChar = Chr(13) Then
             CARGADATOS()
         End If
+        TXTNOM.Focus()
     End Sub
     Private Sub GUARDAR()
         If TXTNOM.Text = "" Or TXTDIR.Text = "" Or TXTTEL.Text = "" Or TXTCEL.Text = "" Or TXTMAIL.Text = "" Then
