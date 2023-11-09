@@ -56,12 +56,14 @@
             Exit Sub
         End If
         ACTIVAR(False)
-        Dim SQLSELECT As New SqlClient.SqlCommand("SELECT NOMBRE,CELULAR,ACTIVO FROM  VENDEDORES WHERE  CLAVE=" + TXTCLA.Text + "", frmPrincipal.CONX)
+        '  Dim SQLSELECT As New SqlClient.SqlCommand("SELECT NOMBRE,CELULAR,ACTIVO FROM  VENDEDORES WHERE  CLAVE=" + TXTCLA.Text + "", frmPrincipal.CONX)
+        Dim SQLSELECT As New SqlClient.SqlCommand("SELECT NOMBRE,PWDAPP,CELULAR,ACTIVO FROM  VENDEDORES WHERE  CLAVE=" + TXTCLA.Text + "", frmPrincipal.CONX)
         Dim LECTOR As SqlClient.SqlDataReader
         LECTOR = SQLSELECT.ExecuteReader
         If LECTOR.Read Then
             TXTNOM.Text = LECTOR(0).ToString
             TXTPWD.Text = LECTOR(1).ToString
+            TXTCEL.Text = LECTOR(2).ToString
 
             If LECTOR(2) = 1 Then
                 CBACT.SelectedIndex = 1
