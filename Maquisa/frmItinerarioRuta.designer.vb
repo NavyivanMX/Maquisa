@@ -22,8 +22,8 @@ Partial Class frmItinerarioRuta
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LBLANT = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -41,11 +41,11 @@ Partial Class frmItinerarioRuta
         Me.BTNAGREGAR = New System.Windows.Forms.Button()
         Me.BTNCANCELAR = New System.Windows.Forms.Button()
         Me.BTNACEPTAR = New System.Windows.Forms.Button()
-        Me.BTNNIVANT = New System.Windows.Forms.Button()
         Me.BTNNIVPROX = New System.Windows.Forms.Button()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.LBLVENDEDOR = New System.Windows.Forms.Label()
         Me.CBCLI = New System.Windows.Forms.ComboBox()
+        Me.BTNNIVANT = New System.Windows.Forms.Button()
         CType(Me.DGV3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -155,16 +155,16 @@ Partial Class frmItinerarioRuta
         '
         Me.DGV3.AllowUserToAddRows = False
         Me.DGV3.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.DGV3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.DGV3.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGV3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV3.Location = New System.Drawing.Point(29, 168)
         Me.DGV3.Name = "DGV3"
@@ -253,22 +253,10 @@ Partial Class frmItinerarioRuta
         Me.BTNACEPTAR.TabIndex = 1248
         Me.BTNACEPTAR.UseVisualStyleBackColor = False
         '
-        'BTNNIVANT
-        '
-        Me.BTNNIVANT.BackColor = System.Drawing.Color.White
-        Me.BTNNIVANT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BTNNIVANT.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNNIVANT.ForeColor = System.Drawing.Color.Black
-        Me.BTNNIVANT.Location = New System.Drawing.Point(625, 307)
-        Me.BTNNIVANT.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BTNNIVANT.Name = "BTNNIVANT"
-        Me.BTNNIVANT.Size = New System.Drawing.Size(79, 74)
-        Me.BTNNIVANT.TabIndex = 1241
-        Me.BTNNIVANT.UseVisualStyleBackColor = False
-        '
         'BTNNIVPROX
         '
         Me.BTNNIVPROX.BackColor = System.Drawing.Color.White
+        Me.BTNNIVPROX.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNIZQUIERDA
         Me.BTNNIVPROX.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNNIVPROX.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNNIVPROX.ForeColor = System.Drawing.Color.Black
@@ -314,6 +302,20 @@ Partial Class frmItinerarioRuta
         Me.CBCLI.Name = "CBCLI"
         Me.CBCLI.Size = New System.Drawing.Size(295, 25)
         Me.CBCLI.TabIndex = 1260
+        '
+        'BTNNIVANT
+        '
+        Me.BTNNIVANT.BackColor = System.Drawing.Color.White
+        Me.BTNNIVANT.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNDERECHA
+        Me.BTNNIVANT.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTNNIVANT.Font = New System.Drawing.Font("Microsoft Sans Serif", 24.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNNIVANT.ForeColor = System.Drawing.Color.Black
+        Me.BTNNIVANT.Location = New System.Drawing.Point(625, 307)
+        Me.BTNNIVANT.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BTNNIVANT.Name = "BTNNIVANT"
+        Me.BTNNIVANT.Size = New System.Drawing.Size(79, 74)
+        Me.BTNNIVANT.TabIndex = 1241
+        Me.BTNNIVANT.UseVisualStyleBackColor = False
         '
         'frmItinerarioRuta
         '

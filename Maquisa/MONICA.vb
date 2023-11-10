@@ -49,7 +49,17 @@ Module MONICA
         Next
         Return cadenaMD5
     End Function
-
+    Public Sub DgvAjusteEncabezado(ByRef DGV As DataGridView, Optional NumeroColumna As Integer = -1)
+        Dim NC As Integer
+        NC = DGV.ColumnCount - 1
+        For X = 0 To NC
+            If X = NumeroColumna Then
+                DGV.Columns(X).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
+            Else
+                DGV.Columns(X).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+            End If
+        Next
+    End Sub
     Public Function CENTRAR(ByVal NOMBRELOGO As PictureBox)
         NOMBRELOGO.Left = (frmPrincipal.Width - NOMBRELOGO.Width) / 2
         NOMBRELOGO.Top = (frmPrincipal.Height - NOMBRELOGO.Height) / 2

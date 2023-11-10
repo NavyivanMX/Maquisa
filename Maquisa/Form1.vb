@@ -238,6 +238,11 @@
         VMVR.ShowDialog()
     End Sub
 
+    Private Sub ContactoClienteToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ContactoClienteToolStripMenuItem.Click
+        Dim VCC As New frmContactoCliente
+        VCC.ShowDialog()
+    End Sub
+
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
         frmEmpresa.ShowDialog()
     End Sub

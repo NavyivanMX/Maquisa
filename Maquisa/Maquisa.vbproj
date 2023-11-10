@@ -168,6 +168,12 @@
     <Compile Include="frmClsBusqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmContactoCliente.Designer.vb">
+      <DependentUpon>frmContactoCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmContactoCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmEmpresa.designer.vb">
       <DependentUpon>frmEmpresa.vb</DependentUpon>
     </Compile>
@@ -262,6 +268,9 @@
     <EmbeddedResource Include="frmClsBusqueda.resx">
       <DependentUpon>frmClsBusqueda.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmContactoCliente.resx">
+      <DependentUpon>frmContactoCliente.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmEmpresa.resx">
       <DependentUpon>frmEmpresa.vb</DependentUpon>
     </EmbeddedResource>
@@ -323,6 +332,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MaquisaIcon.ico" />
+    <None Include="Resources\BTNIZQUIERDA.png" />
+    <None Include="Resources\BTNDERECHA.png" />
     <None Include="Resources\Logo Maquisa 2010 Horizontal.PNG" />
     <None Include="Resources\wallpaper1.PNG" />
     <None Include="Resources\logo2.jpg" />
