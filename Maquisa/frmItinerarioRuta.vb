@@ -2,6 +2,7 @@
     Dim CLACLI As New List(Of String)
     Dim CLASUC As New List(Of String)
     Dim CLARUT As New List(Of String)
+    Dim CLADIA As New List(Of String)
     Dim CCLIENTE As String
     Dim SUCURSAL, NRUTA As String
     Dim RUTA As Integer
@@ -19,7 +20,7 @@
             LIMPIAR()
             ACTIVAR(True)
             CARGASUCURSALES()
-            'CARGARUTAS()
+            CARGADIAS()
             OPCargaX(CLASUC, CBSUC, frmPrincipal.SucursalBase)
         Else
             ACTIVAR(False)
@@ -27,15 +28,23 @@
 
         End If
 
+
+
+
         'LBLSUC.Text = SUCURSAL
         'LBLRUTA.Text = NRUTA 'NOMBRE RUTA 
 
     End Sub
     Private Sub CARGACLIENTES()
         QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 AND CLAVE NOT IN (select CLIENTE FROM ITINERARIORUTA WHERE SUCURSAL='" + CLASUC(CBSUC.SelectedIndex) + "' AND RUTA='" + CLARUT(CBR.SelectedIndex) + "' AND DIA='" + (CBD.SelectedIndex + 1).ToString + "') ORDER BY NOMBRE "
-        'DT.Clear()
-        'DT = BDLlenatabla(QUERY, frmPrincipal.CADENACONEXION)
+
         OPLlenaComboBox(CBCLI, CLACLI, QUERY, frmPrincipal.CadenaConexion)
+
+    End Sub
+    Private Sub CARGADIAS()
+        Dim QUERY As String
+        QUERY = "SELECT CLAVE,NOMBRE FROM DIASSEMANA WHERE ACTIVO=1  ORDER BY CLAVE ASC "
+        OPLlenaComboBox(CBD, CLADIA, QUERY, frmPrincipal.CadenaConexion)
 
     End Sub
     Private Sub CARGASUCURSALES()
@@ -90,12 +99,9 @@
 
         CBCLI.Items.RemoveAt(POSCLI)
         CLACLI.RemoveAt(POSCLI)
-
         CBCLI.Focus()
 
-        'MessageBox.Show("La información agrego correctamente", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        'LIMPIAR()
-        'ACTIVAR(True)
+
     End Sub
     'Private Sub BUSCAR()
     '    Dim QUERY As String
@@ -150,12 +156,12 @@
         CBCLI.Focus()
     End Sub
     Private Sub QUITAR()
-        ''PRIMERO BORRAMOS DE LA TABLA EN CUESTION LA RUTA,SUCURSAL,DIA
+
         Dim DIA As Integer
         DIA = CBD.SelectedIndex + 1
         Dim SQLBORRA As New SqlClient.SqlCommand("DELETE FROM ITINERARIORUTA WHERE SUCURSAL='" + CLASUC(CBSUC.SelectedIndex) + "' AND RUTA=" + CLARUT(CBR.SelectedIndex) + " AND DIA=" + DIA.ToString + " ", frmPrincipal.CONX)
         SQLBORRA.ExecuteNonQuery()
-        ''DESPUES NSERTAMOS LO QUE HAY EN EL DGV3
+
 
 
         Dim SQLGUARDAR As New SqlClient.SqlCommand
@@ -176,7 +182,7 @@
             SQLGUARDAR.ExecuteNonQuery()
         Next
     End Sub
-  
+
     Private Sub BTNNIVANT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNNIVANT.Click
         Dim FILA As Integer = DGV3.CurrentRow.Index ''FILA = A LA FILA SELECCIONADA
         Dim PROXFILA As Integer = DGV3.CurrentRow.Index - 1 ''EN ESTE CASO LA FILA QUE SELECCIONASTE LA VA A SUBIR, A LA ACTUAL - 1
@@ -232,7 +238,7 @@
     End Sub
 
 
- 
+
 
     Private Sub CHECATABLA()
 
@@ -247,10 +253,10 @@
             BTNNIVPROX.Enabled = True
             BTNGUARDAR.Enabled = True
         End If
-       
+
     End Sub
 
- 
+
     Private Sub BTNAGREGAR_Click(sender As Object, e As EventArgs) Handles BTNAGREGAR.Click
         If CBCLI.SelectedIndex = -1 Then
             MessageBox.Show("Debe seleccionar un cliente", "Aviso", MessageBoxButtons.OK)
@@ -270,16 +276,19 @@
         CLACLI.Add(DGV3.Item(2, DGV3.CurrentRow.Index).Value.ToString)
         CBCLI.Items.Add(DGV3.Item(0, DGV3.CurrentRow.Index).Value.ToString)
         DGV3.Rows.RemoveAt(DGV3.CurrentRow.Index)
-        '' estas quitando del dgv3 pero no de la bd aqui...k show?
 
-        'QUITAR()
-        'CARGAR()
+
+        QUITAR()
+        CARGAR()
         CHECATABLA()
     End Sub
 
 
     Private Sub BTNGUARDAR_Click(sender As Object, e As EventArgs) Handles BTNGUARDAR.Click
         QUITAR()
-        CARGAR()
+        ' CARGAR()
+        MessageBox.Show("La información agrego correctamente", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        LIMPIAR()
+        ACTIVAR(True)
     End Sub
 End Class
