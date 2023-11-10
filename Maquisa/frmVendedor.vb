@@ -65,14 +65,14 @@
             TXTPWD.Text = LECTOR(1).ToString
             TXTCEL.Text = LECTOR(2).ToString
 
-            If LECTOR(2) = 1 Then
-                CBACT.SelectedIndex = 1
-            Else
+            If CType(LECTOR(2), Boolean) = True Then
                 CBACT.SelectedIndex = 0
+            Else
+                CBACT.SelectedIndex = 1
             End If
 
-        End If
-        LECTOR.Close()
+            End If
+            LECTOR.Close()
     End Sub
 
     Private Sub TXTCLA_KeyPress(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyPressEventArgs) Handles TXTCLA.KeyPress

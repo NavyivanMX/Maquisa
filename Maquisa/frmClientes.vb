@@ -66,7 +66,9 @@
         ACTIVAR(False)
         LATITUD = 0
         LONGITUD = 0
-        Dim SQLSELECT As New SqlClient.SqlCommand("SELECT CLAVE,NOMBRE,DIRECCION,TELEFONO,CELULAR,MAIL,ACTIVO,LATITUD,LONGITUD,TIPO FROM CLIENTES WHERE CLAVE='" + TXTCLA.Text + "' ", frmPrincipal.CONX)
+        Dim QUERY As String
+        QUERY = "SELECT CLAVE,NOMBRE,DIRECCION,TELEFONO,CELULAR,MAIL,ACTIVO,LATITUD,LONGITUD,TIPO FROM CLIENTES WHERE CLAVE='" + TXTCLA.Text + "' "
+        Dim SQLSELECT As New SqlClient.SqlCommand(QUERY, frmPrincipal.CONX)
         Dim LECTOR As SqlClient.SqlDataReader
         LECTOR = SQLSELECT.ExecuteReader
         If LECTOR.Read Then
@@ -76,10 +78,10 @@
             TXTCEL.Text = LECTOR(4).ToString
             TXTMAIL.Text = LECTOR(5).ToString
 
-            If LECTOR(6) = 1 Then
-                CBACT.SelectedIndex = 1
-            Else
+            If CType(LECTOR(6), Boolean) = True Then
                 CBACT.SelectedIndex = 0
+            Else
+                CBACT.SelectedIndex = 1
             End If
             LATITUD = LECTOR(7).ToString
             LONGITUD = LECTOR(8).ToString
