@@ -37,4 +37,8 @@
 
         Next
     End Sub
+
+    Private Sub Label75_Click(sender As Object, e As EventArgs) Handles LBLCNODISP6.Click
+
+    End Sub
 End Class
