@@ -144,6 +144,18 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAgenda.designer.vb">
+      <DependentUpon>frmAgenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgendaVisita.Designer.vb">
+      <DependentUpon>frmAgendaVisita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgendaVisita.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAyuda.designer.vb">
       <DependentUpon>frmAyuda.vb</DependentUpon>
     </Compile>
@@ -172,6 +184,12 @@
       <DependentUpon>frmContactoCliente.vb</DependentUpon>
     </Compile>
     <Compile Include="frmContactoCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleAgenda.Designer.vb">
+      <DependentUpon>frmDetalleAgenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleAgenda.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmEmpresa.designer.vb">
@@ -256,6 +274,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmAgenda.resx">
+      <DependentUpon>frmAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgendaVisita.resx">
+      <DependentUpon>frmAgendaVisita.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmAyuda.resx">
       <DependentUpon>frmAyuda.vb</DependentUpon>
     </EmbeddedResource>
@@ -270,6 +294,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmContactoCliente.resx">
       <DependentUpon>frmContactoCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleAgenda.resx">
+      <DependentUpon>frmDetalleAgenda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpresa.resx">
       <DependentUpon>frmEmpresa.vb</DependentUpon>
