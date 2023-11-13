@@ -243,6 +243,11 @@
         VCC.ShowDialog()
     End Sub
 
+    Private Sub AgendaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgendaToolStripMenuItem.Click
+        Dim VMAGE As New frmAgendaVisita
+        VMAGE.ShowDialog()
+    End Sub
+
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
         frmEmpresa.ShowDialog()
     End Sub

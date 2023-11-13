@@ -40,6 +40,7 @@ Partial Class frmPrincipal
         Me.RutaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ItinerarioRutasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.ContactoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MapaVendedorRutaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM4 = New System.Windows.Forms.ToolStripMenuItem()
@@ -56,7 +57,7 @@ Partial Class frmPrincipal
         Me.LBLP = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PBCNC = New System.Windows.Forms.PictureBox()
-        Me.ContactoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PBS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -157,7 +158,7 @@ Partial Class frmPrincipal
         '
         'MM2
         '
-        Me.MM2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItinerarioRutasToolStripMenuItem, Me.ContactoClienteToolStripMenuItem})
+        Me.MM2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItinerarioRutasToolStripMenuItem, Me.ContactoClienteToolStripMenuItem, Me.AgendaToolStripMenuItem})
         Me.MM2.Name = "MM2"
         Me.MM2.Size = New System.Drawing.Size(113, 24)
         Me.MM2.Text = "&Movimientos"
@@ -167,6 +168,12 @@ Partial Class frmPrincipal
         Me.ItinerarioRutasToolStripMenuItem.Name = "ItinerarioRutasToolStripMenuItem"
         Me.ItinerarioRutasToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
         Me.ItinerarioRutasToolStripMenuItem.Text = "Itinerario Rutas"
+        '
+        'ContactoClienteToolStripMenuItem
+        '
+        Me.ContactoClienteToolStripMenuItem.Name = "ContactoClienteToolStripMenuItem"
+        Me.ContactoClienteToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
+        Me.ContactoClienteToolStripMenuItem.Text = "Contacto Cliente"
         '
         'MM3
         '
@@ -313,7 +320,7 @@ Partial Class frmPrincipal
         Me.PBCNC.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.PBCNC.Image = Global.Maquisa.My.Resources.Resources.Logo_Maquisa_2010_Horizontal
         Me.PBCNC.Location = New System.Drawing.Point(22, 47)
-        Me.PBCNC.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.PBCNC.Margin = New System.Windows.Forms.Padding(4)
         Me.PBCNC.Name = "PBCNC"
         Me.PBCNC.Size = New System.Drawing.Size(464, 113)
         Me.PBCNC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
@@ -321,11 +328,11 @@ Partial Class frmPrincipal
         Me.PBCNC.TabStop = False
         Me.PBCNC.Visible = False
         '
-        'ContactoClienteToolStripMenuItem
+        'AgendaToolStripMenuItem
         '
-        Me.ContactoClienteToolStripMenuItem.Name = "ContactoClienteToolStripMenuItem"
-        Me.ContactoClienteToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
-        Me.ContactoClienteToolStripMenuItem.Text = "Contacto Cliente"
+        Me.AgendaToolStripMenuItem.Name = "AgendaToolStripMenuItem"
+        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
+        Me.AgendaToolStripMenuItem.Text = "Agenda"
         '
         'frmPrincipal
         '
@@ -345,7 +352,7 @@ Partial Class frmPrincipal
         Me.Controls.Add(Me.MenuStrip1)
         Me.DoubleBuffered = True
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
-        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.Margin = New System.Windows.Forms.Padding(2)
         Me.MinimumSize = New System.Drawing.Size(644, 501)
         Me.Name = "frmPrincipal"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
@@ -395,4 +402,5 @@ Partial Class frmPrincipal
     Friend WithEvents PBCNC As PictureBox
     Friend WithEvents MapaVendedorRutaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContactoClienteToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AgendaToolStripMenuItem As ToolStripMenuItem
 End Class

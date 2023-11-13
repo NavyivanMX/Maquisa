@@ -31,7 +31,7 @@ Partial Class frmAgendaVisita
         Me.LBLNUMPROSPECTO = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GBDIA1 = New System.Windows.Forms.GroupBox()
-        Me.Label11 = New System.Windows.Forms.Label()
+        Me.LBLFECHAS1 = New System.Windows.Forms.Label()
         Me.Button2 = New System.Windows.Forms.Button()
         Me.LBLFINRUTA1 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
@@ -49,7 +49,7 @@ Partial Class frmAgendaVisita
         Me.Label3 = New System.Windows.Forms.Label()
         Me.BTNBUSCAR = New System.Windows.Forms.Button()
         Me.GBDIA2 = New System.Windows.Forms.GroupBox()
-        Me.Label1 = New System.Windows.Forms.Label()
+        Me.LBLFECHAS2 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
         Me.LBLFINRUTA2 = New System.Windows.Forms.Label()
         Me.Label6 = New System.Windows.Forms.Label()
@@ -66,7 +66,7 @@ Partial Class frmAgendaVisita
         Me.LBLNOMVEND2 = New System.Windows.Forms.Label()
         Me.Label24 = New System.Windows.Forms.Label()
         Me.GBDIA3 = New System.Windows.Forms.GroupBox()
-        Me.Label25 = New System.Windows.Forms.Label()
+        Me.LBLFECHAS3 = New System.Windows.Forms.Label()
         Me.Button4 = New System.Windows.Forms.Button()
         Me.LBLFINRUTA3 = New System.Windows.Forms.Label()
         Me.Label27 = New System.Windows.Forms.Label()
@@ -83,7 +83,7 @@ Partial Class frmAgendaVisita
         Me.LBLNOMVEND3 = New System.Windows.Forms.Label()
         Me.Label39 = New System.Windows.Forms.Label()
         Me.GBDIA4 = New System.Windows.Forms.GroupBox()
-        Me.Label40 = New System.Windows.Forms.Label()
+        Me.LBLFECHAS4 = New System.Windows.Forms.Label()
         Me.Button5 = New System.Windows.Forms.Button()
         Me.LBLFINRUTA4 = New System.Windows.Forms.Label()
         Me.Label42 = New System.Windows.Forms.Label()
@@ -100,7 +100,7 @@ Partial Class frmAgendaVisita
         Me.LBLNOMVEND4 = New System.Windows.Forms.Label()
         Me.Label54 = New System.Windows.Forms.Label()
         Me.GBDIA5 = New System.Windows.Forms.GroupBox()
-        Me.Label55 = New System.Windows.Forms.Label()
+        Me.LBLFECHAS5 = New System.Windows.Forms.Label()
         Me.Button6 = New System.Windows.Forms.Button()
         Me.LBLFINRUTA5 = New System.Windows.Forms.Label()
         Me.Label57 = New System.Windows.Forms.Label()
@@ -117,7 +117,7 @@ Partial Class frmAgendaVisita
         Me.LBLNOMVEND5 = New System.Windows.Forms.Label()
         Me.Label69 = New System.Windows.Forms.Label()
         Me.GBDIA6 = New System.Windows.Forms.GroupBox()
-        Me.Label70 = New System.Windows.Forms.Label()
+        Me.LBLFECHAS6 = New System.Windows.Forms.Label()
         Me.Button7 = New System.Windows.Forms.Button()
         Me.LBLFINRUTA6 = New System.Windows.Forms.Label()
         Me.Label72 = New System.Windows.Forms.Label()
@@ -133,6 +133,7 @@ Partial Class frmAgendaVisita
         Me.Label82 = New System.Windows.Forms.Label()
         Me.LBLNOMVEND6 = New System.Windows.Forms.Label()
         Me.Label84 = New System.Windows.Forms.Label()
+        Me.MC = New System.Windows.Forms.MonthCalendar()
         Me.GBDIA1.SuspendLayout()
         Me.GBDIA2.SuspendLayout()
         Me.GBDIA3.SuspendLayout()
@@ -143,6 +144,7 @@ Partial Class frmAgendaVisita
         '
         'CBRUTA
         '
+        Me.CBRUTA.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList
         Me.CBRUTA.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.CBRUTA.FormattingEnabled = True
         Me.CBRUTA.Location = New System.Drawing.Point(93, 44)
@@ -165,7 +167,7 @@ Partial Class frmAgendaVisita
         Me.BTNAGENDAR.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BTNAGENDAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNAGENDAR.ForeColor = System.Drawing.Color.Black
-        Me.BTNAGENDAR.Location = New System.Drawing.Point(546, 21)
+        Me.BTNAGENDAR.Location = New System.Drawing.Point(1001, 381)
         Me.BTNAGENDAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNAGENDAR.Name = "BTNAGENDAR"
         Me.BTNAGENDAR.Size = New System.Drawing.Size(121, 77)
@@ -199,7 +201,7 @@ Partial Class frmAgendaVisita
         Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.Button1.ForeColor = System.Drawing.Color.Black
-        Me.Button1.Location = New System.Drawing.Point(726, 21)
+        Me.Button1.Location = New System.Drawing.Point(989, 599)
         Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(140, 77)
@@ -212,7 +214,7 @@ Partial Class frmAgendaVisita
         Me.LBLNUMPROSPECTO.AutoSize = True
         Me.LBLNUMPROSPECTO.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.LBLNUMPROSPECTO.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLNUMPROSPECTO.Location = New System.Drawing.Point(859, 102)
+        Me.LBLNUMPROSPECTO.Location = New System.Drawing.Point(1118, 680)
         Me.LBLNUMPROSPECTO.Name = "LBLNUMPROSPECTO"
         Me.LBLNUMPROSPECTO.Size = New System.Drawing.Size(13, 17)
         Me.LBLNUMPROSPECTO.TabIndex = 1176
@@ -222,7 +224,7 @@ Partial Class frmAgendaVisita
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(726, 102)
+        Me.Label2.Location = New System.Drawing.Point(986, 680)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(136, 17)
         Me.Label2.TabIndex = 1175
@@ -231,7 +233,7 @@ Partial Class frmAgendaVisita
         'GBDIA1
         '
         Me.GBDIA1.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GBDIA1.Controls.Add(Me.Label11)
+        Me.GBDIA1.Controls.Add(Me.LBLFECHAS1)
         Me.GBDIA1.Controls.Add(Me.Button2)
         Me.GBDIA1.Controls.Add(Me.LBLFINRUTA1)
         Me.GBDIA1.Controls.Add(Me.Label17)
@@ -254,16 +256,16 @@ Partial Class frmAgendaVisita
         Me.GBDIA1.TabStop = False
         Me.GBDIA1.Text = "."
         '
-        'Label11
+        'LBLFECHAS1
         '
-        Me.Label11.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Label11.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(9, 17)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(290, 22)
-        Me.Label11.TabIndex = 1191
-        Me.Label11.Text = "Fecha"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LBLFECHAS1.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLFECHAS1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLFECHAS1.Location = New System.Drawing.Point(9, 17)
+        Me.LBLFECHAS1.Name = "LBLFECHAS1"
+        Me.LBLFECHAS1.Size = New System.Drawing.Size(290, 22)
+        Me.LBLFECHAS1.TabIndex = 1191
+        Me.LBLFECHAS1.Text = "Fecha"
+        Me.LBLFECHAS1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button2
         '
@@ -282,9 +284,9 @@ Partial Class frmAgendaVisita
         '
         Me.LBLFINRUTA1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.LBLFINRUTA1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLFINRUTA1.Location = New System.Drawing.Point(217, 245)
+        Me.LBLFINRUTA1.Location = New System.Drawing.Point(122, 245)
         Me.LBLFINRUTA1.Name = "LBLFINRUTA1"
-        Me.LBLFINRUTA1.Size = New System.Drawing.Size(59, 17)
+        Me.LBLFINRUTA1.Size = New System.Drawing.Size(165, 17)
         Me.LBLFINRUTA1.TabIndex = 1189
         Me.LBLFINRUTA1.Text = "."
         Me.LBLFINRUTA1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -293,7 +295,7 @@ Partial Class frmAgendaVisita
         '
         Me.Label17.AutoSize = True
         Me.Label17.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label17.Location = New System.Drawing.Point(128, 245)
+        Me.Label17.Location = New System.Drawing.Point(33, 245)
         Me.Label17.Name = "Label17"
         Me.Label17.Size = New System.Drawing.Size(72, 17)
         Me.Label17.TabIndex = 1188
@@ -432,7 +434,7 @@ Partial Class frmAgendaVisita
         Me.BTNBUSCAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNBUSCAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNBUSCAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNBUSCAR.Location = New System.Drawing.Point(322, 21)
+        Me.BTNBUSCAR.Location = New System.Drawing.Point(404, 22)
         Me.BTNBUSCAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNBUSCAR.Name = "BTNBUSCAR"
         Me.BTNBUSCAR.Size = New System.Drawing.Size(85, 77)
@@ -442,7 +444,7 @@ Partial Class frmAgendaVisita
         'GBDIA2
         '
         Me.GBDIA2.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GBDIA2.Controls.Add(Me.Label1)
+        Me.GBDIA2.Controls.Add(Me.LBLFECHAS2)
         Me.GBDIA2.Controls.Add(Me.Button3)
         Me.GBDIA2.Controls.Add(Me.LBLFINRUTA2)
         Me.GBDIA2.Controls.Add(Me.Label6)
@@ -465,16 +467,16 @@ Partial Class frmAgendaVisita
         Me.GBDIA2.TabStop = False
         Me.GBDIA2.Text = "."
         '
-        'Label1
+        'LBLFECHAS2
         '
-        Me.Label1.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(9, 17)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(290, 22)
-        Me.Label1.TabIndex = 1191
-        Me.Label1.Text = "Fecha"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LBLFECHAS2.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLFECHAS2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLFECHAS2.Location = New System.Drawing.Point(9, 17)
+        Me.LBLFECHAS2.Name = "LBLFECHAS2"
+        Me.LBLFECHAS2.Size = New System.Drawing.Size(290, 22)
+        Me.LBLFECHAS2.TabIndex = 1191
+        Me.LBLFECHAS2.Text = "Fecha"
+        Me.LBLFECHAS2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button3
         '
@@ -493,9 +495,9 @@ Partial Class frmAgendaVisita
         '
         Me.LBLFINRUTA2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.LBLFINRUTA2.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLFINRUTA2.Location = New System.Drawing.Point(217, 245)
+        Me.LBLFINRUTA2.Location = New System.Drawing.Point(122, 245)
         Me.LBLFINRUTA2.Name = "LBLFINRUTA2"
-        Me.LBLFINRUTA2.Size = New System.Drawing.Size(59, 17)
+        Me.LBLFINRUTA2.Size = New System.Drawing.Size(165, 22)
         Me.LBLFINRUTA2.TabIndex = 1189
         Me.LBLFINRUTA2.Text = "."
         Me.LBLFINRUTA2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -504,7 +506,7 @@ Partial Class frmAgendaVisita
         '
         Me.Label6.AutoSize = True
         Me.Label6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label6.Location = New System.Drawing.Point(128, 245)
+        Me.Label6.Location = New System.Drawing.Point(33, 245)
         Me.Label6.Name = "Label6"
         Me.Label6.Size = New System.Drawing.Size(72, 17)
         Me.Label6.TabIndex = 1188
@@ -639,7 +641,7 @@ Partial Class frmAgendaVisita
         'GBDIA3
         '
         Me.GBDIA3.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GBDIA3.Controls.Add(Me.Label25)
+        Me.GBDIA3.Controls.Add(Me.LBLFECHAS3)
         Me.GBDIA3.Controls.Add(Me.Button4)
         Me.GBDIA3.Controls.Add(Me.LBLFINRUTA3)
         Me.GBDIA3.Controls.Add(Me.Label27)
@@ -662,16 +664,16 @@ Partial Class frmAgendaVisita
         Me.GBDIA3.TabStop = False
         Me.GBDIA3.Text = "."
         '
-        'Label25
+        'LBLFECHAS3
         '
-        Me.Label25.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Label25.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label25.Location = New System.Drawing.Point(9, 17)
-        Me.Label25.Name = "Label25"
-        Me.Label25.Size = New System.Drawing.Size(290, 22)
-        Me.Label25.TabIndex = 1191
-        Me.Label25.Text = "Fecha"
-        Me.Label25.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LBLFECHAS3.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLFECHAS3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLFECHAS3.Location = New System.Drawing.Point(9, 17)
+        Me.LBLFECHAS3.Name = "LBLFECHAS3"
+        Me.LBLFECHAS3.Size = New System.Drawing.Size(290, 22)
+        Me.LBLFECHAS3.TabIndex = 1191
+        Me.LBLFECHAS3.Text = "Fecha"
+        Me.LBLFECHAS3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button4
         '
@@ -690,9 +692,9 @@ Partial Class frmAgendaVisita
         '
         Me.LBLFINRUTA3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.LBLFINRUTA3.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLFINRUTA3.Location = New System.Drawing.Point(217, 245)
+        Me.LBLFINRUTA3.Location = New System.Drawing.Point(122, 245)
         Me.LBLFINRUTA3.Name = "LBLFINRUTA3"
-        Me.LBLFINRUTA3.Size = New System.Drawing.Size(59, 17)
+        Me.LBLFINRUTA3.Size = New System.Drawing.Size(165, 17)
         Me.LBLFINRUTA3.TabIndex = 1189
         Me.LBLFINRUTA3.Text = "."
         Me.LBLFINRUTA3.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -701,7 +703,7 @@ Partial Class frmAgendaVisita
         '
         Me.Label27.AutoSize = True
         Me.Label27.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label27.Location = New System.Drawing.Point(128, 245)
+        Me.Label27.Location = New System.Drawing.Point(33, 245)
         Me.Label27.Name = "Label27"
         Me.Label27.Size = New System.Drawing.Size(72, 17)
         Me.Label27.TabIndex = 1188
@@ -836,7 +838,7 @@ Partial Class frmAgendaVisita
         'GBDIA4
         '
         Me.GBDIA4.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GBDIA4.Controls.Add(Me.Label40)
+        Me.GBDIA4.Controls.Add(Me.LBLFECHAS4)
         Me.GBDIA4.Controls.Add(Me.Button5)
         Me.GBDIA4.Controls.Add(Me.LBLFINRUTA4)
         Me.GBDIA4.Controls.Add(Me.Label42)
@@ -859,16 +861,16 @@ Partial Class frmAgendaVisita
         Me.GBDIA4.TabStop = False
         Me.GBDIA4.Text = "."
         '
-        'Label40
+        'LBLFECHAS4
         '
-        Me.Label40.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Label40.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label40.Location = New System.Drawing.Point(9, 17)
-        Me.Label40.Name = "Label40"
-        Me.Label40.Size = New System.Drawing.Size(290, 22)
-        Me.Label40.TabIndex = 1191
-        Me.Label40.Text = "Fecha"
-        Me.Label40.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LBLFECHAS4.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLFECHAS4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLFECHAS4.Location = New System.Drawing.Point(9, 17)
+        Me.LBLFECHAS4.Name = "LBLFECHAS4"
+        Me.LBLFECHAS4.Size = New System.Drawing.Size(290, 22)
+        Me.LBLFECHAS4.TabIndex = 1191
+        Me.LBLFECHAS4.Text = "Fecha"
+        Me.LBLFECHAS4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button5
         '
@@ -887,9 +889,9 @@ Partial Class frmAgendaVisita
         '
         Me.LBLFINRUTA4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.LBLFINRUTA4.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLFINRUTA4.Location = New System.Drawing.Point(217, 245)
+        Me.LBLFINRUTA4.Location = New System.Drawing.Point(122, 245)
         Me.LBLFINRUTA4.Name = "LBLFINRUTA4"
-        Me.LBLFINRUTA4.Size = New System.Drawing.Size(59, 17)
+        Me.LBLFINRUTA4.Size = New System.Drawing.Size(160, 17)
         Me.LBLFINRUTA4.TabIndex = 1189
         Me.LBLFINRUTA4.Text = "."
         Me.LBLFINRUTA4.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -898,7 +900,7 @@ Partial Class frmAgendaVisita
         '
         Me.Label42.AutoSize = True
         Me.Label42.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label42.Location = New System.Drawing.Point(128, 245)
+        Me.Label42.Location = New System.Drawing.Point(33, 245)
         Me.Label42.Name = "Label42"
         Me.Label42.Size = New System.Drawing.Size(72, 17)
         Me.Label42.TabIndex = 1188
@@ -1033,7 +1035,7 @@ Partial Class frmAgendaVisita
         'GBDIA5
         '
         Me.GBDIA5.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GBDIA5.Controls.Add(Me.Label55)
+        Me.GBDIA5.Controls.Add(Me.LBLFECHAS5)
         Me.GBDIA5.Controls.Add(Me.Button6)
         Me.GBDIA5.Controls.Add(Me.LBLFINRUTA5)
         Me.GBDIA5.Controls.Add(Me.Label57)
@@ -1056,16 +1058,16 @@ Partial Class frmAgendaVisita
         Me.GBDIA5.TabStop = False
         Me.GBDIA5.Text = "."
         '
-        'Label55
+        'LBLFECHAS5
         '
-        Me.Label55.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Label55.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label55.Location = New System.Drawing.Point(9, 17)
-        Me.Label55.Name = "Label55"
-        Me.Label55.Size = New System.Drawing.Size(290, 22)
-        Me.Label55.TabIndex = 1191
-        Me.Label55.Text = "Fecha"
-        Me.Label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LBLFECHAS5.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLFECHAS5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLFECHAS5.Location = New System.Drawing.Point(9, 17)
+        Me.LBLFECHAS5.Name = "LBLFECHAS5"
+        Me.LBLFECHAS5.Size = New System.Drawing.Size(290, 22)
+        Me.LBLFECHAS5.TabIndex = 1191
+        Me.LBLFECHAS5.Text = "Fecha"
+        Me.LBLFECHAS5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button6
         '
@@ -1084,9 +1086,9 @@ Partial Class frmAgendaVisita
         '
         Me.LBLFINRUTA5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.LBLFINRUTA5.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLFINRUTA5.Location = New System.Drawing.Point(217, 245)
+        Me.LBLFINRUTA5.Location = New System.Drawing.Point(122, 245)
         Me.LBLFINRUTA5.Name = "LBLFINRUTA5"
-        Me.LBLFINRUTA5.Size = New System.Drawing.Size(59, 17)
+        Me.LBLFINRUTA5.Size = New System.Drawing.Size(165, 17)
         Me.LBLFINRUTA5.TabIndex = 1189
         Me.LBLFINRUTA5.Text = "."
         Me.LBLFINRUTA5.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1095,7 +1097,7 @@ Partial Class frmAgendaVisita
         '
         Me.Label57.AutoSize = True
         Me.Label57.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label57.Location = New System.Drawing.Point(128, 245)
+        Me.Label57.Location = New System.Drawing.Point(33, 245)
         Me.Label57.Name = "Label57"
         Me.Label57.Size = New System.Drawing.Size(72, 17)
         Me.Label57.TabIndex = 1188
@@ -1230,7 +1232,7 @@ Partial Class frmAgendaVisita
         'GBDIA6
         '
         Me.GBDIA6.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.GBDIA6.Controls.Add(Me.Label70)
+        Me.GBDIA6.Controls.Add(Me.LBLFECHAS6)
         Me.GBDIA6.Controls.Add(Me.Button7)
         Me.GBDIA6.Controls.Add(Me.LBLFINRUTA6)
         Me.GBDIA6.Controls.Add(Me.Label72)
@@ -1253,16 +1255,16 @@ Partial Class frmAgendaVisita
         Me.GBDIA6.TabStop = False
         Me.GBDIA6.Text = "."
         '
-        'Label70
+        'LBLFECHAS6
         '
-        Me.Label70.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Label70.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label70.Location = New System.Drawing.Point(9, 17)
-        Me.Label70.Name = "Label70"
-        Me.Label70.Size = New System.Drawing.Size(290, 22)
-        Me.Label70.TabIndex = 1191
-        Me.Label70.Text = "Fecha"
-        Me.Label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.LBLFECHAS6.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLFECHAS6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLFECHAS6.Location = New System.Drawing.Point(9, 17)
+        Me.LBLFECHAS6.Name = "LBLFECHAS6"
+        Me.LBLFECHAS6.Size = New System.Drawing.Size(290, 22)
+        Me.LBLFECHAS6.TabIndex = 1191
+        Me.LBLFECHAS6.Text = "Fecha"
+        Me.LBLFECHAS6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'Button7
         '
@@ -1281,9 +1283,9 @@ Partial Class frmAgendaVisita
         '
         Me.LBLFINRUTA6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.LBLFINRUTA6.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLFINRUTA6.Location = New System.Drawing.Point(217, 245)
+        Me.LBLFINRUTA6.Location = New System.Drawing.Point(122, 245)
         Me.LBLFINRUTA6.Name = "LBLFINRUTA6"
-        Me.LBLFINRUTA6.Size = New System.Drawing.Size(59, 17)
+        Me.LBLFINRUTA6.Size = New System.Drawing.Size(149, 17)
         Me.LBLFINRUTA6.TabIndex = 1189
         Me.LBLFINRUTA6.Text = "."
         Me.LBLFINRUTA6.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
@@ -1292,7 +1294,7 @@ Partial Class frmAgendaVisita
         '
         Me.Label72.AutoSize = True
         Me.Label72.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label72.Location = New System.Drawing.Point(128, 245)
+        Me.Label72.Location = New System.Drawing.Point(33, 245)
         Me.Label72.Name = "Label72"
         Me.Label72.Size = New System.Drawing.Size(72, 17)
         Me.Label72.TabIndex = 1188
@@ -1424,11 +1426,21 @@ Partial Class frmAgendaVisita
         Me.Label84.TabIndex = 1174
         Me.Label84.Text = "Vendedor"
         '
+        'MC
+        '
+        Me.MC.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MC.FirstDayOfWeek = System.Windows.Forms.Day.Sunday
+        Me.MC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.MC.Location = New System.Drawing.Point(950, 138)
+        Me.MC.Name = "MC"
+        Me.MC.TabIndex = 1195
+        '
         'frmAgendaVisita
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(953, 749)
+        Me.ClientSize = New System.Drawing.Size(1208, 749)
+        Me.Controls.Add(Me.MC)
         Me.Controls.Add(Me.GBDIA6)
         Me.Controls.Add(Me.GBDIA5)
         Me.Controls.Add(Me.GBDIA4)
@@ -1445,6 +1457,7 @@ Partial Class frmAgendaVisita
         Me.Controls.Add(Me.BTNBUSCAR)
         Me.Controls.Add(Me.CBRUTA)
         Me.Name = "frmAgendaVisita"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agenda Visita"
         Me.GBDIA1.ResumeLayout(False)
         Me.GBDIA1.PerformLayout()
@@ -1488,9 +1501,9 @@ Partial Class frmAgendaVisita
     Friend WithEvents Label5 As Label
     Friend WithEvents LBLNOMVEND1 As Label
     Friend WithEvents Label3 As Label
-    Friend WithEvents Label11 As Label
+    Friend WithEvents LBLFECHAS1 As Label
     Friend WithEvents GBDIA2 As GroupBox
-    Friend WithEvents Label1 As Label
+    Friend WithEvents LBLFECHAS2 As Label
     Friend WithEvents Button3 As Button
     Friend WithEvents LBLFINRUTA2 As Label
     Friend WithEvents Label6 As Label
@@ -1507,7 +1520,7 @@ Partial Class frmAgendaVisita
     Friend WithEvents LBLNOMVEND2 As Label
     Friend WithEvents Label24 As Label
     Friend WithEvents GBDIA3 As GroupBox
-    Friend WithEvents Label25 As Label
+    Friend WithEvents LBLFECHAS3 As Label
     Friend WithEvents Button4 As Button
     Friend WithEvents LBLFINRUTA3 As Label
     Friend WithEvents Label27 As Label
@@ -1524,7 +1537,7 @@ Partial Class frmAgendaVisita
     Friend WithEvents LBLNOMVEND3 As Label
     Friend WithEvents Label39 As Label
     Friend WithEvents GBDIA4 As GroupBox
-    Friend WithEvents Label40 As Label
+    Friend WithEvents LBLFECHAS4 As Label
     Friend WithEvents Button5 As Button
     Friend WithEvents LBLFINRUTA4 As Label
     Friend WithEvents Label42 As Label
@@ -1541,7 +1554,7 @@ Partial Class frmAgendaVisita
     Friend WithEvents LBLNOMVEND4 As Label
     Friend WithEvents Label54 As Label
     Friend WithEvents GBDIA5 As GroupBox
-    Friend WithEvents Label55 As Label
+    Friend WithEvents LBLFECHAS5 As Label
     Friend WithEvents Button6 As Button
     Friend WithEvents LBLFINRUTA5 As Label
     Friend WithEvents Label57 As Label
@@ -1558,7 +1571,7 @@ Partial Class frmAgendaVisita
     Friend WithEvents LBLNOMVEND5 As Label
     Friend WithEvents Label69 As Label
     Friend WithEvents GBDIA6 As GroupBox
-    Friend WithEvents Label70 As Label
+    Friend WithEvents LBLFECHAS6 As Label
     Friend WithEvents Button7 As Button
     Friend WithEvents LBLFINRUTA6 As Label
     Friend WithEvents Label72 As Label
@@ -1574,4 +1587,5 @@ Partial Class frmAgendaVisita
     Friend WithEvents Label82 As Label
     Friend WithEvents LBLNOMVEND6 As Label
     Friend WithEvents Label84 As Label
+    Friend WithEvents MC As MonthCalendar
 End Class

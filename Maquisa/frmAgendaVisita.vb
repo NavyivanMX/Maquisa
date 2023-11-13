@@ -1,28 +1,64 @@
 ﻿Public Class frmAgendaVisita
 
-    Dim GBDIA(6) As GroupBox
-    Dim LBLNOMVEND(6) As Label
-    Dim LBLCTOT(6) As Label
-    Dim LBLCVISITADO(6) As Label
-    Dim LBLCVISITAR(6) As Label
-    Dim LBLCNODISP(6) As Label
-    Dim LBLPROSP(6) As Label
-    Dim LBLFINRUTA(6) As Label
+    Dim GBDIA(7) As GroupBox
+    Dim LBLFECHAS(7) As Label
+    Dim LBLNOMVEND(7) As Label
+    Dim LBLCTOT(7) As Label
+    Dim LBLCVISITADO(7) As Label
+    Dim LBLCVISITAR(7) As Label
+    Dim LBLCNODISP(7) As Label
+    Dim LBLPROSP(7) As Label
+    Dim LBLFINRUTA(7) As Label
+    Dim FEC As DateTime
+    Dim LRUT As New List(Of String)
+    Dim LVEN As New List(Of String)
     Private Sub frmAgendaVisita_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        OPVisualizacionForm(Me)
+        ' OPVisualizacionForm(Me)
         Me.Icon = frmPrincipal.Icon
+        OPLlenaComboBox(CBRUTA, LRUT, LVEN, "SELECT R.CLAVE,V.NOMBRE,R.NOMBRE FROM RUTAS R INNER JOIN VENDEDORES V ON R.VENDEDOR=V.CLAVE WHERE R.ACTIVO=1 ORDER BY R.NOMBRE", frmPrincipal.CadenaConexion)
+
         INICIALIZAR()
     End Sub
     Private Sub BTNBUSCAR_Click(sender As Object, e As EventArgs) Handles BTNBUSCAR.Click
-        CARGADATOS
+        'If CBRUTA.SelectedIndex = 0 Then
+        '    OPMsgError("Favor de seleccionar una ruta")
+        '    Return
+        'End If
+        CARGADATOS()
     End Sub
     Private Sub INICIALIZAR()
+        Dim X As Integer
+        FEC = InicioSemana(System.DateTime.Now)
+
+        For X = 1 To 6
+            GBDIA(X) = New GroupBox
+            LBLFECHAS(X) = New Label
+            LBLNOMVEND(X) = New Label
+            LBLCTOT(X) = New Label
+            LBLCVISITADO(X) = New Label
+            LBLCVISITAR(X) = New Label
+            LBLCNODISP(X) = New Label
+            LBLPROSP(X) = New Label
+            LBLFINRUTA(X) = New Label
+
+        Next
+
         GBDIA(1) = GBDIA1
         GBDIA(2) = GBDIA2
         GBDIA(3) = GBDIA3
         GBDIA(4) = GBDIA4
         GBDIA(5) = GBDIA5
         GBDIA(6) = GBDIA6
+        For X = 1 To 6
+            GBDIA(X).Visible = False
+        Next
+
+        LBLFECHAS(1) = LBLFECHAS1
+        LBLFECHAS(2) = LBLFECHAS2
+        LBLFECHAS(3) = LBLFECHAS3
+        LBLFECHAS(4) = LBLFECHAS4
+        LBLFECHAS(5) = LBLFECHAS5
+        LBLFECHAS(6) = LBLFECHAS6
 
         LBLNOMVEND(1) = LBLNOMVEND1
         LBLNOMVEND(2) = LBLNOMVEND2
@@ -75,21 +111,58 @@
 
 
     End Sub
-    Private Sub GroupBox1_Enter(sender As Object, e As EventArgs) Handles GBDIA1.Enter
 
-    End Sub
 
 
     Private Sub CARGADATOS()
 
+        ''BDExtraeUnDato("SELECT V.NOMBRE FROM  RUTAS R INNER JOIN VENDEDORES V ON V.CLAVE=R.VENDEDOR WHERE  ")
+        Dim POS As Integer
+        POS = 1
+        Dim X As Integer
+        For X = 1 To 6
+            GBDIA(X).Visible = False
+        Next
         Dim DS As New DataSet
-        DS = BDLlenaDataSet("EXEC SPAGENDASEMANAL '06/11/2023',3", frmPrincipal.CadenaConexion)
+        DS = BDLlenaDataSet("EXEC SPAGENDASEMANAL '" + FEC.ToString("dd/MM/yyyy") + "',3", frmPrincipal.CadenaConexion)
         For Each DT As DataTable In DS.Tables
-
+            GBDIA(POS).Visible = True
+            LBLNOMVEND(POS).Text = DT.Rows(0).Item(0).ToString
+            LBLCTOT(POS).Text = DT.Rows(0).Item(1).ToString
+            LBLCVISITADO(POS).Text = DT.Rows(0).Item(2).ToString
+            LBLCVISITAR(POS).Text = DT.Rows(0).Item(3).ToString
+            LBLCNODISP(POS).Text = DT.Rows(0).Item(4).ToString
+            LBLPROSP(POS).Text = DT.Rows(0).Item(5).ToString
+            LBLFINRUTA(POS).Text = DT.Rows(0).Item(6).ToString
+            LBLFECHAS(POS).Text = DT.Rows(0).Item(7).ToString()
+            POS += 1
         Next
     End Sub
 
-    Private Sub Label75_Click(sender As Object, e As EventArgs) Handles LBLCNODISP6.Click
+    Private Sub MC_DateChanged(sender As Object, e As DateRangeEventArgs) Handles MC.DateChanged
+        FEC = InicioSemana(MC.SelectionStart)
+    End Sub
+    Private Function InicioSemana(ByVal pFec As DateTime) As DateTime
+        Dim reg As DateTime
+        reg = pFec
 
+        Try
+
+            Dim DS As Integer
+            DS = pFec.DayOfWeek
+            If DS = 0 Then
+                reg = pFec.AddDays(1)
+            End If
+            If DS >= 2 Then
+                reg = pFec.AddDays(-1 * (DS - 1))
+            End If
+        Catch ex As Exception
+
+        End Try
+        Return reg
+    End Function
+
+    Private Sub CBRUTA_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBRUTA.SelectedIndexChanged
+        LBLVENDEDOR.Text = LVEN(CBRUTA.SelectedIndex)
     End Sub
 End Class
