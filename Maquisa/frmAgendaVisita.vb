@@ -16,7 +16,7 @@
         ' OPVisualizacionForm(Me)
         Me.Icon = frmPrincipal.Icon
         OPLlenaComboBox(CBRUTA, LRUT, LVEN, "SELECT R.CLAVE,V.NOMBRE,R.NOMBRE FROM RUTAS R INNER JOIN VENDEDORES V ON R.VENDEDOR=V.CLAVE WHERE R.ACTIVO=1 ORDER BY R.NOMBRE", frmPrincipal.CadenaConexion)
-
+        LBLNUMPROSPECTO.Text = BDExtraeUnDato("SELECT ISNULL(COUNT(CLAVE),0) FROM PROSPECTOS WHERE RESULTADOPROSPECTO=0", frmPrincipal.CadenaConexion)
         INICIALIZAR()
     End Sub
     Private Sub BTNBUSCAR_Click(sender As Object, e As EventArgs) Handles BTNBUSCAR.Click
@@ -124,7 +124,7 @@
             GBDIA(X).Visible = False
         Next
         Dim DS As New DataSet
-        DS = BDLlenaDataSet("EXEC SPAGENDASEMANAL '" + FEC.ToString("dd/MM/yyyy") + "',3", frmPrincipal.CadenaConexion)
+        DS = BDLlenaDataSet("EXEC SPAGENDASEMANAL '" + FEC.ToString("dd/MM/yyyy") + "'," + LRUT(CBRUTA.SelectedIndex).ToString + " ", frmPrincipal.CadenaConexion)
         For Each DT As DataTable In DS.Tables
             GBDIA(POS).Visible = True
             LBLNOMVEND(POS).Text = DT.Rows(0).Item(0).ToString
