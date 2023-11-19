@@ -150,6 +150,14 @@
     <Compile Include="frmAgenda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="C:\Users\panch\Desktop\frmAgendar.Designer.vb">
+      <DependentUpon>frmAgendar.vb</DependentUpon>
+      <Link>frmAgendar.Designer.vb</Link>
+    </Compile>
+    <Compile Include="C:\Users\panch\Desktop\frmAgendar.vb">
+      <SubType>Form</SubType>
+      <Link>frmAgendar.vb</Link>
+    </Compile>
     <Compile Include="frmAgendaVisita.Designer.vb">
       <DependentUpon>frmAgendaVisita.vb</DependentUpon>
     </Compile>
@@ -276,6 +284,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgenda.resx">
       <DependentUpon>frmAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="C:\Users\panch\Desktop\frmAgendar.resx">
+      <DependentUpon>frmAgendar.vb</DependentUpon>
+      <Link>frmAgendar.resx</Link>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgendaVisita.resx">
       <DependentUpon>frmAgendaVisita.vb</DependentUpon>

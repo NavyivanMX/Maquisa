@@ -31,23 +31,23 @@ Partial Class frmAgendaVisita
         Me.LBLNUMPROSPECTO = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.GBDIA1 = New System.Windows.Forms.GroupBox()
-        Me.LBLNOMVEND1 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.LBLCTOT1 = New System.Windows.Forms.Label()
-        Me.Label5 = New System.Windows.Forms.Label()
-        Me.LBLCVISITADO1 = New System.Windows.Forms.Label()
-        Me.Label7 = New System.Windows.Forms.Label()
-        Me.LBLCVISITAR1 = New System.Windows.Forms.Label()
-        Me.Label9 = New System.Windows.Forms.Label()
-        Me.LBLCNODISP1 = New System.Windows.Forms.Label()
-        Me.Label13 = New System.Windows.Forms.Label()
-        Me.LBLPROSP1 = New System.Windows.Forms.Label()
-        Me.Label15 = New System.Windows.Forms.Label()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
         Me.LBLFINRUTA1 = New System.Windows.Forms.Label()
         Me.Label17 = New System.Windows.Forms.Label()
-        Me.Button2 = New System.Windows.Forms.Button()
+        Me.LBLPROSP1 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.LBLCNODISP1 = New System.Windows.Forms.Label()
+        Me.Label13 = New System.Windows.Forms.Label()
+        Me.LBLCVISITAR1 = New System.Windows.Forms.Label()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.LBLCVISITADO1 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.LBLCTOT1 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.LBLNOMVEND1 = New System.Windows.Forms.Label()
+        Me.Label3 = New System.Windows.Forms.Label()
         Me.BTNBUSCAR = New System.Windows.Forms.Button()
-        Me.Label11 = New System.Windows.Forms.Label()
         Me.GroupBox1 = New System.Windows.Forms.GroupBox()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.Button3 = New System.Windows.Forms.Button()
@@ -254,131 +254,29 @@ Partial Class frmAgendaVisita
         Me.GBDIA1.TabStop = False
         Me.GBDIA1.Text = "."
         '
-        'LBLNOMVEND1
+        'Label11
         '
-        Me.LBLNOMVEND1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.LBLNOMVEND1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLNOMVEND1.Location = New System.Drawing.Point(13, 66)
-        Me.LBLNOMVEND1.Name = "LBLNOMVEND1"
-        Me.LBLNOMVEND1.Size = New System.Drawing.Size(286, 18)
-        Me.LBLNOMVEND1.TabIndex = 1175
-        Me.LBLNOMVEND1.Text = "."
-        Me.LBLNOMVEND1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.Label11.BackColor = System.Drawing.SystemColors.HotTrack
+        Me.Label11.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label11.Location = New System.Drawing.Point(9, 17)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(290, 22)
+        Me.Label11.TabIndex = 1191
+        Me.Label11.Text = "Fecha"
+        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
-        'Label3
+        'Button2
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label3.Location = New System.Drawing.Point(111, 49)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(79, 17)
-        Me.Label3.TabIndex = 1174
-        Me.Label3.Text = "Vendedor"
-        '
-        'LBLCTOT1
-        '
-        Me.LBLCTOT1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.LBLCTOT1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLCTOT1.Location = New System.Drawing.Point(217, 105)
-        Me.LBLCTOT1.Name = "LBLCTOT1"
-        Me.LBLCTOT1.Size = New System.Drawing.Size(59, 17)
-        Me.LBLCTOT1.TabIndex = 1177
-        Me.LBLCTOT1.Text = "."
-        Me.LBLCTOT1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label5
-        '
-        Me.Label5.AutoSize = True
-        Me.Label5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label5.Location = New System.Drawing.Point(7, 105)
-        Me.Label5.Name = "Label5"
-        Me.Label5.Size = New System.Drawing.Size(193, 17)
-        Me.Label5.TabIndex = 1176
-        Me.Label5.Text = "Total Clientes Agendados"
-        '
-        'LBLCVISITADO1
-        '
-        Me.LBLCVISITADO1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.LBLCVISITADO1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLCVISITADO1.Location = New System.Drawing.Point(217, 133)
-        Me.LBLCVISITADO1.Name = "LBLCVISITADO1"
-        Me.LBLCVISITADO1.Size = New System.Drawing.Size(59, 17)
-        Me.LBLCVISITADO1.TabIndex = 1179
-        Me.LBLCVISITADO1.Text = "."
-        Me.LBLCVISITADO1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label7
-        '
-        Me.Label7.AutoSize = True
-        Me.Label7.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label7.Location = New System.Drawing.Point(63, 133)
-        Me.Label7.Name = "Label7"
-        Me.Label7.Size = New System.Drawing.Size(137, 17)
-        Me.Label7.TabIndex = 1178
-        Me.Label7.Text = "Clientes Visitados"
-        '
-        'LBLCVISITAR1
-        '
-        Me.LBLCVISITAR1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.LBLCVISITAR1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLCVISITAR1.Location = New System.Drawing.Point(217, 161)
-        Me.LBLCVISITAR1.Name = "LBLCVISITAR1"
-        Me.LBLCVISITAR1.Size = New System.Drawing.Size(59, 17)
-        Me.LBLCVISITAR1.TabIndex = 1181
-        Me.LBLCVISITAR1.Text = "."
-        Me.LBLCVISITAR1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label9
-        '
-        Me.Label9.AutoSize = True
-        Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label9.Location = New System.Drawing.Point(53, 161)
-        Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(147, 17)
-        Me.Label9.TabIndex = 1180
-        Me.Label9.Text = "Clientes por Visitar"
-        '
-        'LBLCNODISP1
-        '
-        Me.LBLCNODISP1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.LBLCNODISP1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLCNODISP1.Location = New System.Drawing.Point(217, 189)
-        Me.LBLCNODISP1.Name = "LBLCNODISP1"
-        Me.LBLCNODISP1.Size = New System.Drawing.Size(59, 17)
-        Me.LBLCNODISP1.TabIndex = 1185
-        Me.LBLCNODISP1.Text = "."
-        Me.LBLCNODISP1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label13
-        '
-        Me.Label13.AutoSize = True
-        Me.Label13.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label13.Location = New System.Drawing.Point(29, 189)
-        Me.Label13.Name = "Label13"
-        Me.Label13.Size = New System.Drawing.Size(171, 17)
-        Me.Label13.TabIndex = 1184
-        Me.Label13.Text = "Clientes No Disponible"
-        '
-        'LBLPROSP1
-        '
-        Me.LBLPROSP1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.LBLPROSP1.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLPROSP1.Location = New System.Drawing.Point(217, 217)
-        Me.LBLPROSP1.Name = "LBLPROSP1"
-        Me.LBLPROSP1.Size = New System.Drawing.Size(59, 17)
-        Me.LBLPROSP1.TabIndex = 1187
-        Me.LBLPROSP1.Text = "."
-        Me.LBLPROSP1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        '
-        'Label15
-        '
-        Me.Label15.AutoSize = True
-        Me.Label15.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label15.Location = New System.Drawing.Point(109, 217)
-        Me.Label15.Name = "Label15"
-        Me.Label15.Size = New System.Drawing.Size(91, 17)
-        Me.Label15.TabIndex = 1186
-        Me.Label15.Text = "Prospectos"
+        Me.Button2.BackColor = System.Drawing.Color.White
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Black
+        Me.Button2.Location = New System.Drawing.Point(6, 271)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(286, 31)
+        Me.Button2.TabIndex = 1190
+        Me.Button2.Text = "VER DETALLE VISITA"
+        Me.Button2.UseVisualStyleBackColor = False
         '
         'LBLFINRUTA1
         '
@@ -401,18 +299,131 @@ Partial Class frmAgendaVisita
         Me.Label17.TabIndex = 1188
         Me.Label17.Text = "Fin Ruta "
         '
-        'Button2
+        'LBLPROSP1
         '
-        Me.Button2.BackColor = System.Drawing.Color.White
-        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button2.ForeColor = System.Drawing.Color.Black
-        Me.Button2.Location = New System.Drawing.Point(6, 271)
-        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Button2.Name = "Button2"
-        Me.Button2.Size = New System.Drawing.Size(286, 31)
-        Me.Button2.TabIndex = 1190
-        Me.Button2.Text = "VER DETALLE VISITA"
-        Me.Button2.UseVisualStyleBackColor = False
+        Me.LBLPROSP1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.LBLPROSP1.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLPROSP1.Location = New System.Drawing.Point(217, 217)
+        Me.LBLPROSP1.Name = "LBLPROSP1"
+        Me.LBLPROSP1.Size = New System.Drawing.Size(59, 17)
+        Me.LBLPROSP1.TabIndex = 1187
+        Me.LBLPROSP1.Text = "."
+        Me.LBLPROSP1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.Label15.Location = New System.Drawing.Point(109, 217)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(91, 17)
+        Me.Label15.TabIndex = 1186
+        Me.Label15.Text = "Prospectos"
+        '
+        'LBLCNODISP1
+        '
+        Me.LBLCNODISP1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.LBLCNODISP1.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLCNODISP1.Location = New System.Drawing.Point(217, 189)
+        Me.LBLCNODISP1.Name = "LBLCNODISP1"
+        Me.LBLCNODISP1.Size = New System.Drawing.Size(59, 17)
+        Me.LBLCNODISP1.TabIndex = 1185
+        Me.LBLCNODISP1.Text = "."
+        Me.LBLCNODISP1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label13
+        '
+        Me.Label13.AutoSize = True
+        Me.Label13.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.Label13.Location = New System.Drawing.Point(29, 189)
+        Me.Label13.Name = "Label13"
+        Me.Label13.Size = New System.Drawing.Size(171, 17)
+        Me.Label13.TabIndex = 1184
+        Me.Label13.Text = "Clientes No Disponible"
+        '
+        'LBLCVISITAR1
+        '
+        Me.LBLCVISITAR1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.LBLCVISITAR1.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLCVISITAR1.Location = New System.Drawing.Point(217, 161)
+        Me.LBLCVISITAR1.Name = "LBLCVISITAR1"
+        Me.LBLCVISITAR1.Size = New System.Drawing.Size(59, 17)
+        Me.LBLCVISITAR1.TabIndex = 1181
+        Me.LBLCVISITAR1.Text = "."
+        Me.LBLCVISITAR1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label9
+        '
+        Me.Label9.AutoSize = True
+        Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.Label9.Location = New System.Drawing.Point(53, 161)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(147, 17)
+        Me.Label9.TabIndex = 1180
+        Me.Label9.Text = "Clientes por Visitar"
+        '
+        'LBLCVISITADO1
+        '
+        Me.LBLCVISITADO1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.LBLCVISITADO1.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLCVISITADO1.Location = New System.Drawing.Point(217, 133)
+        Me.LBLCVISITADO1.Name = "LBLCVISITADO1"
+        Me.LBLCVISITADO1.Size = New System.Drawing.Size(59, 17)
+        Me.LBLCVISITADO1.TabIndex = 1179
+        Me.LBLCVISITADO1.Text = "."
+        Me.LBLCVISITADO1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.Label7.Location = New System.Drawing.Point(63, 133)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(137, 17)
+        Me.Label7.TabIndex = 1178
+        Me.Label7.Text = "Clientes Visitados"
+        '
+        'LBLCTOT1
+        '
+        Me.LBLCTOT1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.LBLCTOT1.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLCTOT1.Location = New System.Drawing.Point(217, 105)
+        Me.LBLCTOT1.Name = "LBLCTOT1"
+        Me.LBLCTOT1.Size = New System.Drawing.Size(59, 17)
+        Me.LBLCTOT1.TabIndex = 1177
+        Me.LBLCTOT1.Text = "."
+        Me.LBLCTOT1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.Label5.Location = New System.Drawing.Point(7, 105)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(193, 17)
+        Me.Label5.TabIndex = 1176
+        Me.Label5.Text = "Total Clientes Agendados"
+        '
+        'LBLNOMVEND1
+        '
+        Me.LBLNOMVEND1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.LBLNOMVEND1.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLNOMVEND1.Location = New System.Drawing.Point(13, 66)
+        Me.LBLNOMVEND1.Name = "LBLNOMVEND1"
+        Me.LBLNOMVEND1.Size = New System.Drawing.Size(286, 18)
+        Me.LBLNOMVEND1.TabIndex = 1175
+        Me.LBLNOMVEND1.Text = "."
+        Me.LBLNOMVEND1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        '
+        'Label3
+        '
+        Me.Label3.AutoSize = True
+        Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
+        Me.Label3.Location = New System.Drawing.Point(111, 49)
+        Me.Label3.Name = "Label3"
+        Me.Label3.Size = New System.Drawing.Size(79, 17)
+        Me.Label3.TabIndex = 1174
+        Me.Label3.Text = "Vendedor"
         '
         'BTNBUSCAR
         '
@@ -427,17 +438,6 @@ Partial Class frmAgendaVisita
         Me.BTNBUSCAR.Size = New System.Drawing.Size(85, 77)
         Me.BTNBUSCAR.TabIndex = 1169
         Me.BTNBUSCAR.UseVisualStyleBackColor = False
-        '
-        'Label11
-        '
-        Me.Label11.BackColor = System.Drawing.SystemColors.HotTrack
-        Me.Label11.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label11.Location = New System.Drawing.Point(9, 17)
-        Me.Label11.Name = "Label11"
-        Me.Label11.Size = New System.Drawing.Size(290, 22)
-        Me.Label11.TabIndex = 1191
-        Me.Label11.Text = "Fecha"
-        Me.Label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'GroupBox1
         '

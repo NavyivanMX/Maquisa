@@ -37,4 +37,8 @@
 
         Next
     End Sub
+
+    Private Sub BTNAGENDAR_Click(sender As Object, e As EventArgs) Handles BTNAGENDAR.Click
+        frmAgendar.showdialog()
+    End Sub
 End Class

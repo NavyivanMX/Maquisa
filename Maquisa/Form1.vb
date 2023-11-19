@@ -243,6 +243,11 @@
         VCC.ShowDialog()
     End Sub
 
+    Private Sub AgendarVisitaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgendarVisitaToolStripMenuItem.Click
+        Dim VAV As New frmAgendar
+        VAV.ShowDialog()
+    End Sub
+
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
         frmEmpresa.ShowDialog()
     End Sub
