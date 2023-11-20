@@ -57,7 +57,7 @@ Partial Class frmPrincipal
         Me.LBLP = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PBCNC = New System.Windows.Forms.PictureBox()
-        Me.AgendarVisitaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PBS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,7 +158,7 @@ Partial Class frmPrincipal
         '
         'MM2
         '
-        Me.MM2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItinerarioRutasToolStripMenuItem, Me.ContactoClienteToolStripMenuItem, Me.AgendarVisitaToolStripMenuItem})
+        Me.MM2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItinerarioRutasToolStripMenuItem, Me.ContactoClienteToolStripMenuItem, Me.AgendaToolStripMenuItem})
         Me.MM2.Name = "MM2"
         Me.MM2.Size = New System.Drawing.Size(113, 24)
         Me.MM2.Text = "&Movimientos"
@@ -328,11 +328,11 @@ Partial Class frmPrincipal
         Me.PBCNC.TabStop = False
         Me.PBCNC.Visible = False
         '
-        'AgendarVisitaToolStripMenuItem
+        'AgendaToolStripMenuItem
         '
-        Me.AgendarVisitaToolStripMenuItem.Name = "AgendarVisitaToolStripMenuItem"
-        Me.AgendarVisitaToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
-        Me.AgendarVisitaToolStripMenuItem.Text = "Agendar Visita"
+        Me.AgendaToolStripMenuItem.Name = "AgendaToolStripMenuItem"
+        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
+        Me.AgendaToolStripMenuItem.Text = "Agenda"
         '
         'frmPrincipal
         '
@@ -402,5 +402,5 @@ Partial Class frmPrincipal
     Friend WithEvents PBCNC As PictureBox
     Friend WithEvents MapaVendedorRutaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContactoClienteToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents AgendarVisitaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AgendaToolStripMenuItem As ToolStripMenuItem
 End Class

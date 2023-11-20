@@ -33,7 +33,7 @@
         USER = "MAROSILOCAL"
         PASS = "Loco*1234"
         Empresa = 1
-        VERSION = "1.0"
+        VERSION = "1.2"
         Sistema = "Maquisa"
         COLORFUENTE = My.Settings.COLORDEFAULT
 
@@ -42,6 +42,7 @@
             '    CENTRARHORIZONTALABEL(LBLPRU)
         End If
 
+        LBLV.Text = "Versión " + VERSION
 
 
         CadenaConexion = "Data Source=" + IP + ",1433;Network Library=DBMSSOCN;Initial Catalog=" + BD + ";User ID=" + USER + ";Password=" + PASS + ""
@@ -88,7 +89,7 @@
 
     Private Function VERIFICAVERSION() As Boolean
         Try
-            Return True
+
             Dim VER As String
             Dim SQL As New SqlClient.SqlCommand("Select VERSION,LIGA FROM VERSIONES WHERE SISTEMA='WIN'", Me.CONX)
             Dim LEC As SqlClient.SqlDataReader
@@ -243,9 +244,9 @@
         VCC.ShowDialog()
     End Sub
 
-    Private Sub AgendarVisitaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgendarVisitaToolStripMenuItem.Click
-        Dim VAV As New frmAgendar
-        VAV.ShowDialog()
+    Private Sub AgendaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgendaToolStripMenuItem.Click
+        Dim VMAGE As New frmAgendaVisita
+        VMAGE.ShowDialog()
     End Sub
 
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
