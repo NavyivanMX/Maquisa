@@ -249,6 +249,11 @@
         VMAGE.ShowDialog()
     End Sub
 
+    Private Sub AgendarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgendarToolStripMenuItem.Click
+        Dim VAVIS As New frmAgendar
+        VAVIS.ShowDialog()
+    End Sub
+
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
         frmEmpresa.ShowDialog()
     End Sub

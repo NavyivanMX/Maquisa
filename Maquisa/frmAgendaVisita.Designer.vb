@@ -47,7 +47,6 @@ Partial Class frmAgendaVisita
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LBLNOMVEND1 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
-        Me.BTNBUSCAR = New System.Windows.Forms.Button()
         Me.GBDIA2 = New System.Windows.Forms.GroupBox()
         Me.LBLFECHAS2 = New System.Windows.Forms.Label()
         Me.BTNVERDETALLEVISITA2 = New System.Windows.Forms.Button()
@@ -134,6 +133,7 @@ Partial Class frmAgendaVisita
         Me.LBLNOMVEND6 = New System.Windows.Forms.Label()
         Me.Label84 = New System.Windows.Forms.Label()
         Me.MC = New System.Windows.Forms.MonthCalendar()
+        Me.BTNBUSCAR = New System.Windows.Forms.Button()
         Me.GBDIA1.SuspendLayout()
         Me.GBDIA2.SuspendLayout()
         Me.GBDIA3.SuspendLayout()
@@ -277,6 +277,7 @@ Partial Class frmAgendaVisita
         Me.BTNVERDETALLEVISITA1.Name = "BTNVERDETALLEVISITA1"
         Me.BTNVERDETALLEVISITA1.Size = New System.Drawing.Size(286, 31)
         Me.BTNVERDETALLEVISITA1.TabIndex = 1190
+        Me.BTNVERDETALLEVISITA1.Tag = "1"
         Me.BTNVERDETALLEVISITA1.Text = "VER DETALLE VISITA"
         Me.BTNVERDETALLEVISITA1.UseVisualStyleBackColor = False
         '
@@ -427,20 +428,6 @@ Partial Class frmAgendaVisita
         Me.Label3.TabIndex = 1174
         Me.Label3.Text = "Vendedor"
         '
-        'BTNBUSCAR
-        '
-        Me.BTNBUSCAR.BackColor = System.Drawing.Color.White
-        Me.BTNBUSCAR.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNBUSCAR
-        Me.BTNBUSCAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BTNBUSCAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNBUSCAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNBUSCAR.Location = New System.Drawing.Point(404, 22)
-        Me.BTNBUSCAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BTNBUSCAR.Name = "BTNBUSCAR"
-        Me.BTNBUSCAR.Size = New System.Drawing.Size(85, 77)
-        Me.BTNBUSCAR.TabIndex = 1169
-        Me.BTNBUSCAR.UseVisualStyleBackColor = False
-        '
         'GBDIA2
         '
         Me.GBDIA2.BackColor = System.Drawing.SystemColors.ActiveCaption
@@ -488,6 +475,7 @@ Partial Class frmAgendaVisita
         Me.BTNVERDETALLEVISITA2.Name = "BTNVERDETALLEVISITA2"
         Me.BTNVERDETALLEVISITA2.Size = New System.Drawing.Size(286, 31)
         Me.BTNVERDETALLEVISITA2.TabIndex = 1190
+        Me.BTNVERDETALLEVISITA2.Tag = "2"
         Me.BTNVERDETALLEVISITA2.Text = "VER DETALLE VISITA"
         Me.BTNVERDETALLEVISITA2.UseVisualStyleBackColor = False
         '
@@ -685,6 +673,7 @@ Partial Class frmAgendaVisita
         Me.BTNVERDETALLEVISITA3.Name = "BTNVERDETALLEVISITA3"
         Me.BTNVERDETALLEVISITA3.Size = New System.Drawing.Size(286, 31)
         Me.BTNVERDETALLEVISITA3.TabIndex = 1190
+        Me.BTNVERDETALLEVISITA3.Tag = "3"
         Me.BTNVERDETALLEVISITA3.Text = "VER DETALLE VISITA"
         Me.BTNVERDETALLEVISITA3.UseVisualStyleBackColor = False
         '
@@ -882,6 +871,7 @@ Partial Class frmAgendaVisita
         Me.BTNVERDETALLEVISITA4.Name = "BTNVERDETALLEVISITA4"
         Me.BTNVERDETALLEVISITA4.Size = New System.Drawing.Size(286, 31)
         Me.BTNVERDETALLEVISITA4.TabIndex = 1190
+        Me.BTNVERDETALLEVISITA4.Tag = "4"
         Me.BTNVERDETALLEVISITA4.Text = "VER DETALLE VISITA"
         Me.BTNVERDETALLEVISITA4.UseVisualStyleBackColor = False
         '
@@ -1079,6 +1069,7 @@ Partial Class frmAgendaVisita
         Me.BTNVERDETALLEVISITA5.Name = "BTNVERDETALLEVISITA5"
         Me.BTNVERDETALLEVISITA5.Size = New System.Drawing.Size(286, 31)
         Me.BTNVERDETALLEVISITA5.TabIndex = 1190
+        Me.BTNVERDETALLEVISITA5.Tag = "5"
         Me.BTNVERDETALLEVISITA5.Text = "VER DETALLE VISITA"
         Me.BTNVERDETALLEVISITA5.UseVisualStyleBackColor = False
         '
@@ -1276,6 +1267,7 @@ Partial Class frmAgendaVisita
         Me.BTNVERDETALLEVISITA6.Name = "BTNVERDETALLEVISITA6"
         Me.BTNVERDETALLEVISITA6.Size = New System.Drawing.Size(286, 31)
         Me.BTNVERDETALLEVISITA6.TabIndex = 1190
+        Me.BTNVERDETALLEVISITA6.Tag = "6"
         Me.BTNVERDETALLEVISITA6.Text = "VER DETALLE VISITA"
         Me.BTNVERDETALLEVISITA6.UseVisualStyleBackColor = False
         '
@@ -1434,6 +1426,20 @@ Partial Class frmAgendaVisita
         Me.MC.Location = New System.Drawing.Point(953, 109)
         Me.MC.Name = "MC"
         Me.MC.TabIndex = 1195
+        '
+        'BTNBUSCAR
+        '
+        Me.BTNBUSCAR.BackColor = System.Drawing.Color.White
+        Me.BTNBUSCAR.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNBUSCAR
+        Me.BTNBUSCAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTNBUSCAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNBUSCAR.ForeColor = System.Drawing.Color.Transparent
+        Me.BTNBUSCAR.Location = New System.Drawing.Point(404, 22)
+        Me.BTNBUSCAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BTNBUSCAR.Name = "BTNBUSCAR"
+        Me.BTNBUSCAR.Size = New System.Drawing.Size(85, 77)
+        Me.BTNBUSCAR.TabIndex = 1169
+        Me.BTNBUSCAR.UseVisualStyleBackColor = False
         '
         'frmAgendaVisita
         '

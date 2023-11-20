@@ -876,19 +876,19 @@
 
     Dim SUC, VI As Integer
     Private Sub BD1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs)
-        SUC = LSVD(CType(sender.TAG, Integer))
-        VI = LNVD(TypeOf sender.TAG Is Integer)
-        'frmDetalleAgenda.MOSTRAR(1, LSVD(CType(sender.TAG, Integer)), LNVD(CType(sender.TAG, Integer)))
-        frmDetalleAgenda.MOSTRAR(1, SUC, VI)
+        'SUC = LSVD(CType(sender.TAG, Integer))
+        'VI = LNVD(TypeOf sender.TAG Is Integer)
+        ''frmDetalleAgenda.MOSTRAR(1, LSVD(CType(sender.TAG, Integer)), LNVD(CType(sender.TAG, Integer)))
+        'frmDetalleAgenda.MOSTRAR(1, SUC, VI)
     End Sub
 
 
     Private Sub LV1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles LV1.Click, LV2.Click, LV3.Click, LV4.Click, LV5.Click, LV6.Click, LV7.Click, LV8.Click, LV9.Click, LV10.Click, LV11.Click, LV12.Click, LV13.Click, LV14.Click, LV15.Click, LV16.Click, LV17.Click, LV18.Click, LV19.Click, LV20.Click, LV21.Click, LV22.Click, LV23.Click, LV24.Click, LV25.Click, LV26.Click, LV27.Click, LV28.Click, LV29.Click, LV30.Click, LV31.Click, LV32.Click, LV33.Click, LV34.Click, LV35.Click, LV36.Click, LV37.Click, LV38.Click, LV39.Click, LV40.Click, LV41.Click, LV42.Click
-        LBLMES.Text = LFC(CType(sender.TAG, Integer)).ToShortDateString
-        CARGADIA(LFC(CType(sender.TAG, Integer)))
+        'LBLMES.Text = LFC(CType(sender.TAG, Integer)).ToShortDateString
+        'CARGADIA(LFC(CType(sender.TAG, Integer)))
 
         'frmDetalleAgenda.MOSTRAR(1, LLCS(CType(sender.TAG, Integer), DatoLVSeleccionado(sender)), LLCV(CType(sender.TAG, Integer), CType(sender, ListView).SelectedItems.Count - 1))
-        frmDetalleAgenda.MOSTRAR(1, LLCS(CType(sender.TAG, Integer), DatoLVSeleccionado(sender)), LLCV(CType(sender.TAG, Integer), DatoLVSeleccionado(sender)))
+        ' frmDetalleAgenda.MOSTRAR(1, LLCS(CType(sender.TAG, Integer), DatoLVSeleccionado(sender)), LLCV(CType(sender.TAG, Integer), DatoLVSeleccionado(sender)))
     End Sub
 
     Private Function DatoLVSeleccionado(ByRef LV As ListView) As Integer
@@ -903,10 +903,10 @@
 
     Dim PSS As Integer
     Private Sub BS1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BS1.Click, BS2.Click, BS3.Click, BS4.Click, BS5.Click, BS6.Click, BS7.Click, BS8.Click, BS9.Click, BS10.Click, BS11.Click, BS12.Click, BS13.Click, BS14.Click, BS15.Click, BS16.Click, BS17.Click, BS18.Click, BS19.Click, BS20.Click, BS21.Click, BS22.Click, BS23.Click, BS24.Click, BS25.Click, BS26.Click, BS27.Click, BS28.Click, BS29.Click, BS30.Click, BS31.Click, BS32.Click, BS33.Click, BS34.Click, BS35.Click, BS36.Click, BS37.Click, BS38.Click, BS39.Click, BS40.Click, BS41.Click, BS42.Click
-        PSS = CType(sender.TAG, Integer)
-        SUC = LNSS(PSS)
-        VI = LNVS(PSS)
-        frmDetalleAgenda.MOSTRAR(1, SUC, VI)
+        'PSS = CType(sender.TAG, Integer)
+        'SUC = LNSS(PSS)
+        'VI = LNVS(PSS)
+        'frmDetalleAgenda.MOSTRAR(1, SUC, VI)
     End Sub
 
     Private Sub BTNMOSTRAR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNMOSTRAR.Click
@@ -940,19 +940,19 @@
     End Sub
     Dim TAGDGV, SSUC, SVI As String
     Private Sub DGV3_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGV3.CellDoubleClick
-        TAGDGV = DGV3.Item(DGV3.CurrentCell.ColumnIndex, DGV3.CurrentRow.Index).Tag
-        If String.IsNullOrEmpty(TAGDGV) Then
-            Exit Sub
-        End If
-        Dim INI, FIN As Integer
-        INI = 1
-        FIN = TAGDGV.LastIndexOf("-")
+        'TAGDGV = DGV3.Item(DGV3.CurrentCell.ColumnIndex, DGV3.CurrentRow.Index).Tag
+        'If String.IsNullOrEmpty(TAGDGV) Then
+        '    Exit Sub
+        'End If
+        'Dim INI, FIN As Integer
+        'INI = 1
+        'FIN = TAGDGV.LastIndexOf("-")
 
-        SSUC = TAGDGV.Substring(INI, FIN - INI)
-        INI = FIN + 2
-        FIN = TAGDGV.Length
-        SVI = TAGDGV.Substring(INI, FIN - INI)
-        frmDetalleAgenda.MOSTRAR(1, SSUC, SVI)
+        'SSUC = TAGDGV.Substring(INI, FIN - INI)
+        'INI = FIN + 2
+        'FIN = TAGDGV.Length
+        'SVI = TAGDGV.Substring(INI, FIN - INI)
+        'frmDetalleAgenda.MOSTRAR(1, SSUC, SVI)
     End Sub
 
     Private Sub DataGridView1_CellContentClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGV3.CellContentClick
@@ -960,19 +960,19 @@
     End Sub
 
     Private Sub DGV4_CellDoubleClick(ByVal sender As System.Object, ByVal e As System.Windows.Forms.DataGridViewCellEventArgs) Handles DGV4.CellDoubleClick
-        TAGDGV = DGV4.Item(DGV4.CurrentCell.ColumnIndex, DGV4.CurrentRow.Index).Tag
-        If String.IsNullOrEmpty(TAGDGV) Then
-            Exit Sub
-        End If
-        Dim INI, FIN As Integer
-        INI = 1
-        FIN = TAGDGV.LastIndexOf("-")
+        'TAGDGV = DGV4.Item(DGV4.CurrentCell.ColumnIndex, DGV4.CurrentRow.Index).Tag
+        'If String.IsNullOrEmpty(TAGDGV) Then
+        '    Exit Sub
+        'End If
+        'Dim INI, FIN As Integer
+        'INI = 1
+        'FIN = TAGDGV.LastIndexOf("-")
 
-        SSUC = TAGDGV.Substring(INI, FIN - INI)
-        INI = FIN + 2
-        FIN = TAGDGV.Length
-        SVI = TAGDGV.Substring(INI, FIN - INI)
-        frmDetalleAgenda.MOSTRAR(1, SSUC, SVI)
+        'SSUC = TAGDGV.Substring(INI, FIN - INI)
+        'INI = FIN + 2
+        'FIN = TAGDGV.Length
+        'SVI = TAGDGV.Substring(INI, FIN - INI)
+        'frmDetalleAgenda.MOSTRAR(1, SSUC, SVI)
     End Sub
 
     Private Sub BTNACEPTAR_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNACEPTAR.Click
