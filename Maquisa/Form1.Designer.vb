@@ -41,6 +41,7 @@ Partial Class frmPrincipal
         Me.MM2 = New System.Windows.Forms.ToolStripMenuItem()
         Me.ItinerarioRutasToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ContactoClienteToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM3 = New System.Windows.Forms.ToolStripMenuItem()
         Me.MapaVendedorRutaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.MM4 = New System.Windows.Forms.ToolStripMenuItem()
@@ -57,7 +58,7 @@ Partial Class frmPrincipal
         Me.LBLP = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PBCNC = New System.Windows.Forms.PictureBox()
-        Me.AgendaToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.AgendarToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PBS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -158,7 +159,7 @@ Partial Class frmPrincipal
         '
         'MM2
         '
-        Me.MM2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItinerarioRutasToolStripMenuItem, Me.ContactoClienteToolStripMenuItem, Me.AgendaToolStripMenuItem})
+        Me.MM2.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ItinerarioRutasToolStripMenuItem, Me.ContactoClienteToolStripMenuItem, Me.AgendaToolStripMenuItem, Me.AgendarToolStripMenuItem})
         Me.MM2.Name = "MM2"
         Me.MM2.Size = New System.Drawing.Size(113, 24)
         Me.MM2.Text = "&Movimientos"
@@ -174,6 +175,12 @@ Partial Class frmPrincipal
         Me.ContactoClienteToolStripMenuItem.Name = "ContactoClienteToolStripMenuItem"
         Me.ContactoClienteToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
         Me.ContactoClienteToolStripMenuItem.Text = "Contacto Cliente"
+        '
+        'AgendaToolStripMenuItem
+        '
+        Me.AgendaToolStripMenuItem.Name = "AgendaToolStripMenuItem"
+        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
+        Me.AgendaToolStripMenuItem.Text = "Agenda"
         '
         'MM3
         '
@@ -328,11 +335,11 @@ Partial Class frmPrincipal
         Me.PBCNC.TabStop = False
         Me.PBCNC.Visible = False
         '
-        'AgendaToolStripMenuItem
+        'AgendarToolStripMenuItem
         '
-        Me.AgendaToolStripMenuItem.Name = "AgendaToolStripMenuItem"
-        Me.AgendaToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
-        Me.AgendaToolStripMenuItem.Text = "Agenda"
+        Me.AgendarToolStripMenuItem.Name = "AgendarToolStripMenuItem"
+        Me.AgendarToolStripMenuItem.Size = New System.Drawing.Size(193, 24)
+        Me.AgendarToolStripMenuItem.Text = "Agendar Visita"
         '
         'frmPrincipal
         '
@@ -403,4 +410,5 @@ Partial Class frmPrincipal
     Friend WithEvents MapaVendedorRutaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ContactoClienteToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgendaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents AgendarToolStripMenuItem As ToolStripMenuItem
 End Class

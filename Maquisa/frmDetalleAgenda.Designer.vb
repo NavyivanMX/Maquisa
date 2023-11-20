@@ -28,7 +28,7 @@ Partial Class frmDetalleAgenda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(284, 261)
+        Me.ClientSize = New System.Drawing.Size(1031, 575)
         Me.Name = "frmDetalleAgenda"
         Me.Text = "frmDetalleAgenda"
         Me.ResumeLayout(False)

@@ -13,7 +13,7 @@
     Dim LRUT As New List(Of String)
     Dim LVEN As New List(Of String)
     Private Sub frmAgendaVisita_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        ' OPVisualizacionForm(Me)
+        OPVisualizacionForm(Me)
         Me.Icon = frmPrincipal.Icon
         OPLlenaComboBox(CBRUTA, LRUT, LVEN, "SELECT R.CLAVE,V.NOMBRE,R.NOMBRE FROM RUTAS R INNER JOIN VENDEDORES V ON R.VENDEDOR=V.CLAVE WHERE R.ACTIVO=1 ORDER BY R.NOMBRE", frmPrincipal.CadenaConexion)
         LBLNUMPROSPECTO.Text = BDExtraeUnDato("SELECT ISNULL(COUNT(CLAVE),0) FROM PROSPECTOS WHERE RESULTADOPROSPECTO=0", frmPrincipal.CadenaConexion)
@@ -165,4 +165,19 @@
     Private Sub CBRUTA_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBRUTA.SelectedIndexChanged
         LBLVENDEDOR.Text = LVEN(CBRUTA.SelectedIndex)
     End Sub
+
+    Private Sub BTNAGENDAR_Click(sender As Object, e As EventArgs) Handles BTNAGENDAR.Click
+        frmAgendar.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        'TODO: hacer ventana de prospecto
+        'frmAdministrarProspecto.showdialog()
+    End Sub
+
+    Private Sub BTNVERDETALLEVISITA_Click(sender As Object, e As EventArgs) Handles BTNVERDETALLEVISITA1.Click, BTNVERDETALLEVISITA2.Click
+        frmDetalleAgenda.ShowDialog()
+    End Sub
+
+
 End Class
