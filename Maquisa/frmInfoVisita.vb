@@ -92,10 +92,10 @@
     End Sub
 
     Private Sub BTNIMPRIMIR_Click_1(sender As Object, e As EventArgs) Handles BTNIMPRIMIR.Click
-        Dim REP As New rptVisita
-        Dim QUERY As String
-        QUERY = "SELECT * FROM [dbo].[VRTPVISITA] WHERE VISITA='" + VISITA.ToString + "' "
-        MOSTRARMULTIREPORTE(REP, "IMPRESION DE ORDEN DE DISEÑO", 1, BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion), "")
+        ''   Dim REP As New rptVisita
+        'Dim QUERY As String
+        'QUERY = "SELECT * FROM [dbo].[VRTPVISITA] WHERE VISITA='" + VISITA.ToString + "' "
+        'MOSTRARMULTIREPORTE(REP, "IMPRESION DE ORDEN DE DISEÑO", 1, BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion), "")
 
     End Sub
 End Class
