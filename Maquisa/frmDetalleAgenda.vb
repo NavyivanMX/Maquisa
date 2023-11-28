@@ -32,17 +32,17 @@
     End Sub
 
     Private Sub BTNAGENDAR_Click(sender As Object, e As EventArgs) Handles BTNAGENDAR.Click
-        frmAgendar.ShowDialog()
+        'frmAgendar.ShowDialog()
     End Sub
 
-    Private Sub BTNIZQUIERDA_Click(sender As Object, e As EventArgs) Handles BTNIZQUIERDA.Click
-        Me.Close()
-    End Sub
+    'Private Sub BTNIZQUIERDA_Click(sender As Object, e As EventArgs) Handles BTNIZQUIERDA.Clicks
+    '    Me.Close()
+    'End Sub
 
     Private Sub DGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
-        frmInfoVisita.VISITA = DGV.Item(0, DGV.CurrentRow.Index).Value.ToString
-        '  Dim VINFOV As New frmInfoVisita
-        ' VINFOV.ShowDialog()
-        frmInfoVisita.ShowDialog()
+        'frmInfoVisita.VISITA = DGV.Item(0, DGV.CurrentRow.Index).Value.ToString
+        ''  Dim VINFOV As New frmInfoVisita
+        '' VINFOV.ShowDialog()
+        'frmInfoVisita.ShowDialog()
     End Sub
 End Class
