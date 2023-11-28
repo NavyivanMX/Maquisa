@@ -254,6 +254,11 @@
         'VAVIS.ShowDialog()
     End Sub
 
+    Private Sub MapaClientesEnRutaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MapaClientesEnRutaToolStripMenuItem.Click
+        Dim VRMC As New frmRutaMapaClientes
+        VRMC.ShowDialog()
+    End Sub
+
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click
         frmEmpresa.ShowDialog()
     End Sub
