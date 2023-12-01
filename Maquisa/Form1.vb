@@ -250,8 +250,8 @@
     End Sub
 
     Private Sub AgendarToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles AgendarToolStripMenuItem.Click
-        'Dim VAVIS As New frmAgendar
-        'VAVIS.ShowDialog()
+        Dim VAVIS As New frmAgendar
+        VAVIS.ShowDialog()
     End Sub
 
     Private Sub MapaClientesEnRutaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MapaClientesEnRutaToolStripMenuItem.Click

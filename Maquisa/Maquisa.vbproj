@@ -150,6 +150,12 @@
     <Compile Include="frmAgenda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAgendar.Designer.vb">
+      <DependentUpon>frmAgendar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgendar.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAgendaVisita.Designer.vb">
       <DependentUpon>frmAgendaVisita.vb</DependentUpon>
     </Compile>
@@ -282,6 +288,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgenda.resx">
       <DependentUpon>frmAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgendar.resx">
+      <DependentUpon>frmAgendar.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgendaVisita.resx">
       <DependentUpon>frmAgendaVisita.vb</DependentUpon>
