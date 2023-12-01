@@ -36,6 +36,9 @@ Partial Class frmDetalleAgenda
         Me.LBLRUTA = New System.Windows.Forms.Label()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.DGV = New System.Windows.Forms.DataGridView()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.LBLVENDEDOR = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -44,10 +47,10 @@ Partial Class frmDetalleAgenda
         Me.BTNAGENDAR.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BTNAGENDAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNAGENDAR.ForeColor = System.Drawing.Color.Black
-        Me.BTNAGENDAR.Location = New System.Drawing.Point(921, 16)
-        Me.BTNAGENDAR.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BTNAGENDAR.Location = New System.Drawing.Point(691, 13)
+        Me.BTNAGENDAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNAGENDAR.Name = "BTNAGENDAR"
-        Me.BTNAGENDAR.Size = New System.Drawing.Size(187, 95)
+        Me.BTNAGENDAR.Size = New System.Drawing.Size(140, 77)
         Me.BTNAGENDAR.TabIndex = 1172
         Me.BTNAGENDAR.Text = "AGENDAR"
         Me.BTNAGENDAR.UseVisualStyleBackColor = False
@@ -57,10 +60,10 @@ Partial Class frmDetalleAgenda
         Me.BTNEDITAR.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BTNEDITAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNEDITAR.ForeColor = System.Drawing.Color.Black
-        Me.BTNEDITAR.Location = New System.Drawing.Point(287, 20)
-        Me.BTNEDITAR.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BTNEDITAR.Location = New System.Drawing.Point(215, 16)
+        Me.BTNEDITAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNEDITAR.Name = "BTNEDITAR"
-        Me.BTNEDITAR.Size = New System.Drawing.Size(187, 95)
+        Me.BTNEDITAR.Size = New System.Drawing.Size(140, 77)
         Me.BTNEDITAR.TabIndex = 1173
         Me.BTNEDITAR.Text = "EDITAR"
         Me.BTNEDITAR.UseVisualStyleBackColor = False
@@ -70,10 +73,9 @@ Partial Class frmDetalleAgenda
         Me.LBLNUMPROSPECTO.AutoSize = True
         Me.LBLNUMPROSPECTO.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
         Me.LBLNUMPROSPECTO.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLNUMPROSPECTO.Location = New System.Drawing.Point(1332, 119)
-        Me.LBLNUMPROSPECTO.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LBLNUMPROSPECTO.Location = New System.Drawing.Point(999, 97)
         Me.LBLNUMPROSPECTO.Name = "LBLNUMPROSPECTO"
-        Me.LBLNUMPROSPECTO.Size = New System.Drawing.Size(16, 22)
+        Me.LBLNUMPROSPECTO.Size = New System.Drawing.Size(13, 17)
         Me.LBLNUMPROSPECTO.TabIndex = 1179
         Me.LBLNUMPROSPECTO.Text = "."
         '
@@ -81,10 +83,9 @@ Partial Class frmDetalleAgenda
         '
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!)
-        Me.Label2.Location = New System.Drawing.Point(1145, 119)
-        Me.Label2.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label2.Location = New System.Drawing.Point(859, 97)
         Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(171, 22)
+        Me.Label2.Size = New System.Drawing.Size(136, 17)
         Me.Label2.TabIndex = 1178
         Me.Label2.Text = "# Prospecto Pend"
         '
@@ -93,10 +94,10 @@ Partial Class frmDetalleAgenda
         Me.BTNADMINPROSPECTO.BackColor = System.Drawing.SystemColors.ActiveCaption
         Me.BTNADMINPROSPECTO.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNADMINPROSPECTO.ForeColor = System.Drawing.Color.Black
-        Me.BTNADMINPROSPECTO.Location = New System.Drawing.Point(1143, 16)
-        Me.BTNADMINPROSPECTO.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BTNADMINPROSPECTO.Location = New System.Drawing.Point(857, 13)
+        Me.BTNADMINPROSPECTO.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNADMINPROSPECTO.Name = "BTNADMINPROSPECTO"
-        Me.BTNADMINPROSPECTO.Size = New System.Drawing.Size(187, 95)
+        Me.BTNADMINPROSPECTO.Size = New System.Drawing.Size(140, 77)
         Me.BTNADMINPROSPECTO.TabIndex = 1177
         Me.BTNADMINPROSPECTO.Text = "ADMIN PROSPECTO"
         Me.BTNADMINPROSPECTO.UseVisualStyleBackColor = False
@@ -106,10 +107,9 @@ Partial Class frmDetalleAgenda
         Me.LBLFECHA.AutoSize = True
         Me.LBLFECHA.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
         Me.LBLFECHA.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLFECHA.Location = New System.Drawing.Point(127, 127)
-        Me.LBLFECHA.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LBLFECHA.Location = New System.Drawing.Point(95, 103)
         Me.LBLFECHA.Name = "LBLFECHA"
-        Me.LBLFECHA.Size = New System.Drawing.Size(20, 28)
+        Me.LBLFECHA.Size = New System.Drawing.Size(16, 22)
         Me.LBLFECHA.TabIndex = 1182
         Me.LBLFECHA.Text = "."
         '
@@ -117,10 +117,9 @@ Partial Class frmDetalleAgenda
         '
         Me.LBL1.AutoSize = True
         Me.LBL1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
-        Me.LBL1.Location = New System.Drawing.Point(28, 128)
-        Me.LBL1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LBL1.Location = New System.Drawing.Point(21, 104)
         Me.LBL1.Name = "LBL1"
-        Me.LBL1.Size = New System.Drawing.Size(90, 28)
+        Me.LBL1.Size = New System.Drawing.Size(71, 22)
         Me.LBL1.TabIndex = 1181
         Me.LBL1.Text = "Fecha:"
         '
@@ -131,10 +130,10 @@ Partial Class frmDetalleAgenda
         Me.BTNIZQUIERDA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNIZQUIERDA.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNIZQUIERDA.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNIZQUIERDA.Location = New System.Drawing.Point(23, 15)
-        Me.BTNIZQUIERDA.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.BTNIZQUIERDA.Location = New System.Drawing.Point(17, 12)
+        Me.BTNIZQUIERDA.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNIZQUIERDA.Name = "BTNIZQUIERDA"
-        Me.BTNIZQUIERDA.Size = New System.Drawing.Size(107, 98)
+        Me.BTNIZQUIERDA.Size = New System.Drawing.Size(80, 80)
         Me.BTNIZQUIERDA.TabIndex = 1271
         Me.BTNIZQUIERDA.Text = "&G"
         Me.BTNIZQUIERDA.UseVisualStyleBackColor = False
@@ -144,10 +143,9 @@ Partial Class frmDetalleAgenda
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
         Me.Label1.ForeColor = System.Drawing.SystemColors.Desktop
-        Me.Label1.Location = New System.Drawing.Point(701, 128)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(12, 133)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(380, 28)
+        Me.Label1.Size = New System.Drawing.Size(296, 22)
         Me.Label1.TabIndex = 1272
         Me.Label1.Text = "Doble Click para ver Info. Visita"
         '
@@ -156,10 +154,9 @@ Partial Class frmDetalleAgenda
         Me.LBLRUTA.AutoSize = True
         Me.LBLRUTA.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
         Me.LBLRUTA.ForeColor = System.Drawing.SystemColors.HotTrack
-        Me.LBLRUTA.Location = New System.Drawing.Point(383, 128)
-        Me.LBLRUTA.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.LBLRUTA.Location = New System.Drawing.Point(287, 104)
         Me.LBLRUTA.Name = "LBLRUTA"
-        Me.LBLRUTA.Size = New System.Drawing.Size(20, 28)
+        Me.LBLRUTA.Size = New System.Drawing.Size(16, 22)
         Me.LBLRUTA.TabIndex = 1274
         Me.LBLRUTA.Text = "."
         '
@@ -167,10 +164,9 @@ Partial Class frmDetalleAgenda
         '
         Me.Label4.AutoSize = True
         Me.Label4.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
-        Me.Label4.Location = New System.Drawing.Point(307, 129)
-        Me.Label4.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label4.Location = New System.Drawing.Point(230, 105)
         Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(73, 28)
+        Me.Label4.Size = New System.Drawing.Size(59, 22)
         Me.Label4.TabIndex = 1273
         Me.Label4.Text = "Ruta:"
         '
@@ -181,8 +177,7 @@ Partial Class frmDetalleAgenda
         DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue
         Me.DGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV.Location = New System.Drawing.Point(16, 160)
-        Me.DGV.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.DGV.Location = New System.Drawing.Point(12, 158)
         Me.DGV.Name = "DGV"
         Me.DGV.ReadOnly = True
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -193,14 +188,51 @@ Partial Class frmDetalleAgenda
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DGV.Size = New System.Drawing.Size(1345, 586)
+        Me.DGV.Size = New System.Drawing.Size(1009, 476)
         Me.DGV.TabIndex = 1275
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Black
+        Me.Button1.Location = New System.Drawing.Point(446, 16)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(140, 77)
+        Me.Button1.TabIndex = 1276
+        Me.Button1.Text = "REPORTE DEL DIA"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'LBLVENDEDOR
+        '
+        Me.LBLVENDEDOR.AutoSize = True
+        Me.LBLVENDEDOR.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.LBLVENDEDOR.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLVENDEDOR.Location = New System.Drawing.Point(536, 105)
+        Me.LBLVENDEDOR.Name = "LBLVENDEDOR"
+        Me.LBLVENDEDOR.Size = New System.Drawing.Size(16, 22)
+        Me.LBLVENDEDOR.TabIndex = 1278
+        Me.LBLVENDEDOR.Text = "."
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label5.Location = New System.Drawing.Point(425, 105)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(105, 22)
+        Me.Label5.TabIndex = 1277
+        Me.Label5.Text = "Vendedor:"
         '
         'frmDetalleAgenda
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1377, 762)
+        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.Controls.Add(Me.LBLVENDEDOR)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.DGV)
         Me.Controls.Add(Me.LBLRUTA)
         Me.Controls.Add(Me.Label4)
@@ -213,7 +245,6 @@ Partial Class frmDetalleAgenda
         Me.Controls.Add(Me.BTNADMINPROSPECTO)
         Me.Controls.Add(Me.BTNEDITAR)
         Me.Controls.Add(Me.BTNAGENDAR)
-        Me.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
         Me.Name = "frmDetalleAgenda"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " Detalle Agenda"
@@ -235,4 +266,7 @@ Partial Class frmDetalleAgenda
     Friend WithEvents LBLRUTA As Label
     Friend WithEvents Label4 As Label
     Friend WithEvents DGV As DataGridView
+    Friend WithEvents Button1 As Button
+    Friend WithEvents LBLVENDEDOR As Label
+    Friend WithEvents Label5 As Label
 End Class

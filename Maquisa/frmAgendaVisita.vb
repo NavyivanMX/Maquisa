@@ -179,7 +179,7 @@
         Dim POS As Integer
         POS = CType(sender.TAG, Integer)
         Dim VDA As New frmDetalleAgenda
-        VDA.MOSTRAR(LRUT(CBRUTA.SelectedIndex), CType(LBLFECHAS(POS).Text, DateTime))
+        VDA.MOSTRAR(LRUT(CBRUTA.SelectedIndex), CType(LBLFECHAS(POS).Text, DateTime), LBLNOMVEND(POS).Text)
     End Sub
 
 

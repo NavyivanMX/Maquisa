@@ -9,11 +9,12 @@
 
     End Sub
 
-    Public Sub MOSTRAR(ByVal PRUTA As Integer, ByVal PFECHA As DateTime)
+    Public Sub MOSTRAR(ByVal PRUTA As Integer, ByVal PFECHA As DateTime, ByVal PVENDEDOR As String)
         IDRUTA = PRUTA
         Fecha = PFECHA
         LBLFECHA.Text = PFECHA
         LBLRUTA.Text = PRUTA
+        LBLVENDEDOR.TEXT = PVENDEDOR
         CARGADATOS()
         Me.ShowDialog()
 
@@ -44,5 +45,12 @@
         ''  Dim VINFOV As New frmInfoVisita
         '' VINFOV.ShowDialog()
         'frmInfoVisita.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim QUER As String
+        QUER = "SELECT * FROM VRTPVISITA WHERE FECHA='" + LBLFECHA.Text + "' AND VENDEDOR='" + LBLVENDEDOR.Text + "' "
+        Dim REPI As New rptReporteDiaVendedor
+        MOSTRARREPORTE(REPI, "Reporte del Dia Vendedor", BDLlenaTabla(QUER, frmPrincipal.CadenaConexion), "")
     End Sub
 End Class

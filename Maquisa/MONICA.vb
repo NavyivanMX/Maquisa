@@ -32,6 +32,44 @@ Module MONICA
         Detener
         Pausar
     End Enum
+
+    Public Function MOSTRARREPORTE(ByVal REP As CrystalDecisions.CrystalReports.Engine.ReportDocument, ByVal NombreVentana As String, ByVal DT As DataTable, ByVal NombreImpresora As String) As Boolean
+        Dim FRM As New System.Windows.Forms.Form
+        Dim CRV As New CrystalDecisions.Windows.Forms.CrystalReportViewer
+        Dim ImpDefault As String
+        ImpDefault = ""
+        If NombreImpresora = "" Then
+        Else
+            ImpDefault = ImpresoraDefault()
+            For i As Integer = 0 To PrinterSettings.InstalledPrinters.Count - 1
+                Dim a As New PrinterSettings()
+                a.PrinterName = PrinterSettings.InstalledPrinters(i).ToString()
+                If a.PrinterName.ToUpper = NombreImpresora.ToUpper Then
+                    SetDefPrinter(NombreImpresora)
+                    NombreImpresora = PrinterSettings.InstalledPrinters(i).ToString()
+                    REP.PrintOptions.PrinterName = NombreImpresora
+                End If
+            Next
+        End If
+        REP.SetDataSource(DT)
+        CRV.ReportSource = REP
+        CRV.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        CRV.Dock = System.Windows.Forms.DockStyle.Fill
+        FRM.Controls.Add(CRV)
+        FRM.Text = NombreVentana
+        FRM.WindowState = FormWindowState.Maximized
+        FRM.ShowDialog()
+        REP.Dispose()
+        CRV.Dispose()
+        FRM.Dispose()
+        If NombreImpresora = "" Then
+        Else
+            SetDefPrinter(ImpDefault)
+        End If
+
+        Return False
+    End Function
+
     Public Function OpObtenerMD5(ByVal fichero As String) As String
         Dim cadenaMD5 As String = ""
         Dim cadenaFichero As FileStream
