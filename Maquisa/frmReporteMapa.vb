@@ -72,7 +72,7 @@ Public Class frmReporteMapa
             If CBVEN.SelectedIndex = 0 Then
                 Return
             End If
-            QUERY = " Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=T.NOMBRE +' '+ISNULL(C.NOMBRE,'')+' '+CONVERT(VARCHAR(10),D.FECHA,108)
+            QUERY = " Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=T.NOMBRE +' '+ISNULL(C.NOMBRE,'')+' '+CONVERT(VARCHAR(10),D.FECHA,108),D.ID
 From GEOMARCAS D INNER JOIN TIPOSCHECK T
 ON D.TipoCheckId=T.Clave LEFT JOIN CLIENTES C
 ON D.ClientId=C.Clave Where VendedorId = " + LVEN(CBVEN.SelectedIndex) + " And FECHA >=@INI And FECHA<@FIN ORDER BY D.FECHA"
@@ -81,7 +81,7 @@ ON D.ClientId=C.Clave Where VendedorId = " + LVEN(CBVEN.SelectedIndex) + " And F
             If CBRUTA.SelectedIndex = 0 Then
                 Return
             End If
-            QUERY = "Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=T.NOMBRE +' '+ISNULL(C.NOMBRE,'')+' '+CONVERT(VARCHAR(10),D.FECHA,108)
+            QUERY = "Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=T.NOMBRE +' '+ISNULL(C.NOMBRE,'')+' '+CONVERT(VARCHAR(10),D.FECHA,108),D.ID
 From GEOMARCAS D INNER JOIN TIPOSCHECK T
 ON D.TipoCheckId=T.Clave LEFT JOIN CLIENTES C
 ON D.ClientId=C.ClaveWhere D.RUTA = " + LRUTA(CBRUTA.SelectedIndex) + " And FECHA >=@INI And FECHA<@FIN ORDER BY D.FECHA"
@@ -91,6 +91,7 @@ ON D.ClientId=C.ClaveWhere D.RUTA = " + LRUTA(CBRUTA.SelectedIndex) + " And FECH
 
 
         DGV.DataSource = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion, DTDE.Value.Date, DTDE.Value.Date.AddDays(1))
+        DGV.Columns(4).Visible = False
         DGV.Columns(3).Visible = False
         DGV.Columns(2).Visible = False
         DGV.Columns(1).Visible = False
@@ -129,7 +130,7 @@ ON D.ClientId=C.ClaveWhere D.RUTA = " + LRUTA(CBRUTA.SelectedIndex) + " And FECH
             Dim GMR As New GMapRoute(ss.Route, "Mi Ruta")
             GMR.Duration = ss.DurationValue
             OVERLAYRUTAS.Routes.Add(GMR)
-
+            BDEjecutarSql("UPDATE GEOMARCAS SET DISTANCIAMTS='" + ss.DistanceValue.ToString + "',DISTANCIA='" + ss.Distance.ToString + "',TIEMPOSEG ='" + ss.DurationValue.ToString + "',TIEMPO='" + ss.Duration.ToString + "',DireccionInicio='" + ss.StartAddress + "',DireccionFinal='" + ss.EndAddress + "' WHERE ID=" + DGV.Item(5, x).Value.ToString, frmPrincipal.CadenaConexion)
             OLCLIENTE.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(PIni.Lat, PIni.Lng), Icon2GMarker(DGV.Item(3, x).Value)))
             OLCLIENTE.Markers(x).ToolTipText = vbNewLine + DGV.Item(4, x).Value.ToString + vbNewLine + " T: " + ss.DurationValue.ToString + vbNewLine + " D: " + ss.DistanceValue.ToString
 
