@@ -9,12 +9,13 @@
 
     End Sub
 
-    Public Sub MOSTRAR(ByVal PRUTA As Integer, ByVal PFECHA As DateTime, ByVal PVENDEDOR As String)
+    Public Sub MOSTRAR(ByVal PRUTA As Integer, ByVal PFECHA As DateTime, ByVal PVENDEDOR As String, ByVal PVISITADOS As String)
         IDRUTA = PRUTA
         Fecha = PFECHA
         LBLFECHA.Text = PFECHA
         LBLRUTA.Text = PRUTA
-        LBLVENDEDOR.TEXT = PVENDEDOR
+        LBLVENDEDOR.Text = PVENDEDOR
+        LBLVISITAS.Text = PVISITADOS
         CARGADATOS()
         Me.ShowDialog()
 
@@ -32,7 +33,7 @@
 
     End Sub
 
-    Private Sub BTNAGENDAR_Click(sender As Object, e As EventArgs) Handles BTNAGENDAR.Click
+    Private Sub BTNAGENDAR_Click(sender As Object, e As EventArgs) Handles LBLVISITADOS.Click
         'frmAgendar.ShowDialog()
     End Sub
 
@@ -49,8 +50,17 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim QUER As String
-        QUER = "SELECT * FROM VRTPVISITA WHERE FECHA='" + LBLFECHA.Text + "' AND VENDEDOR='" + LBLVENDEDOR.Text + "' "
+        QUER = "SELECT *, VISITADOS='" + LBLVISITAS.Text + "' FROM VRTPVISITA "
+        QUER = QUER + " WHERE FECHA='" + LBLFECHA.Text + "' AND VENDEDOR='" + LBLVENDEDOR.Text + "' ORDER BY FECHAINI ASC"
         Dim REPI As New rptReporteDiaVendedor
         MOSTRARREPORTE(REPI, "Reporte del Dia Vendedor", BDLlenaTabla(QUER, frmPrincipal.CadenaConexion), "")
+    End Sub
+
+    Private Sub Label6_Click(sender As Object, e As EventArgs) Handles Label6.Click
+
+    End Sub
+
+    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles LBLVISITAS.Click
+
     End Sub
 End Class

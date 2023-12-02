@@ -24,7 +24,7 @@ Partial Class frmDetalleAgenda
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.BTNAGENDAR = New System.Windows.Forms.Button()
+        Me.LBLVISITADOS = New System.Windows.Forms.Button()
         Me.BTNEDITAR = New System.Windows.Forms.Button()
         Me.LBLNUMPROSPECTO = New System.Windows.Forms.Label()
         Me.Label2 = New System.Windows.Forms.Label()
@@ -39,21 +39,23 @@ Partial Class frmDetalleAgenda
         Me.Button1 = New System.Windows.Forms.Button()
         Me.LBLVENDEDOR = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
+        Me.LBLVISITAS = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BTNAGENDAR
+        'LBLVISITADOS
         '
-        Me.BTNAGENDAR.BackColor = System.Drawing.SystemColors.ActiveCaption
-        Me.BTNAGENDAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNAGENDAR.ForeColor = System.Drawing.Color.Black
-        Me.BTNAGENDAR.Location = New System.Drawing.Point(691, 13)
-        Me.BTNAGENDAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BTNAGENDAR.Name = "BTNAGENDAR"
-        Me.BTNAGENDAR.Size = New System.Drawing.Size(140, 77)
-        Me.BTNAGENDAR.TabIndex = 1172
-        Me.BTNAGENDAR.Text = "AGENDAR"
-        Me.BTNAGENDAR.UseVisualStyleBackColor = False
+        Me.LBLVISITADOS.BackColor = System.Drawing.SystemColors.ActiveCaption
+        Me.LBLVISITADOS.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLVISITADOS.ForeColor = System.Drawing.Color.Black
+        Me.LBLVISITADOS.Location = New System.Drawing.Point(691, 13)
+        Me.LBLVISITADOS.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.LBLVISITADOS.Name = "LBLVISITADOS"
+        Me.LBLVISITADOS.Size = New System.Drawing.Size(140, 77)
+        Me.LBLVISITADOS.TabIndex = 1172
+        Me.LBLVISITADOS.Text = "AGENDAR"
+        Me.LBLVISITADOS.UseVisualStyleBackColor = False
         '
         'BTNEDITAR
         '
@@ -225,11 +227,34 @@ Partial Class frmDetalleAgenda
         Me.Label5.TabIndex = 1277
         Me.Label5.Text = "Vendedor:"
         '
+        'LBLVISITAS
+        '
+        Me.LBLVISITAS.AutoSize = True
+        Me.LBLVISITAS.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.LBLVISITAS.ForeColor = System.Drawing.SystemColors.HotTrack
+        Me.LBLVISITAS.Location = New System.Drawing.Point(536, 133)
+        Me.LBLVISITAS.Name = "LBLVISITAS"
+        Me.LBLVISITAS.Size = New System.Drawing.Size(16, 22)
+        Me.LBLVISITAS.TabIndex = 1280
+        Me.LBLVISITAS.Text = "."
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Font = New System.Drawing.Font("Arial Rounded MT Bold", 14.25!)
+        Me.Label6.Location = New System.Drawing.Point(425, 133)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(100, 22)
+        Me.Label6.TabIndex = 1279
+        Me.Label6.Text = "Visitados:"
+        '
         'frmDetalleAgenda
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.Controls.Add(Me.LBLVISITAS)
+        Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.LBLVENDEDOR)
         Me.Controls.Add(Me.Label5)
         Me.Controls.Add(Me.Button1)
@@ -244,7 +269,7 @@ Partial Class frmDetalleAgenda
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BTNADMINPROSPECTO)
         Me.Controls.Add(Me.BTNEDITAR)
-        Me.Controls.Add(Me.BTNAGENDAR)
+        Me.Controls.Add(Me.LBLVISITADOS)
         Me.Name = "frmDetalleAgenda"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " Detalle Agenda"
@@ -254,7 +279,7 @@ Partial Class frmDetalleAgenda
 
     End Sub
 
-    Friend WithEvents BTNAGENDAR As Button
+    Friend WithEvents LBLVISITADOS As Button
     Friend WithEvents BTNEDITAR As Button
     Friend WithEvents LBLNUMPROSPECTO As Label
     Friend WithEvents Label2 As Label
@@ -269,4 +294,6 @@ Partial Class frmDetalleAgenda
     Friend WithEvents Button1 As Button
     Friend WithEvents LBLVENDEDOR As Label
     Friend WithEvents Label5 As Label
+    Friend WithEvents LBLVISITAS As Label
+    Friend WithEvents Label6 As Label
 End Class
