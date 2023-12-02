@@ -65,41 +65,47 @@ Public Class frmReporteMapa
         End If
     End Sub
     Private Sub CARGADATOS()
-        BDEjecutarSql("EXEC SPACTUALIZAICONGEOMARCA @INI,@FIN", frmPrincipal.CadenaConexion, DTDE.Value.Date, DTDE.Value.Date.AddDays(1))
-        Dim QUERY As String
-        QUERY = ""
-        If RBVEN.Checked Then
-            If CBVEN.SelectedIndex = 0 Then
-                Return
+        Me.Cursor = Cursors.WaitCursor
+        Try
+            BDEjecutarSql("EXEC SPACTUALIZAICONGEOMARCA @INI,@FIN", frmPrincipal.CadenaConexion, DTDE.Value.Date, DTDE.Value.Date.AddDays(1))
+            Dim QUERY As String
+            QUERY = ""
+            If RBVEN.Checked Then
+                If CBVEN.SelectedIndex = 0 Then
+                    Return
+                End If
+                QUERY = " Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=T.NOMBRE +' '+ISNULL(C.NOMBRE,'')+' '+CONVERT(VARCHAR(10),D.FECHA,108),D.ID
+                From GEOMARCAS D INNER JOIN TIPOSCHECK T
+                ON D.TipoCheckId=T.Clave LEFT JOIN CLIENTES C
+                ON D.ClientId=C.Clave Where VendedorId = " + LVEN(CBVEN.SelectedIndex) + " And FECHA >=@INI And FECHA<@FIN ORDER BY D.FECHA"
             End If
-            QUERY = " Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=T.NOMBRE +' '+ISNULL(C.NOMBRE,'')+' '+CONVERT(VARCHAR(10),D.FECHA,108),D.ID
-From GEOMARCAS D INNER JOIN TIPOSCHECK T
-ON D.TipoCheckId=T.Clave LEFT JOIN CLIENTES C
-ON D.ClientId=C.Clave Where VendedorId = " + LVEN(CBVEN.SelectedIndex) + " And FECHA >=@INI And FECHA<@FIN ORDER BY D.FECHA"
-        End If
-        If RBRUTA.Checked Then
-            If CBRUTA.SelectedIndex = 0 Then
-                Return
+            If RBRUTA.Checked Then
+                If CBRUTA.SelectedIndex = 0 Then
+                    Return
+                End If
+                QUERY = "Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=T.NOMBRE +' '+ISNULL(C.NOMBRE,'')+' '+CONVERT(VARCHAR(10),D.FECHA,108),D.ID
+                From GEOMARCAS D INNER JOIN TIPOSCHECK T
+                ON D.TipoCheckId=T.Clave LEFT JOIN CLIENTES C
+                ON D.ClientId=C.ClaveWhere D.RUTA = " + LRUTA(CBRUTA.SelectedIndex) + " And FECHA >=@INI And FECHA<@FIN ORDER BY D.FECHA"
             End If
-            QUERY = "Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=T.NOMBRE +' '+ISNULL(C.NOMBRE,'')+' '+CONVERT(VARCHAR(10),D.FECHA,108),D.ID
-From GEOMARCAS D INNER JOIN TIPOSCHECK T
-ON D.TipoCheckId=T.Clave LEFT JOIN CLIENTES C
-ON D.ClientId=C.ClaveWhere D.RUTA = " + LRUTA(CBRUTA.SelectedIndex) + " And FECHA >=@INI And FECHA<@FIN ORDER BY D.FECHA"
-        End If
 
-        DT = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion, DTDE.Value.Date, DTDE.Value.Date.AddDays(1))
+            DT = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion, DTDE.Value.Date, DTDE.Value.Date.AddDays(1))
 
 
-        DGV.DataSource = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion, DTDE.Value.Date, DTDE.Value.Date.AddDays(1))
-        DGV.Columns(4).Visible = False
-        DGV.Columns(3).Visible = False
-        DGV.Columns(2).Visible = False
-        DGV.Columns(1).Visible = False
-        DGV.Columns(0).Visible = False
-        DgvAjusteEncabezado(DGV, 4)
+            DGV.DataSource = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion, DTDE.Value.Date, DTDE.Value.Date.AddDays(1))
+            DGV.Columns(5).Visible = False
+            DGV.Columns(3).Visible = False
+            DGV.Columns(2).Visible = False
+            DGV.Columns(1).Visible = False
+            DGV.Columns(0).Visible = False
+            DgvAjusteEncabezado(DGV, 4)
 
-        DGV.Refresh()
-        EnrutarGrid()
+            DGV.Refresh()
+            EnrutarGrid()
+        Catch ex As Exception
+
+        End Try
+        Me.Cursor = Cursors.Default
     End Sub
 
     Private Sub EnrutarGrid()
@@ -182,7 +188,6 @@ ON D.ClientId=C.ClaveWhere D.RUTA = " + LRUTA(CBRUTA.SelectedIndex) + " And FECH
         If MAPA IsNot Nothing Then
             CARGADATOS()
         End If
-
     End Sub
 
     Private Sub CBTV_SelectedIndexChanged(sender As Object, e As EventArgs) Handles CBTV.SelectedIndexChanged
