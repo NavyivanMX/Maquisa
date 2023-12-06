@@ -156,6 +156,9 @@
             If DS >= 2 Then
                 reg = pFec.AddDays(-1 * (DS - 1))
             End If
+            reg = reg.AddHours(reg.Hour * -1)
+            reg = reg.AddMinutes(reg.Minute * -1)
+            reg = reg.AddSeconds(reg.Second * -1)
         Catch ex As Exception
 
         End Try
@@ -179,7 +182,7 @@
         Dim POS As Integer
         POS = CType(sender.TAG, Integer)
         Dim VDA As New frmDetalleAgenda
-        VDA.MOSTRAR(LRUT(CBRUTA.SelectedIndex), CType(LBLFECHAS(POS).Text, DateTime), LBLNOMVEND(POS).Text, LBLCVISITADO(POS).Text)
+        VDA.MOSTRAR(LRUT(CBRUTA.SelectedIndex), FEC.AddDays(POS - 1), LBLNOMVEND(POS).Text, LBLCVISITADO(POS).Text)
     End Sub
 
 
