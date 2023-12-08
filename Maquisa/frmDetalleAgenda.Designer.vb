@@ -69,6 +69,7 @@ Partial Class frmDetalleAgenda
         Me.BTNEDITAR.TabIndex = 1173
         Me.BTNEDITAR.Text = "EDITAR"
         Me.BTNEDITAR.UseVisualStyleBackColor = False
+        Me.BTNEDITAR.Visible = False
         '
         'LBLNUMPROSPECTO
         '

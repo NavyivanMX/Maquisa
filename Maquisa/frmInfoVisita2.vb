@@ -39,38 +39,7 @@
                 LBLHORAREAGENDADO.Text = LECTOR(9)
             End If
             TXTCOMENTARIO.Text = LECTOR(10)
-            'If CType(LECTOR(4), Boolean) Then
-            '        LBLFOL.Text = "SI"
-            '        LBLDE.Visible = True
-            '        LBLX1.Visible = True
-            '        LBLA.Visible = True
-            '        LBLX2.Visible = True
-            '        LBLDE.Text = LECTOR(5)
-            '        LBLA.Text = LECTOR(6)
-            '    Else
-            '        LBLFOL.Text = "NO"
-            '        LBLDE.Visible = False
-            '        LBLX1.Visible = False
-            '        LBLA.Visible = False
-            '        LBLX2.Visible = False
-            '    End If
-            '    If CType(LECTOR(7), Boolean) Then
-            '        LBLR.Text = "SI"
-            '        LBLX.Visible = False
-            '        LBLAR.Visible = False
-            '    Else
-            '        LBLX.Visible = True
-            '        LBLAR.Visible = True
-            '        LBLAR.Text = LECTOR(8)
-            '        LBLR.Text = "NO"
 
-            '    End If
-            '    LBLCOM.Text = LECTOR(9)
-            '    If LECTOR(10) = "1" Then
-            '        LBLREV.Text = "SI"
-            '    ElseIf LECTOR(10) = "0" Then
-            '        LBLREV.Text = "NO"
-            '    End If
         End If
         LECTOR.Close()
 
@@ -82,8 +51,9 @@
     End Sub
 
     Private Sub BTNIMPRIMIR_Click(sender As Object, e As EventArgs) Handles BTNGUARDAR.Click
-        Dim SQLGUARDACOMENTARIO As New SqlClient.SqlCommand("UPDATE AGENDAVISITARUTA SET OBSERVACION=@COM ", frmPrincipal.CONX)
+        Dim SQLGUARDACOMENTARIO As New SqlClient.SqlCommand("UPDATE AGENDAVISITARUTA SET OBSERVACION=@COM WHERE VISITA=@VIS ", frmPrincipal.CONX)
         SQLGUARDACOMENTARIO.Parameters.Add("@COM", SqlDbType.VarChar).Value = TXTCOMENTARIO.Text
+        SQLGUARDACOMENTARIO.Parameters.Add("@VIS", SqlDbType.Int).Value = LBLVISITA.Text
         SQLGUARDACOMENTARIO.ExecuteNonQuery()
         MessageBox.Show("La información ha sido guardada correctamente", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
