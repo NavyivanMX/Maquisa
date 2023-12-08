@@ -137,7 +137,6 @@ Partial Class frmDetalleAgenda
         Me.BTNIZQUIERDA.Name = "BTNIZQUIERDA"
         Me.BTNIZQUIERDA.Size = New System.Drawing.Size(80, 80)
         Me.BTNIZQUIERDA.TabIndex = 1271
-        Me.BTNIZQUIERDA.Text = "&G"
         Me.BTNIZQUIERDA.UseVisualStyleBackColor = False
         '
         'Label1

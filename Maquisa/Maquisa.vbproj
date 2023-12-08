@@ -204,6 +204,12 @@
     <Compile Include="frmEmpresa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmInfoVisita2.Designer.vb">
+      <DependentUpon>frmInfoVisita2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfoVisita2.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmItinerarioRuta.designer.vb">
       <DependentUpon>frmItinerarioRuta.vb</DependentUpon>
     </Compile>
@@ -321,6 +327,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmEmpresa.resx">
       <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoVisita2.resx">
+      <DependentUpon>frmInfoVisita2.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmItinerarioRuta.resx">
       <DependentUpon>frmItinerarioRuta.vb</DependentUpon>

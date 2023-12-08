@@ -40,10 +40,8 @@
 
 
     Private Sub DGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
-        'frmInfoVisita.VISITA = DGV.Item(0, DGV.CurrentRow.Index).Value.ToString
-        ''  Dim VINFOV As New frmInfoVisita
-        '' VINFOV.ShowDialog()
-        'frmInfoVisita.ShowDialog()
+        frmInfoVisita2.VISITA = DGV.Item(0, DGV.CurrentRow.Index).Value.ToString
+        frmInfoVisita2.ShowDialog()
     End Sub
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
