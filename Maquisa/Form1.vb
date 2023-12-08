@@ -29,11 +29,11 @@
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ciudad = "Mazatlán, Sin."
          IP = "structureserver2.noip.me"
-        BD = "MAQUISAP"
+        BD = "MAQUISA"
         USER = "MAROSILOCAL"
         PASS = "Loco*1234"
         Empresa = 1
-        VERSION = "1.3"
+        VERSION = "1.4"
         Sistema = "Maquisa"
         COLORFUENTE = My.Settings.COLORDEFAULT
 

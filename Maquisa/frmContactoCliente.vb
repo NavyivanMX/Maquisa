@@ -12,6 +12,7 @@
         CBCLIENTE.Enabled = V
         TXTNOM.Enabled = Not V
         TXTPUESTO.Enabled = Not V
+        TXTOBSERVACION.Enabled = Not V
         DGV.Enabled = Not V
 
         BTNGUARDAR.Enabled = Not V
@@ -34,7 +35,7 @@
         ACTIVAR(False)
         Dim QUERY As String
         Dim COLUMNA As Integer
-        QUERY = "SELECT NOMBRE,PUESTO FROM CONTACTOCLIENTE WHERE CLIENTE= '" + CLACLIENTE(CBCLIENTE.SelectedIndex) + "'"
+        QUERY = "SELECT NOMBRE,PUESTO,OBSERVACION FROM CONTACTOCLIENTE WHERE CLIENTE= '" + CLACLIENTE(CBCLIENTE.SelectedIndex) + "'"
         COLUMNA = 1
         Try
             Dim DA As New SqlClient.SqlDataAdapter(QUERY, frmPrincipal.CONX)
@@ -49,6 +50,7 @@
                 ITEMS = DGV.Rows.Count - 1
                 DGV.Item(0, ITEMS).Value = DDT.Rows(X).Item(0)
                 DGV.Item(1, ITEMS).Value = DDT.Rows(X).Item(1)
+                DGV.Item(2, ITEMS).Value = DDT.Rows(X).Item(2)
             Next
             DgvAjusteEncabezado(DGV, 0)
         Catch ex As Exception
@@ -79,7 +81,7 @@
             ITEMS = DGV.Rows.Count - 1
             DGV.Item(0, ITEMS).Value = TXTNOM.Text
             DGV.Item(1, ITEMS).Value = TXTPUESTO.Text
-
+            DGV.Item(2, ITEMS).Value = TXTOBSERVACION.Text
             DgvAjusteEncabezado(DGV, 1)
             DGV.Refresh()
             CHECATABLA()
@@ -103,23 +105,23 @@
 
         TXTNOM.Text = ""
         TXTPUESTO.Text = ""
-
+        TXTOBSERVACION.Text = ""
     End Sub
 
     Private Sub BTNCANCELAR_Click(sender As Object, e As EventArgs) Handles BTNCANCELAR.Click
-        ACTIVAR(True)
-        LIMPIAR()
 
+        LIMPIAR()
         DGV.Rows.Clear()
     End Sub
 
 
     Private Sub LIMPIAR()
-
+        DGV.Rows.Clear()
         TXTNOM.Text = ""
         TXTPUESTO.Text = ""
+        TXTOBSERVACION.Text = ""
         CBCLIENTE.SelectedIndex = 0
-
+        ACTIVAR(True)
     End Sub
 
     Private Sub BTNGUARDAR_Click(sender As Object, e As EventArgs) Handles BTNGUARDAR.Click
@@ -129,7 +131,7 @@
         End If
 
         GUARDAR()
-        DGV.Rows.Clear()
+
         LIMPIAR()
     End Sub
 
@@ -156,12 +158,14 @@
         SQLGUARDAR.Parameters.Add("@CLIENTE", SqlDbType.Int).Value = CLACLIENTE(CBCLIENTE.SelectedIndex)
         SQLGUARDAR.Parameters.Add("@NOMBRE", SqlDbType.VarChar)
         SQLGUARDAR.Parameters.Add("@PUESTO", SqlDbType.VarChar)
+        SQLGUARDAR.Parameters.Add("@OBSERVACION", SqlDbType.VarChar)
 
         Dim X As Integer
 
         For X = 0 To DGV.Rows.Count - 1
             SQLGUARDAR.Parameters("@NOMBRE").Value = DGV.Item(0, X).Value.ToString
             SQLGUARDAR.Parameters("@PUESTO").Value = DGV.Item(1, X).Value.ToString
+            SQLGUARDAR.Parameters("@OBSERVACION").Value = DGV.Item(2, X).Value.ToString
             Try
                 SQLGUARDAR.ExecuteNonQuery()
             Catch ex As Exception

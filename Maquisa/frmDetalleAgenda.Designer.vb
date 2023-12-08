@@ -190,7 +190,7 @@ Partial Class frmDetalleAgenda
         DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
-        Me.DGV.Size = New System.Drawing.Size(1009, 476)
+        Me.DGV.Size = New System.Drawing.Size(1004, 439)
         Me.DGV.TabIndex = 1275
         '
         'Button1

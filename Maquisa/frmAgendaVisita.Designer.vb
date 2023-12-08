@@ -1423,7 +1423,7 @@ Partial Class frmAgendaVisita
         Me.MC.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MC.FirstDayOfWeek = System.Windows.Forms.Day.Sunday
         Me.MC.Font = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.MC.Location = New System.Drawing.Point(953, 109)
+        Me.MC.Location = New System.Drawing.Point(955, 109)
         Me.MC.Name = "MC"
         Me.MC.TabIndex = 1195
         '
@@ -1446,7 +1446,7 @@ Partial Class frmAgendaVisita
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.DarkOrange
-        Me.ClientSize = New System.Drawing.Size(1208, 693)
+        Me.ClientSize = New System.Drawing.Size(1216, 693)
         Me.Controls.Add(Me.MC)
         Me.Controls.Add(Me.GBDIA6)
         Me.Controls.Add(Me.GBDIA5)
