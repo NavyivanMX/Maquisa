@@ -181,6 +181,15 @@
             SQLGUARDAR.Parameters("@ORD").Value = X + 1
             SQLGUARDAR.ExecuteNonQuery()
         Next
+
+        Dim SGLEDITAAGENDA As New SqlClient.SqlCommand
+        SGLEDITAAGENDA.Connection = frmPrincipal.CONX
+        SGLEDITAAGENDA.CommandType = CommandType.StoredProcedure
+        SGLEDITAAGENDA.CommandText = "[SPREGENERADORAGENDAVISITA]"
+        SGLEDITAAGENDA.Parameters.Add("@SUC", SqlDbType.VarChar).Value = CLASUC(CBSUC.SelectedIndex)
+        SGLEDITAAGENDA.Parameters.Add("@DIA", SqlDbType.Int).Value = DIA.ToString
+        SGLEDITAAGENDA.Parameters.Add("@RUTA", SqlDbType.Int).Value = CLARUT(CBR.SelectedIndex)
+        SGLEDITAAGENDA.ExecuteNonQuery()
     End Sub
 
     Private Sub BTNNIVANT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNNIVANT.Click

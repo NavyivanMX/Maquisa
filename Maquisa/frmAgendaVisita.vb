@@ -182,7 +182,9 @@
         Dim POS As Integer
         POS = CType(sender.TAG, Integer)
         Dim VDA As New frmDetalleAgenda
-        VDA.MOSTRAR(LRUT(CBRUTA.SelectedIndex), FEC.AddDays(POS - 1), LBLNOMVEND(POS).Text, LBLCVISITADO(POS).Text)
+        Dim TFEC As New DateTime
+        TFEC = FEC.AddDays(POS - 1)
+        VDA.MOSTRAR(LRUT(CBRUTA.SelectedIndex), TFEC, LBLNOMVEND(POS).Text, LBLCVISITADO(POS).Text)
     End Sub
 
 

@@ -29,7 +29,7 @@
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ciudad = "Mazatlán, Sin."
          IP = "structureserver2.noip.me"
-        BD = "MAQUISA"
+        BD = "MAQUISAP"
         USER = "MAROSILOCAL"
         PASS = "Loco*1234"
         Empresa = 1

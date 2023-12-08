@@ -12,7 +12,7 @@
     Public Sub MOSTRAR(ByVal PRUTA As Integer, ByVal PFECHA As DateTime, ByVal PVENDEDOR As String, ByVal PVISITADOS As String)
         IDRUTA = PRUTA
         Fecha = PFECHA
-        LBLFECHA.Text = PFECHA
+        LBLFECHA.Text = PFECHA.ToString("dd/MM/yyyy")
         LBLRUTA.Text = PRUTA
         LBLVENDEDOR.Text = PVENDEDOR
         LBLVISITAS.Text = PVISITADOS
@@ -25,7 +25,7 @@
         Dim QUERY As String
         QUERY = "SELECT VISITA,VENDEDOR,CLIENTE, ORDEN, [RESULTA DOVISITA], [CONTACTOS CLIENTE]  "
         QUERY = QUERY + "FROM [dbo].[VDETALLEAGENDA] WHERE RUTA=" + IDRUTA.ToString + " AND  FECHA2>=@INI AND FECHA2<@FIN"
-        DGV.DataSource = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion, Fecha, Fecha.AddDays(1))
+        DGV.DataSource = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion, Fecha.Date, Fecha.Date.AddDays(1))
         DgvAjusteEncabezado(DGV, 1)
     End Sub
 
@@ -34,12 +34,10 @@
     End Sub
 
     Private Sub BTNAGENDAR_Click(sender As Object, e As EventArgs) Handles LBLVISITADOS.Click
-        'frmAgendar.ShowDialog()
+        frmAgendar.ShowDialog()
     End Sub
 
-    'Private Sub BTNIZQUIERDA_Click(sender As Object, e As EventArgs) Handles BTNIZQUIERDA.Clicks
-    '    Me.Close()
-    'End Sub
+
 
     Private Sub DGV_CellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles DGV.CellContentClick
         'frmInfoVisita.VISITA = DGV.Item(0, DGV.CurrentRow.Index).Value.ToString
@@ -60,7 +58,9 @@
 
     End Sub
 
-    Private Sub Label3_Click(sender As Object, e As EventArgs) Handles LBLVISITAS.Click
+
+    Private Sub BTNIZQUIERDA_Click(sender As Object, e As EventArgs) Handles BTNIZQUIERDA.Click
+        Me.Close()
 
     End Sub
 End Class
