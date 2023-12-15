@@ -44,7 +44,7 @@ ON D.CLIENTE=C.Clave", frmPrincipal.CadenaConexion)
 
         Dim x As Integer
         For x = 0 To DT.Rows.Count - 1
-            OLINICIO.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(DT.Rows(x).Item(4), DT.Rows(x).Item(5)), Icon2GMarker(DT.Rows(x).Item(0))))
+            OLINICIO.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(DT.Rows(x).Item(4), DT.Rows(x).Item(5)), Icon2GMarker(DT.Rows(x).Item(0) * 5)))
             OLINICIO.Markers(x).ToolTipText = DT.Rows(x).Item(3).ToString
         Next
 

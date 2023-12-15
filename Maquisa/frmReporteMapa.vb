@@ -128,17 +128,29 @@ Public Class frmReporteMapa
 
             PFin.Lat = DGV.Item(1, x + 1).Value
             PFin.Lng = DGV.Item(2, x + 1).Value
+
+
             Dim ss As New GDirections
             GoogleMapProvider.Instance.ApiKey = My.Settings.GoogleMapProviderApiKey
             GMapProviders.GoogleMap.GetDirections(ss, PIni, PFin, False, False, False, False, False)
-            TTotal += CType(ss.DurationValue, Double)
-            DTotal += CType(ss.DistanceValue, Double)
-            Dim GMR As New GMapRoute(ss.Route, "Mi Ruta")
-            GMR.Duration = ss.DurationValue
-            OVERLAYRUTAS.Routes.Add(GMR)
-            BDEjecutarSql("UPDATE GEOMARCAS SET DISTANCIAMTS='" + ss.DistanceValue.ToString + "',DISTANCIA='" + ss.Distance.ToString + "',TIEMPOSEG ='" + ss.DurationValue.ToString + "',TIEMPO='" + ss.Duration.ToString + "',DireccionInicio='" + ss.StartAddress + "',DireccionFinal='" + ss.EndAddress + "' WHERE ID=" + DGV.Item(5, x).Value.ToString, frmPrincipal.CadenaConexion)
-            OLCLIENTE.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(PIni.Lat, PIni.Lng), Icon2GMarker(DGV.Item(3, x).Value)))
-            OLCLIENTE.Markers(x).ToolTipText = vbNewLine + DGV.Item(4, x).Value.ToString + vbNewLine + " T: " + ss.DurationValue.ToString + vbNewLine + " D: " + ss.DistanceValue.ToString
+            If (ss Is Nothing) Then
+
+                OLCLIENTE.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(PIni.Lat, PIni.Lng), Icon2GMarker(DGV.Item(3, x).Value)))
+                OLCLIENTE.Markers(x).ToolTipText = vbNewLine + DGV.Item(4, x).Value.ToString
+
+
+            Else
+
+                TTotal += CType(ss.DurationValue, Double)
+                DTotal += CType(ss.DistanceValue, Double)
+                Dim GMR As New GMapRoute(ss.Route, "Mi Ruta")
+                GMR.Duration = ss.DurationValue
+                OVERLAYRUTAS.Routes.Add(GMR)
+                BDEjecutarSql("UPDATE GEOMARCAS SET DISTANCIAMTS='" + ss.DistanceValue.ToString + "',DISTANCIA='" + ss.Distance.ToString + "',TIEMPOSEG ='" + ss.DurationValue.ToString + "',TIEMPO='" + ss.Duration.ToString + "',DireccionInicio='" + ss.StartAddress + "',DireccionFinal='" + ss.EndAddress + "' WHERE ID=" + DGV.Item(5, x).Value.ToString, frmPrincipal.CadenaConexion)
+                OLCLIENTE.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(PIni.Lat, PIni.Lng), Icon2GMarker(DGV.Item(3, x).Value)))
+                OLCLIENTE.Markers(x).ToolTipText = vbNewLine + DGV.Item(4, x).Value.ToString + vbNewLine + " T: " + ss.DurationValue.ToString + vbNewLine + " D: " + ss.DistanceValue.ToString
+
+            End If
 
         Next
         OLCLIENTE.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(DGV.Item(1, DGV.RowCount - 1).Value, DGV.Item(2, DGV.RowCount - 1).Value), Icon2GMarker(DGV.Item(3, x).Value)))

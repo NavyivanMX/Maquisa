@@ -65,6 +65,7 @@
 
 
     Private Sub INICIAR()
+        PonerFondo()
         If VERIFICAVERSION() Then
             If Not VERIFICAUBICACION() Then
                 Me.Close()
