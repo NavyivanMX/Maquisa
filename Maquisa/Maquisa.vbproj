@@ -144,6 +144,12 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAdministrarProspecto.Designer.vb">
+      <DependentUpon>frmAdministrarProspecto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarProspecto.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmAgenda.designer.vb">
       <DependentUpon>frmAgenda.vb</DependentUpon>
     </Compile>
@@ -297,6 +303,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarProspecto.resx">
+      <DependentUpon>frmAdministrarProspecto.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgenda.resx">
       <DependentUpon>frmAgenda.vb</DependentUpon>
