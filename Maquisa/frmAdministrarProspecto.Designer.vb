@@ -22,8 +22,8 @@ Partial Class frmAdministrarProspecto
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.BTNBUSCAR = New System.Windows.Forms.Button()
         Me.DGV = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
@@ -35,6 +35,7 @@ Partial Class frmAdministrarProspecto
         '
         'BTNBUSCAR
         '
+        Me.BTNBUSCAR.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BTNBUSCAR.BackColor = System.Drawing.Color.White
         Me.BTNBUSCAR.BackgroundImage = Global.Maquisa.My.Resources.Resources.autorizar100X100
         Me.BTNBUSCAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -51,20 +52,21 @@ Partial Class frmAdministrarProspecto
         '
         Me.DGV.AllowUserToAddRows = False
         Me.DGV.AllowUserToDeleteRows = False
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.DGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.DGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DGV.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.DGV.Location = New System.Drawing.Point(12, 34)
         Me.DGV.Name = "DGV"
-        Me.DGV.ReadOnly = True
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGV.Size = New System.Drawing.Size(1004, 449)
         Me.DGV.TabIndex = 1276
         '
@@ -81,6 +83,7 @@ Partial Class frmAdministrarProspecto
         '
         'Button1
         '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.BackColor = System.Drawing.Color.White
         Me.Button1.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNCANCELAR
         Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -95,6 +98,7 @@ Partial Class frmAdministrarProspecto
         '
         'Label2
         '
+        Me.Label2.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label2.AutoSize = True
         Me.Label2.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!)
         Me.Label2.ForeColor = System.Drawing.SystemColors.Desktop
@@ -106,6 +110,7 @@ Partial Class frmAdministrarProspecto
         '
         'Label3
         '
+        Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.Font = New System.Drawing.Font("Arial Rounded MT Bold", 8.25!)
         Me.Label3.ForeColor = System.Drawing.SystemColors.Desktop
@@ -127,7 +132,8 @@ Partial Class frmAdministrarProspecto
         Me.Controls.Add(Me.DGV)
         Me.Controls.Add(Me.BTNBUSCAR)
         Me.Name = "frmAdministrarProspecto"
-        Me.Text = "frmAdministrarProspecto"
+        Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
+        Me.Text = "Administrar Prospecto"
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()

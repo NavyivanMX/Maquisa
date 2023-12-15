@@ -175,7 +175,7 @@
 
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         'TODO: hacer ventana de prospecto
-        'frmAdministrarProspecto.showdialog()
+        frmAdministrarProspecto.ShowDialog()
     End Sub
 
     Private Sub BTNVERDETALLEVISITA_Click(sender As Object, e As EventArgs) Handles BTNVERDETALLEVISITA1.Click, BTNVERDETALLEVISITA2.Click, BTNVERDETALLEVISITA6.Click, BTNVERDETALLEVISITA3.Click, BTNVERDETALLEVISITA4.Click, BTNVERDETALLEVISITA5.Click
