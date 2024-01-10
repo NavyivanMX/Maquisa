@@ -180,6 +180,7 @@ Public Class frmReporteMapa
         MAPA2.Zoom = ZOOM
         MAPA2.CanDragMap = True
         MAPA2.Manager.Mode = AccessMode.ServerAndCache
+        MAPA2.Position = New PointLatLng(My.Settings.EmpresaLatitud, My.Settings.EmpresaLongitud)
     End Sub
     Private Sub PosicionaEmpresa()
         OLINICIO.Markers.Add(New GMap.NET.WindowsForms.Markers.GMarkerGoogle(New PointLatLng(My.Settings.EmpresaLatitud, My.Settings.EmpresaLongitud), GMarkerGoogleType.red_dot))

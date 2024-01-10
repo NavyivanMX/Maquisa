@@ -277,6 +277,7 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="MapModule.vb" />
+    <Compile Include="Mensajes.vb" />
     <Compile Include="MONICA.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">

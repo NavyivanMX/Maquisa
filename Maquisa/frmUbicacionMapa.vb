@@ -161,6 +161,7 @@ Public Class frmUbicacionMapa
             DGV.Item(0, ULT).Value = PLG.Lat
             DGV.Item(1, ULT).Value = PLG.Lng
             MARCAR(PLG.Lat, PLG.Lng)
+            DGV.CurrentCell = DGV.Rows(DGV.Rows.Count - 1).Cells(0)
             Me.Cursor = Cursors.Default
         End If
     End Sub
