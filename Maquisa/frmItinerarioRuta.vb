@@ -193,6 +193,9 @@
     End Sub
 
     Private Sub BTNNIVANT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNNIVANT.Click
+        If DGV3.CurrentRow.Index = 0 Then
+            Return
+        End If
         Dim FILA As Integer = DGV3.CurrentRow.Index ''FILA = A LA FILA SELECCIONADA
         Dim PROXFILA As Integer = DGV3.CurrentRow.Index - 1 ''EN ESTE CASO LA FILA QUE SELECCIONASTE LA VA A SUBIR, A LA ACTUAL - 1
 
@@ -213,6 +216,8 @@
             DGV3.Rows(FILA - 1).Cells(CONT).Value = DATAORIGEN(CONT)
         Next
 
+
+        DGV3.CurrentCell = DGV3.Rows(PROXFILA).Cells(0)
         'QUITAR()
         'CARGAR()
     End Sub
