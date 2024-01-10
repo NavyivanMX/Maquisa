@@ -61,4 +61,8 @@
         Me.Close()
 
     End Sub
+
+    Private Sub BTNADMINPROSPECTO_Click(sender As Object, e As EventArgs) Handles BTNADMINPROSPECTO.Click
+        frmAdministrarProspecto.ShowDialog()
+    End Sub
 End Class
