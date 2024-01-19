@@ -34,10 +34,10 @@
         PASS = "Loco*1234"
         Empresa = 1
         VERSION = "1.4"
-        Sistema = "Maquisa"
+        Sistema = "MAQUISA"
         COLORFUENTE = My.Settings.COLORDEFAULT
 
-        If BD <> "Maquisa" Then
+        If BD <> "MAQUISA" Then
             LBLPRU.Visible = True
             '    CENTRARHORIZONTALABEL(LBLPRU)
         End If
