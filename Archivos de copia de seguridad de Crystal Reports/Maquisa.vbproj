@@ -52,10 +52,18 @@
     <ApplicationIcon>MaquisaIcon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
-    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.CrystalReports.Engine">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.CrystalReports.Engine.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.ReportSource">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.ReportSource.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Shared">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Shared.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.Windows.Forms">
+      <HintPath>..\..\..\..\..\..\..\program files (x86)\sap businessobjects\crystal reports for .net framework 4.0\common\sap businessobjects enterprise xi 4.0\win32_x86\dotnet\CrystalDecisions.Windows.Forms.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -78,14 +86,20 @@
       <Private>True</Private>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=11.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c">
-      <HintPath>..\..\PapeleriaReI\PapeleriaReI\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <HintPath>D:\PROYECTOS\COLORSHOP\COLORSHOP\bin\Debug\Microsoft.Office.Interop.Excel.dll</HintPath>
       <EmbedInteropTypes>False</EmbedInteropTypes>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.Vbe.Interop">
+      <HintPath>D:\PROYECTOS\COLORSHOP\COLORSHOP\bin\Debug\Microsoft.Vbe.Interop.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net40\Newtonsoft.Json.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>..\..\..\..\..\..\..\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Data" />
     <Reference Include="System.Data.SQLite, Version=1.0.115.5, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
@@ -130,6 +144,42 @@
       <DependentUpon>Form1.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmAdministrarProspecto.Designer.vb">
+      <DependentUpon>frmAdministrarProspecto.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAdministrarProspecto.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgenda.designer.vb">
+      <DependentUpon>frmAgenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgendar.Designer.vb">
+      <DependentUpon>frmAgendar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgendar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAgendaVisita.Designer.vb">
+      <DependentUpon>frmAgendaVisita.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAgendaVisita.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmAyuda.designer.vb">
+      <DependentUpon>frmAyuda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmAyuda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmBotones.Designer.vb">
+      <DependentUpon>frmBotones.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmBotones.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmClientes.designer.vb">
       <DependentUpon>frmClientes.vb</DependentUpon>
     </Compile>
@@ -142,12 +192,91 @@
     <Compile Include="frmClsBusqueda.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmContactoCliente.Designer.vb">
+      <DependentUpon>frmContactoCliente.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmContactoCliente.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDetalleAgenda.Designer.vb">
+      <DependentUpon>frmDetalleAgenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmDetalleAgenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmEmpresa.designer.vb">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmEmpresa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmInfoVisita2.Designer.vb">
+      <DependentUpon>frmInfoVisita2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmInfoVisita2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmItinerarioRuta.designer.vb">
+      <DependentUpon>frmItinerarioRuta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmItinerarioRuta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLigaVersion.designer.vb">
+      <DependentUpon>frmLigaVersion.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLigaVersion.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin2.Designer.vb">
+      <DependentUpon>frmLogin2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmLogin2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMensaje.designer.vb">
+      <DependentUpon>frmMensaje.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmMensaje.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReporteMapa.Designer.vb">
+      <DependentUpon>frmReporteMapa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmReporteMapa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRutaMapaClientes.Designer.vb">
+      <DependentUpon>frmRutaMapaClientes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRutaMapaClientes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmRutas.designer.vb">
+      <DependentUpon>frmRutas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmRutas.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="frmUbicacionMapa.Designer.vb">
       <DependentUpon>frmUbicacionMapa.vb</DependentUpon>
     </Compile>
     <Compile Include="frmUbicacionMapa.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="frmUsuarios.designer.vb">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmUsuarios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmVendedor.Designer.vb">
+      <DependentUpon>frmVendedor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frmVendedor.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MapModule.vb" />
     <Compile Include="MONICA.vb" />
     <Compile Include="My Project\AssemblyInfo.vb" />
     <Compile Include="My Project\Application.Designer.vb">
@@ -164,10 +293,34 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="rptReporteDiaVendedor.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>rptReporteDiaVendedor.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAdministrarProspecto.resx">
+      <DependentUpon>frmAdministrarProspecto.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgenda.resx">
+      <DependentUpon>frmAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgendar.resx">
+      <DependentUpon>frmAgendar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAgendaVisita.resx">
+      <DependentUpon>frmAgendaVisita.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmAyuda.resx">
+      <DependentUpon>frmAyuda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmBotones.resx">
+      <DependentUpon>frmBotones.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmClientes.resx">
       <DependentUpon>frmClientes.vb</DependentUpon>
@@ -175,14 +328,57 @@
     <EmbeddedResource Include="frmClsBusqueda.resx">
       <DependentUpon>frmClsBusqueda.vb</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmContactoCliente.resx">
+      <DependentUpon>frmContactoCliente.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmDetalleAgenda.resx">
+      <DependentUpon>frmDetalleAgenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmEmpresa.resx">
+      <DependentUpon>frmEmpresa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmInfoVisita2.resx">
+      <DependentUpon>frmInfoVisita2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmItinerarioRuta.resx">
+      <DependentUpon>frmItinerarioRuta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLigaVersion.resx">
+      <DependentUpon>frmLigaVersion.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin2.resx">
+      <DependentUpon>frmLogin2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMensaje.resx">
+      <DependentUpon>frmMensaje.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmReporteMapa.resx">
+      <DependentUpon>frmReporteMapa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRutaMapaClientes.resx">
+      <DependentUpon>frmRutaMapaClientes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmRutas.resx">
+      <DependentUpon>frmRutas.vb</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmUbicacionMapa.resx">
       <DependentUpon>frmUbicacionMapa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmUsuarios.resx">
+      <DependentUpon>frmUsuarios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmVendedor.resx">
+      <DependentUpon>frmVendedor.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.vb</LastGenOutput>
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="rptReporteDiaVendedor.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>rptReporteDiaVendedor.vb</LastGenOutput>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -209,7 +405,28 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MaquisaIcon.ico" />
+    <None Include="Resources\BTNIZQUIERDA.png" />
+    <None Include="Resources\BTNDERECHA.png" />
+    <None Include="Resources\Logo Maquisa 2010 Horizontal.PNG" />
+    <None Include="Resources\wallpaper1.PNG" />
+    <None Include="Resources\logo2.jpg" />
+    <None Include="Resources\StructureSmall.JPG" />
+    <None Include="Resources\KEY.jpg" />
+    <None Include="Resources\autorizar100X100.png" />
+    <None Include="Resources\BTNACTUALIZAR.png" />
+    <None Include="Resources\BTNCANCELAR.png" />
+    <None Include="Resources\BTNACEPTAR.png" />
+    <None Include="Resources\BTNCORREO.png" />
+    <None Include="Resources\BTNQUITAR.png" />
+    <None Include="Resources\BTNBUSCAR.png" />
+    <None Include="Resources\BTNELIMINAR.png" />
+    <None Include="Resources\BTNIMPRIMIR.png" />
+    <None Include="Resources\BTNAGREGAR.png" />
+    <None Include="Resources\BTNGUARDAR.png" />
     <None Include="Resources\MaquisaFondo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

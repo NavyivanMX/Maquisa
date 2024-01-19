@@ -31,6 +31,18 @@
         '    Exit Function
         'End Try
     End Function
+
+    Public Sub MOSTRAR(ByVal CNOMBRE As String, ByVal CDIRECCION As String)
+        TXTNOM.Text = CNOMBRE
+        TXTDIR.Text = CDIRECCION
+        CBACT.SelectedIndex = 0
+        ACTIVAR(False)
+        TXTCLA.Text = CARGACLI()
+        OPLlenaComboBox(CBTIPO, LTIPO, "SELECT CLAVE,NOMBRE FROM  TIPOCLIENTE WHERE ACTIVO=1 ORDER BY NOMBRE", frmPrincipal.CadenaConexion, "Favor de Seleccionar", "")
+        OPCargaX(LTIPO, CBTIPO, 1)
+        Me.ShowDialog()
+    End Sub
+
     Private Sub ACTIVAR(ByVal V As Boolean)
         TXTCLA.Enabled = V
         TXTNOM.Enabled = Not V

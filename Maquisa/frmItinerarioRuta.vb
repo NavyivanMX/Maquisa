@@ -11,6 +11,8 @@
     Dim ESTAINICIADO As Integer
     Dim QUERY As String
     Dim DT As New DataTable
+
+    Public MSG As New Mensajes
     Private Sub frmItinerarioRuta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         OPVisualizacionForm(Me, frmPrincipal.COLORFUENTE)
         PonerImagenesBotones(Me)
@@ -193,6 +195,9 @@
     End Sub
 
     Private Sub BTNNIVANT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNNIVANT.Click
+        If DGV3.CurrentRow.Index = 0 Then
+            Return
+        End If
         Dim FILA As Integer = DGV3.CurrentRow.Index ''FILA = A LA FILA SELECCIONADA
         Dim PROXFILA As Integer = DGV3.CurrentRow.Index - 1 ''EN ESTE CASO LA FILA QUE SELECCIONASTE LA VA A SUBIR, A LA ACTUAL - 1
 
@@ -213,6 +218,7 @@
             DGV3.Rows(FILA - 1).Cells(CONT).Value = DATAORIGEN(CONT)
         Next
 
+        DGV3.CurrentCell = DGV3.Rows(PROXFILA).Cells(0)
         'QUITAR()
         'CARGAR()
     End Sub
@@ -236,7 +242,7 @@
             DGV3.Rows(FILA).Cells(CONT).Value = DATADESTINO(CONT)
             DGV3.Rows(FILA + 1).Cells(CONT).Value = DATAORIGEN(CONT)
         Next
-
+        DGV3.CurrentCell = DGV3.Rows(PROXFILA).Cells(0)
         'QUITAR()
         'CARGAR()
     End Sub
@@ -297,7 +303,13 @@
         QUITAR()
         ' CARGAR()
         MessageBox.Show("La información agrego correctamente", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
-        LIMPIAR()
-        ACTIVAR(True)
+
+        If MSG.mensaje_confirmacion("¿Desea Cambiar otro orden?") <> 6 Then
+            LIMPIAR()
+            ACTIVAR(True)
+        End If
+
+
+
     End Sub
 End Class

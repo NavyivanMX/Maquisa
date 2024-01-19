@@ -24,29 +24,29 @@ Partial Class frmAdministrarProspecto
     Private Sub InitializeComponent()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Me.BTNBUSCAR = New System.Windows.Forms.Button()
+        Me.BTNACLIENTE = New System.Windows.Forms.Button()
         Me.DGV = New System.Windows.Forms.DataGridView()
         Me.Label1 = New System.Windows.Forms.Label()
-        Me.Button1 = New System.Windows.Forms.Button()
+        Me.BTNQUITAR = New System.Windows.Forms.Button()
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'BTNBUSCAR
+        'BTNACLIENTE
         '
-        Me.BTNBUSCAR.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.BTNBUSCAR.BackColor = System.Drawing.Color.White
-        Me.BTNBUSCAR.BackgroundImage = Global.Maquisa.My.Resources.Resources.autorizar100X100
-        Me.BTNBUSCAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BTNBUSCAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BTNBUSCAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNBUSCAR.Location = New System.Drawing.Point(917, 494)
-        Me.BTNBUSCAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.BTNBUSCAR.Name = "BTNBUSCAR"
-        Me.BTNBUSCAR.Size = New System.Drawing.Size(85, 77)
-        Me.BTNBUSCAR.TabIndex = 1170
-        Me.BTNBUSCAR.UseVisualStyleBackColor = False
+        Me.BTNACLIENTE.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BTNACLIENTE.BackColor = System.Drawing.Color.White
+        Me.BTNACLIENTE.BackgroundImage = Global.Maquisa.My.Resources.Resources.autorizar100X100
+        Me.BTNACLIENTE.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTNACLIENTE.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNACLIENTE.ForeColor = System.Drawing.Color.Transparent
+        Me.BTNACLIENTE.Location = New System.Drawing.Point(917, 494)
+        Me.BTNACLIENTE.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BTNACLIENTE.Name = "BTNACLIENTE"
+        Me.BTNACLIENTE.Size = New System.Drawing.Size(85, 77)
+        Me.BTNACLIENTE.TabIndex = 1170
+        Me.BTNACLIENTE.UseVisualStyleBackColor = False
         '
         'DGV
         '
@@ -81,20 +81,20 @@ Partial Class frmAdministrarProspecto
         Me.Label1.TabIndex = 1277
         Me.Label1.Text = "Seleccionar Prospectos a Administrar"
         '
-        'Button1
+        'BTNQUITAR
         '
-        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.Button1.BackColor = System.Drawing.Color.White
-        Me.Button1.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNCANCELAR
-        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Button1.ForeColor = System.Drawing.Color.Transparent
-        Me.Button1.Location = New System.Drawing.Point(796, 494)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(85, 77)
-        Me.Button1.TabIndex = 1278
-        Me.Button1.UseVisualStyleBackColor = False
+        Me.BTNQUITAR.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BTNQUITAR.BackColor = System.Drawing.Color.White
+        Me.BTNQUITAR.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNCANCELAR
+        Me.BTNQUITAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BTNQUITAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BTNQUITAR.ForeColor = System.Drawing.Color.Transparent
+        Me.BTNQUITAR.Location = New System.Drawing.Point(796, 494)
+        Me.BTNQUITAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.BTNQUITAR.Name = "BTNQUITAR"
+        Me.BTNQUITAR.Size = New System.Drawing.Size(85, 77)
+        Me.BTNQUITAR.TabIndex = 1278
+        Me.BTNQUITAR.UseVisualStyleBackColor = False
         '
         'Label2
         '
@@ -127,10 +127,10 @@ Partial Class frmAdministrarProspecto
         Me.ClientSize = New System.Drawing.Size(1028, 592)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label2)
-        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.BTNQUITAR)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DGV)
-        Me.Controls.Add(Me.BTNBUSCAR)
+        Me.Controls.Add(Me.BTNACLIENTE)
         Me.Name = "frmAdministrarProspecto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrar Prospecto"
@@ -140,10 +140,10 @@ Partial Class frmAdministrarProspecto
 
     End Sub
 
-    Friend WithEvents BTNBUSCAR As Button
+    Friend WithEvents BTNACLIENTE As Button
     Friend WithEvents DGV As DataGridView
     Friend WithEvents Label1 As Label
-    Friend WithEvents Button1 As Button
+    Friend WithEvents BTNQUITAR As Button
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
 End Class

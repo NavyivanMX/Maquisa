@@ -21,4 +21,45 @@
         DGV.Columns(7).ReadOnly = True
 
     End Sub
+
+    Private Sub BTNQUITAR_Click(sender As Object, e As EventArgs) Handles BTNQUITAR.Click
+        Dim X As Integer
+        Dim QUERY As String
+        Dim CLAVE As Integer
+
+        For X = 0 To DGV.Rows.Count - 1
+            If DGV.Item(0, X).Value = True Then
+                Try
+                    CLAVE = DGV.Item(1, X).Value
+                    QUERY = "UPDATE PROSPECTOS SET RESULTADOPROSPECTO=2 WHERE CLAVE=" + CLAVE.ToString + " "
+                    BDEjecutarSql(QUERY, frmPrincipal.CadenaConexion)
+                Catch ex As Exception
+                    OPMsgError("Paso un detalle, avisar a Structure Soluciones")
+                End Try
+            End If
+        Next
+
+        CARGADATOS()
+    End Sub
+
+    Private Sub BTNACLIENTE_Click(sender As Object, e As EventArgs) Handles BTNACLIENTE.Click
+        Dim X As Integer
+        Dim QUERY As String
+        Dim CLAVE As Integer
+
+        For X = 0 To DGV.Rows.Count - 1
+            If DGV.Item(0, X).Value = True Then
+                Try
+                    CLAVE = DGV.Item(1, X).Value
+                    frmClientes.MOSTRAR(DGV.Item(2, X).Value, DGV.Item(5, X).Value)
+                    QUERY = "UPDATE PROSPECTOS SET RESULTADOPROSPECTO=1 WHERE CLAVE=" + CLAVE.ToString + " "
+                    BDEjecutarSql(QUERY, frmPrincipal.CadenaConexion)
+                Catch ex As Exception
+                    OPMsgError("Paso un detalle, avisar a Structure Soluciones")
+                End Try
+            End If
+        Next
+
+        CARGADATOS()
+    End Sub
 End Class

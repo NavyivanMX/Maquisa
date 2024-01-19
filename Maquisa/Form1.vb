@@ -33,7 +33,7 @@
         USER = "MAROSILOCAL"
         PASS = "Loco*1234"
         Empresa = 1
-        VERSION = "1.4"
+        VERSION = "1.5"
         Sistema = "MAQUISA"
         COLORFUENTE = My.Settings.COLORDEFAULT
 
