@@ -51,13 +51,8 @@
         Dim REPI As New rptReporteDiaVendedor
         MOSTRARREPORTE(REPI, "Reporte del Dia Vendedor", BDLlenaTabla(QUER, frmPrincipal.CadenaConexion), "")
 
-        MessageBox.Show("Ahora se imprima info. Prospecto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
+        ''  MessageBox.Show("Ahora se imprima info. Prospecto", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
-        Dim QUERY As String
-        QUERY = "Select * FROM VRPTPROSPECTOS "
-        QUERY = QUERY + " WHERE FECHAINI>='" + LBLFECHA.Text + "' AND HASTAFECHA<='" + LBLFECHA.Text + "'  AND VENDEDOR='" + LBLVENDEDOR.Text + "' ORDER BY FECHAINI ASC"
-        '  Dim REPI2 As New rptReporteDiaProspecto
-        '  MOSTRARREPORTE(REPI2, "Reporte del Dia Prospectos", BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion), "")
 
 
     End Sub
