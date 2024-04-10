@@ -24,7 +24,8 @@
     Private Sub CARGADATOS()
         Dim QUERY As String
         QUERY = "SELECT VISITA,VENDEDOR,CLIENTE, ORDEN, [RESULTA DOVISITA], [CONTACTOS CLIENTE]  "
-        QUERY = QUERY + "FROM [dbo].[VDETALLEAGENDA] WHERE RUTA=" + IDRUTA.ToString + " AND  FECHA2>=@INI AND FECHA2<@FIN"
+        QUERY = QUERY + "FROM [dbo].[VDETALLEAGENDA] WHERE RUTA=" + IDRUTA.ToString + " AND FECHA>='" + Fecha.ToString("dd/MM/yyyy") + "' AND FECHA<'" + Fecha.AddDays(1).ToString("dd/MM/yyyy") + "' ORDER BY ORDEN"
+
         DGV.DataSource = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion, Fecha.Date, Fecha.Date.AddDays(1))
         DgvAjusteEncabezado(DGV, 1)
     End Sub
@@ -47,7 +48,7 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim QUER As String
         QUER = "SELECT *, VISITADOS='" + LBLVISITAS.Text + "' FROM VRTPVISITA "
-        QUER = QUER + " WHERE FECHA='" + LBLFECHA.Text + "' AND VENDEDOR='" + LBLVENDEDOR.Text + "' ORDER BY FECHAINI ASC"
+        QUER = QUER + " WHERE FECHA='" + LBLFECHA.Text + "' AND VENDEDOR='" + LBLVENDEDOR.Text + "'  ORDER BY FECHAINI ASC"
         Dim REPI As New rptReporteDiaVendedor
         MOSTRARREPORTE(REPI, "Reporte del Dia Vendedor", BDLlenaTabla(QUER, frmPrincipal.CadenaConexion), "")
 
