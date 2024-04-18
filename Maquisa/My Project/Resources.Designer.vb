@@ -22,7 +22,7 @@ Namespace My.Resources
     '''<summary>
     '''  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
     '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0"),  _
+    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0"),  _
      Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
      Global.Microsoft.VisualBasic.HideModuleNameAttribute()>  _
@@ -206,6 +206,16 @@ Namespace My.Resources
         Friend ReadOnly Property Files_Exel() As System.Drawing.Bitmap
             Get
                 Dim obj As Object = ResourceManager.GetObject("Files-Exel", resourceCulture)
+                Return CType(obj,System.Drawing.Bitmap)
+            End Get
+        End Property
+        
+        '''<summary>
+        '''  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        '''</summary>
+        Friend ReadOnly Property fondo() As System.Drawing.Bitmap
+            Get
+                Dim obj As Object = ResourceManager.GetObject("fondo", resourceCulture)
                 Return CType(obj,System.Drawing.Bitmap)
             End Get
         End Property

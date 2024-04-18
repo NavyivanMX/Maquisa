@@ -416,6 +416,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MaquisaIcon.ico" />
+    <None Include="Resources\fondo.jpg" />
     <None Include="Resources\BTNIZQUIERDA.png" />
     <None Include="Resources\BTNDERECHA.png" />
     <None Include="Resources\Logo Maquisa 2010 Horizontal.PNG" />
