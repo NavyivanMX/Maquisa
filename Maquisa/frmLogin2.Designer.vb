@@ -176,7 +176,9 @@ Partial Class frmLogin2
         '
         'PasswordLabel
         '
+        Me.PasswordLabel.BackColor = System.Drawing.Color.Transparent
         Me.PasswordLabel.Font = New System.Drawing.Font("Microsoft Sans Serif", 20.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.PasswordLabel.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
         Me.PasswordLabel.Location = New System.Drawing.Point(232, 62)
         Me.PasswordLabel.Name = "PasswordLabel"
         Me.PasswordLabel.Size = New System.Drawing.Size(220, 30)
@@ -207,13 +209,16 @@ Partial Class frmLogin2
         '
         'Label1
         '
+        Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.8!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(56, 115)
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText
+        Me.Label1.ImageAlign = System.Drawing.ContentAlignment.TopCenter
+        Me.Label1.Location = New System.Drawing.Point(35, 115)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(131, 30)
         Me.Label1.TabIndex = 1141
         Me.Label1.Text = "Powered By"
-        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.Label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
         '
         'BTNTECLADO
         '
@@ -241,6 +246,7 @@ Partial Class frmLogin2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.BackgroundImage = Global.Maquisa.My.Resources.Resources.fondo3
         Me.ClientSize = New System.Drawing.Size(819, 382)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.BTNELIMINAR)

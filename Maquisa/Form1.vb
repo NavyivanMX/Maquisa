@@ -33,13 +33,15 @@
         USER = "MAROSILOCAL"
         PASS = "Loco*1234"
         Empresa = 1
-        VERSION = "1.6"
+        VERSION = "1.7"
         Sistema = "MAQUISA"
-        COLORFUENTE = My.Settings.COLORDEFAULT
+        'COLORFUENTE = My.Settings.COLORDEFAULT
+        COLORFUENTE = Color.Black
+        CENTRARHORIZONTALABEL(LBLV)
 
         If BD <> "MAQUISA" Then
             LBLPRU.Visible = True
-            '    CENTRARHORIZONTALABEL(LBLPRU)
+            CENTRARHORIZONTALABEL(LBLV)
         End If
 
         LBLV.Text = "Versión " + VERSION

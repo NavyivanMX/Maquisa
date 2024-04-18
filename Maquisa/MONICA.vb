@@ -183,7 +183,7 @@ Module MONICA
     End Sub
     Public Sub OPVisualizacionForm(ByRef FRM As System.Windows.Forms.Form)
         Try
-            FRM.BackgroundImage = frmPrincipal.BackgroundImage
+            FRM.BackgroundImage = frmLogin2.BackgroundImage
             FRM.BackgroundImageLayout = ImageLayout.Stretch
             FRM.Icon = frmPrincipal.Icon
         Catch ex As Exception
@@ -192,7 +192,7 @@ Module MONICA
 
         Dim COLORDEFAULT As System.Drawing.Color
         'COLORDEFAULT = Color.DarkGoldenrod
-        COLORDEFAULT = Color.Black
+        COLORDEFAULT = frmPrincipal.COLORFUENTE
         Dim ALGO As String
         Dim TAMABOTON As Size
         TAMABOTON.Width = 80
@@ -306,15 +306,15 @@ Module MONICA
     End Sub
     Public Sub OPVisualizacionForm(ByRef FRM As Form, ByVal ColorFuente As System.Drawing.Color)
         Try
-            FRM.BackgroundImage = frmPrincipal.BackgroundImage
+            FRM.BackgroundImage = frmLogin2.BackgroundImage
             FRM.BackgroundImageLayout = ImageLayout.Stretch
         Catch ex As Exception
 
         End Try
 
         Dim COLORDEFAULT As System.Drawing.Color
-        'COLORDEFAULT = Color.DarkGoldenrod
-        COLORDEFAULT = ColorFuente
+        '' COLORDEFAULT = Color.Black
+        COLORDEFAULT = frmPrincipal.COLORFUENTE
         Dim ALGO As String
         Dim TAMABOTON As Size
         TAMABOTON.Width = 80
@@ -413,8 +413,12 @@ Module MONICA
         Catch ex As Exception
 
         End Try
-
     End Sub
+
+
+
+
+
 
     Public Function mensaje_informacion(ByVal mensaje As String)
         MessageBox.Show(mensaje, "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information)

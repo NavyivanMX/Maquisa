@@ -124,17 +124,23 @@
   <data name="BTNQUITAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BTNQUITAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Logo Maquisa 2010 Horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Logo Maquisa 2010 Horizontal.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="FondoForms" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FondoForms.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BTNGUARDAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BTNGUARDAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="BTNDERECHA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BTNDERECHA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="BTNACEPTAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BTNACEPTAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="BTNIZQUIERDA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BTNIZQUIERDA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -151,20 +157,17 @@
   <data name="Files-Exel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Files-Exel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="KEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\KEY.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="autorizar100X100" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\autorizar100X100.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="Logo Maquisa 2010 Horizontal" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Logo Maquisa 2010 Horizontal.PNG;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="KEY" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\KEY.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="button_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\button_ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="BTNDERECHA" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\BTNDERECHA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="BTNIZQUIERDA" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\BTNIZQUIERDA.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="BTNELIMINAR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BTNELIMINAR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -184,7 +187,7 @@
   <data name="BTNIMPRIMIR" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\BTNIMPRIMIR.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fondo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fondo.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="fondo3" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\fondo3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -1,7 +1,6 @@
 ﻿Public Class frmLogin2
     Dim TOCADO2 As Boolean
     Private Sub frmLogin2_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
-
         OPVisualizacionForm(Me)
         PonerImagenesBotones(Me)
         If Not frmPrincipal.CHECACONX Then

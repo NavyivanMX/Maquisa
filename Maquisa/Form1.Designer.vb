@@ -269,6 +269,7 @@ Partial Class frmPrincipal
         '
         'Label1
         '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
         Me.Label1.Font = New System.Drawing.Font("Arial", 29.75!)
@@ -279,17 +280,18 @@ Partial Class frmPrincipal
         Me.Label1.Size = New System.Drawing.Size(268, 45)
         Me.Label1.TabIndex = 395
         Me.Label1.Text = "Control Flotilla"
-        Me.Label1.Visible = False
         '
         'LBLV
         '
-        Me.LBLV.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LBLV.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LBLV.AutoSize = True
         Me.LBLV.BackColor = System.Drawing.Color.Transparent
         Me.LBLV.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LBLV.ForeColor = System.Drawing.Color.DarkBlue
         Me.LBLV.Location = New System.Drawing.Point(434, 484)
         Me.LBLV.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
+        Me.LBLV.MaximumSize = New System.Drawing.Size(116, 24)
         Me.LBLV.Name = "LBLV"
         Me.LBLV.Size = New System.Drawing.Size(116, 24)
         Me.LBLV.TabIndex = 397
@@ -347,7 +349,6 @@ Partial Class frmPrincipal
         Me.PBCNC.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage
         Me.PBCNC.TabIndex = 354
         Me.PBCNC.TabStop = False
-        Me.PBCNC.Visible = False
         '
         'frmPrincipal
         '
@@ -356,13 +357,13 @@ Partial Class frmPrincipal
         Me.BackgroundImage = Global.Maquisa.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1030, 558)
+        Me.Controls.Add(Me.Label1)
+        Me.Controls.Add(Me.PBCNC)
         Me.Controls.Add(Me.PBS)
         Me.Controls.Add(Me.LBLP)
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.LBLV)
-        Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.LBLPRU)
-        Me.Controls.Add(Me.PBCNC)
         Me.Controls.Add(Me.SB)
         Me.Controls.Add(Me.MenuStrip1)
         Me.DoubleBuffered = True
