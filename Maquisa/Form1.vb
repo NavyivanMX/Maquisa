@@ -33,7 +33,7 @@
         USER = "MAROSILOCAL"
         PASS = "Loco*1234"
         Empresa = 1
-        VERSION = "1.9"
+        VERSION = "1.10"
         Sistema = "MAQUISA"
         'COLORFUENTE = My.Settings.COLORDEFAULT
         COLORFUENTE = Color.Black
