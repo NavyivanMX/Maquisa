@@ -115,7 +115,7 @@ Partial Class frmClsBusqueda
         Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Button1.Image = Global.Maquisa.My.Resources.Resources.Files_Exel
         Me.Button1.Location = New System.Drawing.Point(860, 489)
-        Me.Button1.Margin = New System.Windows.Forms.Padding(4, 4, 4, 4)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(4)
         Me.Button1.Name = "Button1"
         Me.Button1.Size = New System.Drawing.Size(60, 65)
         Me.Button1.TabIndex = 3
@@ -132,6 +132,7 @@ Partial Class frmClsBusqueda
         Me.Controls.Add(Me.TXTBUS)
         Me.Controls.Add(Me.BTNACEPTAR)
         Me.KeyPreview = True
+        Me.MinimumSize = New System.Drawing.Size(946, 605)
         Me.Name = "frmClsBusqueda"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

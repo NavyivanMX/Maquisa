@@ -1463,6 +1463,7 @@ Partial Class frmAgendaVisita
         Me.Controls.Add(Me.LBLRUTA)
         Me.Controls.Add(Me.BTNBUSCAR)
         Me.Controls.Add(Me.CBRUTA)
+        Me.MinimumSize = New System.Drawing.Size(1232, 732)
         Me.Name = "frmAgendaVisita"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agenda Visita"

@@ -1,5 +1,6 @@
 ﻿Public Class frmInfoVisita2
     Public VISITA As Integer
+    Dim CLAVECLIENTE As Integer
     Private Sub frmInfoVisita2_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         OPVisualizacionForm(Me)
         Me.Icon = frmPrincipal.Icon
@@ -13,7 +14,7 @@
         'ACTIVAR(False)
         Dim QUERY As String
         QUERY = "SELECT [VISITA],[CLIENTE],[VENDEDOR],[INI VISITA],[FIN VISITA] ,[FECHA] ,[RESULTADO VISITA], "
-        QUERY = QUERY + "[RESULTADOAGENDAR],[FECHA AGENDAR],[HORA  AGENDAR] ,[OBSERVACION] FROM VINFOVISITA "
+        QUERY = QUERY + "[RESULTADOAGENDAR],[FECHA AGENDAR],[HORA  AGENDAR] ,[OBSERVACION], CVECLI FROM VINFOVISITA "
         QUERY = QUERY + " WHERE VISITA ='" + VISITA.ToString + "' "
         Dim SQLSELECT As New SqlClient.SqlCommand(QUERY, frmPrincipal.CONX)
         Dim LECTOR As SqlClient.SqlDataReader
@@ -39,6 +40,7 @@
                 LBLHORAREAGENDADO.Text = LECTOR(9)
             End If
             TXTCOMENTARIO.Text = LECTOR(10)
+            CLAVECLIENTE = LECTOR(11)
 
         End If
         LECTOR.Close()
@@ -65,5 +67,12 @@
 
     Private Sub BTNIZQUIERDA_Click_1(sender As Object, e As EventArgs) Handles BTNIZQUIERDA.Click
         Me.Close()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim VCONTCLI As New frmContactoCliente
+        'frmContactoCliente.MOSTRAR(DGV.Item(11, DGV.CurrentRow.Index).Value)
+        VCONTCLI.MOSTRAR(CLAVECLIENTE, DGV.Item(1, DGV.CurrentRow.Index).Value, DGV.Item(2, DGV.CurrentRow.Index).Value, DGV.Item(3, DGV.CurrentRow.Index).Value)
+
     End Sub
 End Class

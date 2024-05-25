@@ -248,6 +248,7 @@ Partial Class frmAgendar
         Me.Controls.Add(Me.Label3)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.Label2)
+        Me.MinimumSize = New System.Drawing.Size(770, 524)
         Me.Name = "frmAgendar"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Agendar"

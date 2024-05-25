@@ -220,6 +220,7 @@ Partial Class frmUsuarios
         Me.KeyPreview = True
         Me.MaximizeBox = False
         Me.MinimizeBox = False
+        Me.MinimumSize = New System.Drawing.Size(542, 397)
         Me.Name = "frmUsuarios"
         Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen

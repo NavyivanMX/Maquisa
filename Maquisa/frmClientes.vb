@@ -220,6 +220,25 @@
         BUSCAR()
     End Sub
 
+    Private Sub VERMAP_Click(sender As Object, e As EventArgs) Handles VERMAP.Click
+        Dim VDCLI As New frmUbicacionMapa
+        VDCLI.Mostrar(TXTNOM.Text, TXTDIR.Text, LATITUD, LONGITUD)
+        If VDCLI.DialogResult = DialogResult.Yes Then
+            LATITUD = VDCLI.Latitud
+            LONGITUD = VDCLI.Longitud
+        End If
+    End Sub
+
+    Private Sub BTNITINERARIO_Click(sender As Object, e As EventArgs) Handles BTNITINERARIO.Click
+        Dim VITINERARIO As New frmItinerarioRuta
+        VITINERARIO.MOSTRAR(TXTCLA.Text)
+    End Sub
+
+    Private Sub BTNCONTACTOS_Click(sender As Object, e As EventArgs) Handles BTNCONTACTOS.Click
+        Dim vCONTACTOS As New frmContactoCliente
+        vCONTACTOS.MOSTRAR(TXTCLA.Text, "", "", "")
+    End Sub
+
     Private Sub frmClientes_KeyDown(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyDown
         If e.KeyCode = Keys.Alt + Keys.G Then
             If TXTNOM.Enabled = False Then
@@ -244,14 +263,9 @@
         End If
     End Sub
 
-    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles VERMAP.Click
-        Dim VDCLI As New frmUbicacionMapa
-        VDCLI.Mostrar(TXTNOM.Text, TXTDIR.Text, LATITUD, LONGITUD)
-        If VDCLI.DialogResult = DialogResult.Yes Then
-            LATITUD = VDCLI.Latitud
-            LONGITUD = VDCLI.Longitud
-        End If
-    End Sub
+
+
+
 
 
 End Class

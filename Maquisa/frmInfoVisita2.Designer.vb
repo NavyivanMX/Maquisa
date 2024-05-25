@@ -22,8 +22,8 @@ Partial Class frmInfoVisita2
     'No lo modifique con el editor de código.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.Label6 = New System.Windows.Forms.Label()
         Me.Label5 = New System.Windows.Forms.Label()
         Me.LBLVENDEDOR = New System.Windows.Forms.Label()
@@ -48,6 +48,7 @@ Partial Class frmInfoVisita2
         Me.Hora = New System.Windows.Forms.Label()
         Me.LBLFECHAREAGENDADO = New System.Windows.Forms.Label()
         Me.Label10 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
         CType(Me.DGV, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.GB1.SuspendLayout()
         Me.SuspendLayout()
@@ -201,15 +202,16 @@ Partial Class frmInfoVisita2
         '
         'BTNIZQUIERDA
         '
+        Me.BTNIZQUIERDA.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BTNIZQUIERDA.BackColor = System.Drawing.SystemColors.Control
         Me.BTNIZQUIERDA.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNIZQUIERDA
         Me.BTNIZQUIERDA.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNIZQUIERDA.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNIZQUIERDA.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNIZQUIERDA.Location = New System.Drawing.Point(919, 13)
+        Me.BTNIZQUIERDA.Location = New System.Drawing.Point(936, 13)
         Me.BTNIZQUIERDA.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNIZQUIERDA.Name = "BTNIZQUIERDA"
-        Me.BTNIZQUIERDA.Size = New System.Drawing.Size(80, 80)
+        Me.BTNIZQUIERDA.Size = New System.Drawing.Size(74, 59)
         Me.BTNIZQUIERDA.TabIndex = 1296
         Me.BTNIZQUIERDA.UseVisualStyleBackColor = False
         '
@@ -217,31 +219,35 @@ Partial Class frmInfoVisita2
         '
         Me.DGV.AllowUserToAddRows = False
         Me.DGV.AllowUserToDeleteRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.LightSkyBlue
-        Me.DGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.LightSkyBlue
+        Me.DGV.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        Me.DGV.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.DGV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.DGV.Location = New System.Drawing.Point(10, 130)
+        Me.DGV.Location = New System.Drawing.Point(1, 145)
         Me.DGV.Name = "DGV"
         Me.DGV.ReadOnly = True
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.White
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
-        Me.DGV.Size = New System.Drawing.Size(989, 364)
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.White
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Microsoft Sans Serif", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DGV.RowHeadersDefaultCellStyle = DataGridViewCellStyle2
+        Me.DGV.Size = New System.Drawing.Size(1015, 364)
         Me.DGV.TabIndex = 1297
         '
         'BTNGUARDAR
         '
+        Me.BTNGUARDAR.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BTNGUARDAR.BackColor = System.Drawing.SystemColors.ButtonHighlight
         Me.BTNGUARDAR.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNGUARDAR
         Me.BTNGUARDAR.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.BTNGUARDAR.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BTNGUARDAR.ForeColor = System.Drawing.Color.Transparent
-        Me.BTNGUARDAR.Location = New System.Drawing.Point(919, 516)
+        Me.BTNGUARDAR.Location = New System.Drawing.Point(936, 535)
         Me.BTNGUARDAR.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.BTNGUARDAR.Name = "BTNGUARDAR"
         Me.BTNGUARDAR.Size = New System.Drawing.Size(80, 80)
@@ -250,20 +256,23 @@ Partial Class frmInfoVisita2
         '
         'TXTCOMENTARIO
         '
+        Me.TXTCOMENTARIO.Anchor = CType(((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.TXTCOMENTARIO.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.TXTCOMENTARIO.Location = New System.Drawing.Point(10, 516)
+        Me.TXTCOMENTARIO.Location = New System.Drawing.Point(10, 535)
         Me.TXTCOMENTARIO.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.TXTCOMENTARIO.MaxLength = 199
         Me.TXTCOMENTARIO.Multiline = True
         Me.TXTCOMENTARIO.Name = "TXTCOMENTARIO"
-        Me.TXTCOMENTARIO.Size = New System.Drawing.Size(885, 80)
+        Me.TXTCOMENTARIO.Size = New System.Drawing.Size(900, 80)
         Me.TXTCOMENTARIO.TabIndex = 1299
         '
         'Label1
         '
+        Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(9, 497)
+        Me.Label1.Location = New System.Drawing.Point(9, 512)
         Me.Label1.Name = "Label1"
         Me.Label1.Size = New System.Drawing.Size(98, 17)
         Me.Label1.TabIndex = 1300
@@ -271,6 +280,7 @@ Partial Class frmInfoVisita2
         '
         'GB1
         '
+        Me.GB1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.GB1.Controls.Add(Me.LBLHORAREAGENDADO)
         Me.GB1.Controls.Add(Me.Hora)
         Me.GB1.Controls.Add(Me.LBLFECHAREAGENDADO)
@@ -324,11 +334,32 @@ Partial Class frmInfoVisita2
         Me.Label10.TabIndex = 1294
         Me.Label10.Text = "Fecha :"
         '
+        'Button1
+        '
+        Me.Button1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button1.BackColor = System.Drawing.Color.LightSeaGreen
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.FlatAppearance.BorderColor = System.Drawing.Color.Lime
+        Me.Button1.FlatAppearance.BorderSize = 2
+        Me.Button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(0, Byte), Integer), CType(CType(192, Byte), Integer))
+        Me.Button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(CType(CType(192, Byte), Integer), CType(CType(192, Byte), Integer), CType(CType(0, Byte), Integer))
+        Me.Button1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!)
+        Me.Button1.ForeColor = System.Drawing.Color.Transparent
+        Me.Button1.Location = New System.Drawing.Point(909, 77)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(101, 43)
+        Me.Button1.TabIndex = 1302
+        Me.Button1.Text = "Contacto Cliente"
+        Me.Button1.UseVisualStyleBackColor = False
+        '
         'frmInfoVisita2
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1028, 609)
+        Me.ClientSize = New System.Drawing.Size(1028, 627)
+        Me.Controls.Add(Me.Button1)
         Me.Controls.Add(Me.GB1)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.TXTCOMENTARIO)
@@ -349,6 +380,7 @@ Partial Class frmInfoVisita2
         Me.Controls.Add(Me.Label6)
         Me.Controls.Add(Me.LBLVENDEDOR)
         Me.Controls.Add(Me.Label5)
+        Me.MinimumSize = New System.Drawing.Size(1044, 666)
         Me.Name = "frmInfoVisita2"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Info Visita"
@@ -384,4 +416,5 @@ Partial Class frmInfoVisita2
     Friend WithEvents Label10 As Label
     Friend WithEvents LBLHORAREAGENDADO As Label
     Friend WithEvents Hora As Label
+    Friend WithEvents Button1 As Button
 End Class

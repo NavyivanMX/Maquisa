@@ -11,35 +11,35 @@
     Dim ESTAINICIADO As Integer
     Dim QUERY As String
     Dim DT As New DataTable
-
+    Dim CLAVECLIENTE As Integer
     Public MSG As New Mensajes
     Private Sub frmItinerarioRuta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         OPVisualizacionForm(Me, frmPrincipal.COLORFUENTE)
         PonerImagenesBotones(Me)
         CHECATABLA()
-
+        CARGASUCURSALES()
+        CARGACLIENTES()
+        CARGADIAS()
         If ESTAINICIADO = 0 Then
             LIMPIAR()
             ACTIVAR(True)
-            CARGASUCURSALES()
-            CARGADIAS()
             OPCargaX(CLASUC, CBSUC, frmPrincipal.SucursalBase)
+        ElseIf ESTAINICIADO = 2 Then
+            LIMPIAR()
+            ACTIVAR(True)
+            OPCargaX(CLACLI, CBCLI, CLAVECLIENTE)
         Else
             ACTIVAR(False)
             CARGAR()
-
         End If
-
-
-
-
-        'LBLSUC.Text = SUCURSAL
-        'LBLRUTA.Text = NRUTA 'NOMBRE RUTA 
 
     End Sub
     Private Sub CARGACLIENTES()
-        QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 AND CLAVE NOT IN (select CLIENTE FROM ITINERARIORUTA WHERE SUCURSAL='" + CLASUC(CBSUC.SelectedIndex) + "' AND RUTA='" + CLARUT(CBR.SelectedIndex) + "' AND DIA='" + (CBD.SelectedIndex + 1).ToString + "') ORDER BY NOMBRE "
-
+        If ESTAINICIADO <> 2 Then
+            QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 AND CLAVE NOT IN (select CLIENTE FROM ITINERARIORUTA WHERE SUCURSAL='" + CLASUC(CBSUC.SelectedIndex) + "' AND RUTA='" + CLARUT(CBR.SelectedIndex) + "' AND DIA='" + (CBD.SelectedIndex + 1).ToString + "') ORDER BY NOMBRE "
+        Else
+            QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 ORDER BY NOMBRE "
+        End If
         OPLlenaComboBox(CBCLI, CLACLI, QUERY, frmPrincipal.CadenaConexion)
 
     End Sub
@@ -75,6 +75,11 @@
         ESTAINICIADO = 1
         Me.ShowDialog()
     End Sub
+    Public Sub MOSTRAR(ByVal CLI As Integer)
+        CLAVECLIENTE = CLI
+        ESTAINICIADO = 2
+        Me.ShowDialog()
+    End Sub
     Private Sub LIMPIAR()
         OPCargaX(CLASUC, CBSUC, frmPrincipal.SucursalBase)
         If CBR.SelectedIndex <> -1 Then
@@ -84,7 +89,7 @@
         DGV3.DataSource = Nothing
         DGV3.Rows.Clear()
         DGV3.Refresh()
-        'CBCLIENTES.Text = ""
+
     End Sub
     Private Sub AGREGAR()
         Dim POSCLI As Integer
@@ -124,7 +129,6 @@
 
         LBLVENDEDOR.Text = BDExtraeUnDato("SELECT V.NOMBRE VENDEDOR FROM RUTAS R INNER JOIN VENDEDORES V ON R.VENDEDOR=V.CLAVE WHERE R.CLAVE=" + CLARUT(CBR.SelectedIndex).ToString + " ", frmPrincipal.CadenaConexion)
 
-        CARGACLIENTES()
 
     End Sub
     Private Function SIGORDEN()
@@ -146,11 +150,15 @@
         CHECATABLA()
     End Sub
     Private Sub OK_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNACEPTAR.Click
+
         ACTIVAR(False)
         CBD.SelectedIndex = 0
         CARGAR()
         CHECATABLA()
         CBD.Focus()
+        If ESTAINICIADO = 2 Then
+            OPCargaX(CLACLI, CBCLI, CLAVECLIENTE)
+        End If
     End Sub
     Private Sub CBD_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBD.SelectedIndexChanged
         CARGAR()

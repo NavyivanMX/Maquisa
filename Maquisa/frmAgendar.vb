@@ -40,6 +40,12 @@
         If CBR.SelectedIndex <> -1 Then
             CBR.SelectedIndex = 0
         End If
+        If CBCLI.SelectedIndex <> -1 Then
+            CBCLI.SelectedIndex = 0
+        End If
+        DTFECHA.Value = Now
+        TXTORDEN.Text = "0"
+        TXTOBS.Text = ""
         LBLVENDEDOR.Text = ""
         CARGASIGVISITA()
     End Sub

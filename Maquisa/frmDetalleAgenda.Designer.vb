@@ -273,6 +273,7 @@ Partial Class frmDetalleAgenda
         Me.Controls.Add(Me.BTNADMINPROSPECTO)
         Me.Controls.Add(Me.BTNEDITAR)
         Me.Controls.Add(Me.LBLVISITADOS)
+        Me.MinimumSize = New System.Drawing.Size(1044, 648)
         Me.Name = "frmDetalleAgenda"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = " Detalle Agenda"

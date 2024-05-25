@@ -41,8 +41,7 @@ Partial Class frmRutaMapaClientes
         Me.MAPA.GrayScaleMode = False
         Me.MAPA.HelperLineOption = GMap.NET.WindowsForms.HelperLineOptions.DontShow
         Me.MAPA.LevelsKeepInMemory = 5
-        Me.MAPA.Location = New System.Drawing.Point(13, 65)
-        Me.MAPA.Margin = New System.Windows.Forms.Padding(4)
+        Me.MAPA.Location = New System.Drawing.Point(10, 53)
         Me.MAPA.MarkersEnabled = True
         Me.MAPA.MaxZoom = 2
         Me.MAPA.MinZoom = 2
@@ -56,7 +55,7 @@ Partial Class frmRutaMapaClientes
         Me.MAPA.ScaleMode = GMap.NET.WindowsForms.ScaleModes.[Integer]
         Me.MAPA.SelectedAreaFillColor = System.Drawing.Color.FromArgb(CType(CType(33, Byte), Integer), CType(CType(65, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(225, Byte), Integer))
         Me.MAPA.ShowTileGridLines = False
-        Me.MAPA.Size = New System.Drawing.Size(735, 460)
+        Me.MAPA.Size = New System.Drawing.Size(551, 374)
         Me.MAPA.TabIndex = 1359
         Me.MAPA.Zoom = 0R
         '
@@ -64,10 +63,9 @@ Partial Class frmRutaMapaClientes
         '
         Me.Label1.AutoSize = True
         Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label1.Location = New System.Drawing.Point(8, 17)
-        Me.Label1.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label1.Location = New System.Drawing.Point(6, 14)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(129, 22)
+        Me.Label1.Size = New System.Drawing.Size(101, 17)
         Me.Label1.TabIndex = 1361
         Me.Label1.Text = "Tipo de Vista"
         '
@@ -77,45 +75,45 @@ Partial Class frmRutaMapaClientes
         Me.CBTV.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.CBTV.FormattingEnabled = True
         Me.CBTV.Items.AddRange(New Object() {"Camino", "Satelite", "Hibrido", "Terreno"})
-        Me.CBTV.Location = New System.Drawing.Point(145, 14)
-        Me.CBTV.Margin = New System.Windows.Forms.Padding(4, 5, 4, 5)
+        Me.CBTV.Location = New System.Drawing.Point(109, 11)
+        Me.CBTV.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
         Me.CBTV.Name = "CBTV"
-        Me.CBTV.Size = New System.Drawing.Size(225, 30)
+        Me.CBTV.Size = New System.Drawing.Size(170, 25)
         Me.CBTV.TabIndex = 1360
         '
         'Label9
         '
         Me.Label9.AutoSize = True
         Me.Label9.Font = New System.Drawing.Font("Arial Rounded MT Bold", 11.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label9.Location = New System.Drawing.Point(413, 11)
-        Me.Label9.Margin = New System.Windows.Forms.Padding(4, 0, 4, 0)
+        Me.Label9.Location = New System.Drawing.Point(310, 9)
         Me.Label9.Name = "Label9"
-        Me.Label9.Size = New System.Drawing.Size(61, 22)
+        Me.Label9.Size = New System.Drawing.Size(49, 17)
         Me.Label9.TabIndex = 1363
         Me.Label9.Text = "Zoom"
         '
         'TBZOOM
         '
         Me.TBZOOM.LargeChange = 1
-        Me.TBZOOM.Location = New System.Drawing.Point(482, 1)
-        Me.TBZOOM.Margin = New System.Windows.Forms.Padding(4)
+        Me.TBZOOM.Location = New System.Drawing.Point(362, 1)
         Me.TBZOOM.Maximum = 17
         Me.TBZOOM.Minimum = 3
         Me.TBZOOM.Name = "TBZOOM"
-        Me.TBZOOM.Size = New System.Drawing.Size(225, 56)
+        Me.TBZOOM.Size = New System.Drawing.Size(169, 45)
         Me.TBZOOM.TabIndex = 1362
         Me.TBZOOM.Value = 16
         '
         'frmRutaMapaClientes
         '
-        Me.AutoScaleDimensions = New System.Drawing.SizeF(8.0!, 16.0!)
+        Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(761, 529)
+        Me.ClientSize = New System.Drawing.Size(571, 430)
         Me.Controls.Add(Me.Label9)
         Me.Controls.Add(Me.TBZOOM)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.CBTV)
         Me.Controls.Add(Me.MAPA)
+        Me.Margin = New System.Windows.Forms.Padding(2, 2, 2, 2)
+        Me.MinimumSize = New System.Drawing.Size(587, 469)
         Me.Name = "frmRutaMapaClientes"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Mapa de Clientes Ruta"

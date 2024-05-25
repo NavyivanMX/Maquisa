@@ -29,7 +29,7 @@
     Private Sub frmPrincipal_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         Ciudad = "Mazatlán, Sin."
          IP = "structureserver2.noip.me"
-        BD = "MAQUISAp"
+        BD = "MAQUISA"
         USER = "MAROSILOCAL"
         PASS = "Loco*1234"
         Empresa = 1
@@ -260,6 +260,26 @@
     Private Sub MapaClientesEnRutaToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MapaClientesEnRutaToolStripMenuItem.Click
         Dim VRMC As New frmRutaMapaClientes
         VRMC.ShowDialog()
+    End Sub
+
+    Private Sub VERMAP_Click(sender As Object, e As EventArgs) Handles VERMAP.Click
+        Dim VAGEN As New frmAgendaVisita
+        VAGEN.ShowDialog()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+        Dim ACLIE As New frmClientes
+        ACLIE.ShowDialog()
+    End Sub
+
+    Private Sub Button3_Click(sender As Object, e As EventArgs) Handles Button3.Click
+        Dim AITIN As New frmItinerarioRuta
+        AITIN.ShowDialog()
+    End Sub
+
+    Private Sub Button2_Click(sender As Object, e As EventArgs) Handles Button2.Click
+        Dim MCONTACTO As New frmContactoCliente
+        MCONTACTO.ShowDialog()
     End Sub
 
     Private Sub S1_Click(sender As Object, e As EventArgs) Handles S1.Click

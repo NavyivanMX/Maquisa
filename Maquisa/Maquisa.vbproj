@@ -156,10 +156,10 @@
     <Compile Include="frmAdministrarProspecto.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmAgenda.designer.vb">
-      <DependentUpon>frmAgenda.vb</DependentUpon>
+    <Compile Include="frmNOSEUSAAgenda.designer.vb">
+      <DependentUpon>frmNOSEUSAAgenda.vb</DependentUpon>
     </Compile>
-    <Compile Include="frmAgenda.vb">
+    <Compile Include="frmNOSEUSAAgenda.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="frmAgendar.Designer.vb">
@@ -318,8 +318,8 @@
     <EmbeddedResource Include="frmAdministrarProspecto.resx">
       <DependentUpon>frmAdministrarProspecto.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmAgenda.resx">
-      <DependentUpon>frmAgenda.vb</DependentUpon>
+    <EmbeddedResource Include="frmNOSEUSAAgenda.resx">
+      <DependentUpon>frmNOSEUSAAgenda.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmAgendar.resx">
       <DependentUpon>frmAgendar.vb</DependentUpon>
@@ -416,6 +416,8 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MaquisaIcon.ico" />
+    <None Include="Resources\REQSERV.png" />
+    <None Include="Resources\REQCOMPRA100X100.png" />
     <None Include="Resources\fondo3.jpg" />
     <None Include="Resources\fondo.jpg" />
     <None Include="Resources\BTNIZQUIERDA.png" />

@@ -216,6 +216,7 @@ Partial Class frmVendedor
         Me.Controls.Add(Me.Label2)
         Me.Controls.Add(Me.BTNCANCELAR)
         Me.Controls.Add(Me.BTNGUARDAR)
+        Me.MinimumSize = New System.Drawing.Size(656, 452)
         Me.Name = "frmVendedor"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Vendedor"

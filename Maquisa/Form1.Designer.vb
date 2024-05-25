@@ -60,6 +60,14 @@ Partial Class frmPrincipal
         Me.LBLP = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.PBCNC = New System.Windows.Forms.PictureBox()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.VERMAP = New System.Windows.Forms.Button()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.Button1 = New System.Windows.Forms.Button()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Label6 = New System.Windows.Forms.Label()
         Me.SB.SuspendLayout()
         Me.MenuStrip1.SuspendLayout()
         CType(Me.PBS, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -122,41 +130,41 @@ Partial Class frmPrincipal
         'S1
         '
         Me.S1.Name = "S1"
-        Me.S1.Size = New System.Drawing.Size(160, 24)
+        Me.S1.Size = New System.Drawing.Size(180, 24)
         Me.S1.Text = "Empresa"
         '
         'S4
         '
         Me.S4.Name = "S4"
-        Me.S4.Size = New System.Drawing.Size(160, 24)
+        Me.S4.Size = New System.Drawing.Size(180, 24)
         Me.S4.Text = "Usuarios"
         '
         'ToolStripMenuItem3
         '
         Me.ToolStripMenuItem3.Name = "ToolStripMenuItem3"
-        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(157, 6)
+        Me.ToolStripMenuItem3.Size = New System.Drawing.Size(177, 6)
         '
         'S2
         '
         Me.S2.Name = "S2"
-        Me.S2.Size = New System.Drawing.Size(160, 24)
+        Me.S2.Size = New System.Drawing.Size(180, 24)
         Me.S2.Text = "Vendedores"
         '
         'S5
         '
         Me.S5.Name = "S5"
-        Me.S5.Size = New System.Drawing.Size(160, 24)
+        Me.S5.Size = New System.Drawing.Size(180, 24)
         Me.S5.Text = "Clientes"
         '
         'ToolStripMenuItem2
         '
         Me.ToolStripMenuItem2.Name = "ToolStripMenuItem2"
-        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(157, 6)
+        Me.ToolStripMenuItem2.Size = New System.Drawing.Size(177, 6)
         '
         'RutaToolStripMenuItem
         '
         Me.RutaToolStripMenuItem.Name = "RutaToolStripMenuItem"
-        Me.RutaToolStripMenuItem.Size = New System.Drawing.Size(160, 24)
+        Me.RutaToolStripMenuItem.Size = New System.Drawing.Size(180, 24)
         Me.RutaToolStripMenuItem.Text = "Ruta"
         '
         'MM2
@@ -259,7 +267,7 @@ Partial Class frmPrincipal
         Me.LBLPRU.BackColor = System.Drawing.Color.Transparent
         Me.LBLPRU.Font = New System.Drawing.Font("Arial", 29.75!)
         Me.LBLPRU.ForeColor = System.Drawing.Color.RoyalBlue
-        Me.LBLPRU.Location = New System.Drawing.Point(310, 435)
+        Me.LBLPRU.Location = New System.Drawing.Point(310, 422)
         Me.LBLPRU.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.LBLPRU.Name = "LBLPRU"
         Me.LBLPRU.Size = New System.Drawing.Size(377, 45)
@@ -272,12 +280,12 @@ Partial Class frmPrincipal
         Me.Label1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Label1.AutoSize = True
         Me.Label1.BackColor = System.Drawing.Color.Transparent
-        Me.Label1.Font = New System.Drawing.Font("Arial", 29.75!)
-        Me.Label1.ForeColor = System.Drawing.Color.DarkBlue
+        Me.Label1.Font = New System.Drawing.Font("Arial Rounded MT Bold", 30.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight
         Me.Label1.Location = New System.Drawing.Point(38, 463)
         Me.Label1.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
         Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(268, 45)
+        Me.Label1.Size = New System.Drawing.Size(305, 46)
         Me.Label1.TabIndex = 395
         Me.Label1.Text = "Control Flotilla"
         '
@@ -287,13 +295,13 @@ Partial Class frmPrincipal
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LBLV.AutoSize = True
         Me.LBLV.BackColor = System.Drawing.Color.Transparent
-        Me.LBLV.Font = New System.Drawing.Font("Microsoft Sans Serif", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLV.ForeColor = System.Drawing.Color.DarkBlue
-        Me.LBLV.Location = New System.Drawing.Point(434, 484)
+        Me.LBLV.Font = New System.Drawing.Font("Arial Black", 14.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLV.ForeColor = System.Drawing.Color.White
+        Me.LBLV.Location = New System.Drawing.Point(419, 484)
         Me.LBLV.Margin = New System.Windows.Forms.Padding(2, 0, 2, 0)
-        Me.LBLV.MaximumSize = New System.Drawing.Size(116, 24)
+        Me.LBLV.MaximumSize = New System.Drawing.Size(150, 27)
         Me.LBLV.Name = "LBLV"
-        Me.LBLV.Size = New System.Drawing.Size(116, 24)
+        Me.LBLV.Size = New System.Drawing.Size(129, 27)
         Me.LBLV.TabIndex = 397
         Me.LBLV.Text = "Versión 1.1"
         '
@@ -314,12 +322,12 @@ Partial Class frmPrincipal
         Me.LBLP.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.LBLP.AutoSize = True
         Me.LBLP.BackColor = System.Drawing.Color.Transparent
-        Me.LBLP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.LBLP.ForeColor = System.Drawing.Color.DarkBlue
-        Me.LBLP.Location = New System.Drawing.Point(778, 483)
+        Me.LBLP.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LBLP.ForeColor = System.Drawing.Color.White
+        Me.LBLP.Location = New System.Drawing.Point(772, 483)
         Me.LBLP.Name = "LBLP"
         Me.LBLP.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.LBLP.Size = New System.Drawing.Size(95, 20)
+        Me.LBLP.Size = New System.Drawing.Size(106, 20)
         Me.LBLP.TabIndex = 1337
         Me.LBLP.Text = "Powered by "
         '
@@ -328,12 +336,12 @@ Partial Class frmPrincipal
         Me.Label3.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Label3.AutoSize = True
         Me.Label3.BackColor = System.Drawing.Color.Transparent
-        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.Label3.ForeColor = System.Drawing.Color.DarkBlue
-        Me.Label3.Location = New System.Drawing.Point(747, 508)
+        Me.Label3.Font = New System.Drawing.Font("Microsoft Sans Serif", 12.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label3.ForeColor = System.Drawing.Color.White
+        Me.Label3.Location = New System.Drawing.Point(741, 508)
         Me.Label3.Name = "Label3"
         Me.Label3.RightToLeft = System.Windows.Forms.RightToLeft.Yes
-        Me.Label3.Size = New System.Drawing.Size(157, 20)
+        Me.Label3.Size = New System.Drawing.Size(177, 20)
         Me.Label3.TabIndex = 1336
         Me.Label3.Text = "Structure Soluciones"
         '
@@ -350,6 +358,114 @@ Partial Class frmPrincipal
         Me.PBCNC.TabIndex = 354
         Me.PBCNC.TabStop = False
         '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.BackColor = System.Drawing.Color.Transparent
+        Me.Label2.Font = New System.Drawing.Font("Arial Black", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label2.ForeColor = System.Drawing.Color.White
+        Me.Label2.Location = New System.Drawing.Point(43, 196)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(72, 22)
+        Me.Label2.TabIndex = 1340
+        Me.Label2.Text = "Agenda"
+        '
+        'VERMAP
+        '
+        Me.VERMAP.BackColor = System.Drawing.SystemColors.Control
+        Me.VERMAP.BackgroundImage = Global.Maquisa.My.Resources.Resources.REQCOMPRA100X100
+        Me.VERMAP.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.VERMAP.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.VERMAP.ForeColor = System.Drawing.Color.Transparent
+        Me.VERMAP.Location = New System.Drawing.Point(39, 118)
+        Me.VERMAP.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.VERMAP.Name = "VERMAP"
+        Me.VERMAP.Size = New System.Drawing.Size(80, 80)
+        Me.VERMAP.TabIndex = 1339
+        Me.VERMAP.UseVisualStyleBackColor = False
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.BackColor = System.Drawing.Color.Transparent
+        Me.Label4.Font = New System.Drawing.Font("Arial Black", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label4.ForeColor = System.Drawing.Color.White
+        Me.Label4.Location = New System.Drawing.Point(40, 328)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(78, 22)
+        Me.Label4.TabIndex = 1342
+        Me.Label4.Text = "Clientes"
+        '
+        'Button1
+        '
+        Me.Button1.BackColor = System.Drawing.SystemColors.Control
+        Me.Button1.BackgroundImage = Global.Maquisa.My.Resources.Resources.REQSERV
+        Me.Button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button1.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button1.ForeColor = System.Drawing.Color.Transparent
+        Me.Button1.Location = New System.Drawing.Point(39, 250)
+        Me.Button1.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(80, 80)
+        Me.Button1.TabIndex = 1341
+        Me.Button1.UseVisualStyleBackColor = False
+        '
+        'Label5
+        '
+        Me.Label5.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label5.AutoSize = True
+        Me.Label5.BackColor = System.Drawing.Color.Transparent
+        Me.Label5.Font = New System.Drawing.Font("Arial Black", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label5.ForeColor = System.Drawing.Color.White
+        Me.Label5.Location = New System.Drawing.Point(896, 328)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(86, 22)
+        Me.Label5.TabIndex = 1346
+        Me.Label5.Text = "Contacto"
+        '
+        'Button2
+        '
+        Me.Button2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button2.BackColor = System.Drawing.SystemColors.Control
+        Me.Button2.BackgroundImage = Global.Maquisa.My.Resources.Resources.autorizar100X100
+        Me.Button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button2.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button2.ForeColor = System.Drawing.Color.Transparent
+        Me.Button2.Location = New System.Drawing.Point(895, 250)
+        Me.Button2.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(80, 80)
+        Me.Button2.TabIndex = 1345
+        Me.Button2.UseVisualStyleBackColor = False
+        '
+        'Button3
+        '
+        Me.Button3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Button3.BackColor = System.Drawing.SystemColors.Control
+        Me.Button3.BackgroundImage = Global.Maquisa.My.Resources.Resources.BTNCORREO
+        Me.Button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.Button3.Font = New System.Drawing.Font("Microsoft Sans Serif", 1.5!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Button3.ForeColor = System.Drawing.Color.Transparent
+        Me.Button3.Location = New System.Drawing.Point(895, 118)
+        Me.Button3.Margin = New System.Windows.Forms.Padding(3, 4, 3, 4)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(80, 80)
+        Me.Button3.TabIndex = 1343
+        Me.Button3.UseVisualStyleBackColor = False
+        '
+        'Label6
+        '
+        Me.Label6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.Label6.AutoSize = True
+        Me.Label6.BackColor = System.Drawing.Color.Transparent
+        Me.Label6.Font = New System.Drawing.Font("Arial Black", 11.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.Label6.ForeColor = System.Drawing.Color.White
+        Me.Label6.Location = New System.Drawing.Point(899, 196)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(89, 22)
+        Me.Label6.TabIndex = 1344
+        Me.Label6.Text = "Itinearios"
+        '
         'frmPrincipal
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -357,6 +473,14 @@ Partial Class frmPrincipal
         Me.BackgroundImage = Global.Maquisa.My.Resources.Resources.fondo
         Me.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
         Me.ClientSize = New System.Drawing.Size(1030, 558)
+        Me.Controls.Add(Me.Label5)
+        Me.Controls.Add(Me.Button2)
+        Me.Controls.Add(Me.Label6)
+        Me.Controls.Add(Me.Button3)
+        Me.Controls.Add(Me.Label4)
+        Me.Controls.Add(Me.Button1)
+        Me.Controls.Add(Me.Label2)
+        Me.Controls.Add(Me.VERMAP)
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.PBCNC)
         Me.Controls.Add(Me.PBS)
@@ -421,4 +545,12 @@ Partial Class frmPrincipal
     Friend WithEvents AgendaToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents AgendarToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MapaClientesEnRutaToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents Label2 As Label
+    Friend WithEvents VERMAP As Button
+    Friend WithEvents Label4 As Label
+    Friend WithEvents Button1 As Button
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Label6 As Label
 End Class

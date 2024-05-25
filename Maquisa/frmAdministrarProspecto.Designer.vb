@@ -131,6 +131,7 @@ Partial Class frmAdministrarProspecto
         Me.Controls.Add(Me.Label1)
         Me.Controls.Add(Me.DGV)
         Me.Controls.Add(Me.BTNACLIENTE)
+        Me.MinimumSize = New System.Drawing.Size(1044, 631)
         Me.Name = "frmAdministrarProspecto"
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Administrar Prospecto"
