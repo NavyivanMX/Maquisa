@@ -11,7 +11,7 @@
     Dim ESTAINICIADO As Integer
     Dim QUERY As String
     Dim DT As New DataTable
-    Dim CLAVECLIENTE As Integer
+    Dim CLAVECLIENTE As String
     Public MSG As New Mensajes
     Private Sub frmItinerarioRuta_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
         OPVisualizacionForm(Me, frmPrincipal.COLORFUENTE)
@@ -75,7 +75,7 @@
         ESTAINICIADO = 1
         Me.ShowDialog()
     End Sub
-    Public Sub MOSTRAR(ByVal CLI As Integer)
+    Public Sub MOSTRAR(ByVal CLI As String)
         CLAVECLIENTE = CLI
         ESTAINICIADO = 2
         Me.ShowDialog()
