@@ -35,11 +35,8 @@
 
     End Sub
     Private Sub CARGACLIENTES()
-        If ESTAINICIADO <> 2 Then
-            QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 AND CLAVE NOT IN (select CLIENTE FROM ITINERARIORUTA WHERE SUCURSAL='" + CLASUC(CBSUC.SelectedIndex) + "' AND RUTA='" + CLARUT(CBR.SelectedIndex) + "' AND DIA='" + (CBD.SelectedIndex + 1).ToString + "') ORDER BY NOMBRE "
-        Else
-            QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 ORDER BY NOMBRE "
-        End If
+        Dim QUERY As String
+        QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 ORDER BY NOMBRE "
         OPLlenaComboBox(CBCLI, CLACLI, QUERY, frmPrincipal.CadenaConexion)
 
     End Sub
