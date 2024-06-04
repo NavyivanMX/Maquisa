@@ -101,8 +101,8 @@
         SQLGUARDAR.Parameters.Add("@CLIENTE", SqlDbType.Int).Value = CLACLI(POSCLI)
         SQLGUARDAR.ExecuteNonQuery()
 
-        CBCLI.Items.RemoveAt(POSCLI)
-        CLACLI.RemoveAt(POSCLI)
+        'CBCLI.Items.RemoveAt(POSCLI)
+        'CLACLI.RemoveAt(POSCLI)
         CBCLI.Focus()
 
 
@@ -285,6 +285,16 @@
         If CBCLI.Items.Count <= 0 Then
             Return
         End If
+        'CANDADO PARA VER SI CLIENTES YA FUE AGREGADO A LA RUTA
+
+        Dim X As Integer
+        For X = 0 To DGV3.Rows.Count - 1
+            If DGV3.Item(2, X).Value = CLACLI(CBCLI.SelectedIndex) Then
+                MessageBox.Show("El cliente ya fue agregado a la ruta", "Aviso", MessageBoxButtons.OK)
+                Exit Sub
+            End If
+        Next
+
         AGREGAR()
         CARGAR()
         CHECATABLA()
