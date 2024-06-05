@@ -38,17 +38,14 @@
         Dim QUERY As String
         QUERY = "SELECT CLAVE,NOMBRE FROM CLIENTES WHERE ACTIVO=1 ORDER BY NOMBRE "
         OPLlenaComboBox(CBCLI, CLACLI, QUERY, frmPrincipal.CadenaConexion)
-
     End Sub
     Private Sub CARGADIAS()
         Dim QUERY As String
         QUERY = "SELECT CLAVE,NOMBRE FROM DIASSEMANA WHERE ACTIVO=1  ORDER BY CLAVE ASC "
         OPLlenaComboBox(CBD, CLADIA, QUERY, frmPrincipal.CadenaConexion)
-
     End Sub
     Private Sub CARGASUCURSALES()
         OPLlenaComboBox(CBSUC, CLASUC, "SELECT CLAVE,NOMBRE FROM SUCURSALES WHERE ACTIVO=1 ORDER BY NOMBRE", frmPrincipal.CadenaConexion)
-
     End Sub
     Private Sub ACTIVAR(ByRef V As Boolean)
         CBSUC.Enabled = V
@@ -88,54 +85,79 @@
         DGV3.Refresh()
 
     End Sub
-    Private Sub AGREGAR()
-        Dim POSCLI As Integer
-        POSCLI = CBCLI.SelectedIndex
-        Dim SQLGUARDAR As New SqlClient.SqlCommand
-        SQLGUARDAR.Connection = frmPrincipal.CONX
-        SQLGUARDAR.CommandType = CommandType.StoredProcedure
-        SQLGUARDAR.CommandText = "SPCONFIGITINERARIORUTA"
-        SQLGUARDAR.Parameters.Add("@SUC", SqlDbType.VarChar).Value = CLASUC(CBSUC.SelectedIndex)
-        SQLGUARDAR.Parameters.Add("@RUTA", SqlDbType.Int).Value = CLARUT(CBR.SelectedIndex)
-        SQLGUARDAR.Parameters.Add("@DIA", SqlDbType.Int).Value = CBD.SelectedIndex + 1
-        SQLGUARDAR.Parameters.Add("@CLIENTE", SqlDbType.Int).Value = CLACLI(POSCLI)
-        SQLGUARDAR.ExecuteNonQuery()
+    Private Sub AGREGAR(ByVal NOMCLIENTE As String, CVECLIENTE As Integer)
 
-        'CBCLI.Items.RemoveAt(POSCLI)
-        'CLACLI.RemoveAt(POSCLI)
+        If CBCLI.SelectedIndex = -1 Then
+            MessageBox.Show("Debe seleccionar un cliente", "Aviso", MessageBoxButtons.OK)
+            Exit Sub
+        End If
+        If CBCLI.Items.Count <= 0 Then
+            Return
+        End If
+
+        'CANDADO PARA VER SI CLIENTES YA FUE AGREGADO A LA RUTA
+
+        Dim X As Integer
+        For X = 0 To DGV3.Rows.Count - 1
+            If DGV3.Item(2, X).Value = CLACLI(CBCLI.SelectedIndex) Then
+                MessageBox.Show("El cliente ya fue agregado a la ruta", "Aviso", MessageBoxButtons.OK)
+                Exit Sub
+            End If
+        Next
+
+        'agregar a la tabla
+        DGV3.Rows.Add(1)
+        Dim ITEMS As Integer
+        ITEMS = DGV3.Rows.Count - 1
+        DGV3.Item(0, ITEMS).Value = NOMCLIENTE
+        DGV3.Item(1, ITEMS).Value = SIGORDEN()
+        DGV3.Item(2, ITEMS).Value = CLACLI(CBCLI.SelectedIndex)
+
         CBCLI.Focus()
 
-
     End Sub
-    'Private Sub BUSCAR()
-    '    Dim QUERY As String
-    '    QUERY = "SELECT CLAVE,NOMBRE CLIENTE FROM CLIENTE WHERE SUCURSAL = '" + CLASUC(CBSUC.SelectedIndex) + "' AND RUTA = " + CLARUT(CBR.SelectedIndex) + " AND NOMBRE LIKE '%" + CBCLIENTES.Text + "%'"
-    '    OPLlenaCombobox(CBCLIENTES, CLACLI, QUERY, frmPrincipal.CADENACONEXION)
-    '    CBCLIENTES.DroppedDown = True
-    'End Sub
+
     Private Sub CARGAR()
         Dim QUERY As String
         Dim DIA As Integer
 
-        DIA = CBD.SelectedIndex + 1
+        DIA = CLADIA(CBD.SelectedIndex)
         QUERY = "SELECT C.NOMBRE CLIENTE,CI.ORDEN,CI.CLIENTE FROM ITINERARIORUTA CI INNER JOIN CLIENTEs C ON  CI.CLIENTE=C.CLAVE WHERE CI.SUCURSAL='" + CLASUC(CBSUC.SelectedIndex).ToString + "' AND CI.RUTA=" + CLARUT(CBR.SelectedIndex).ToString + " AND C.ACTIVO=1 AND CI.DIA=" + DIA.ToString + " ORDER BY ORDEN"
-        DGV3.DataSource = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion)
-        DGV3.Columns(0).AutoSizeMode = DataGridViewAutoSizeColumnMode.Fill
-        DGV3.Columns(1).AutoSizeMode = DataGridViewAutoSizeColumnMode.DisplayedCells
+        Dim DA As New SqlClient.SqlDataAdapter(QUERY, frmPrincipal.CONX)
+        Dim DDT As New DataTable
+        DA.Fill(DDT)
+        DGV3.Rows.Clear()
+        Dim X As Integer
+        Dim ITEMS As Integer
+        For X = 0 To DDT.Rows.Count - 1
+            DGV3.Rows.Add(1)
+            ITEMS = DGV3.Rows.Count - 1
+            DGV3.Item(0, ITEMS).Value = DDT.Rows(X).Item(0)
+            DGV3.Item(1, ITEMS).Value = DDT.Rows(X).Item(1)
+            DGV3.Item(2, ITEMS).Value = DDT.Rows(X).Item(2)
+        Next
+        CHECATABLA()
+
         DGV3.Columns(2).Visible = False
+        DgvAjusteEncabezado(DGV3, 0)
 
         LBLVENDEDOR.Text = BDExtraeUnDato("SELECT V.NOMBRE VENDEDOR FROM RUTAS R INNER JOIN VENDEDORES V ON R.VENDEDOR=V.CLAVE WHERE R.CLAVE=" + CLARUT(CBR.SelectedIndex).ToString + " ", frmPrincipal.CadenaConexion)
-
 
     End Sub
     Private Function SIGORDEN()
         Dim ORDEN As Integer
-        For X = 0 To DGV3.Rows.Count - 1
-            ORDEN = DGV3.Item(1, X).Value.ToString() + 1
-        Next
+        ORDEN = 0
+        If DGV3.Rows.Count <> 0 Then
+
+            For X = 0 To DGV3.Rows.Count - 1
+                If (DGV3.Item(1, X).Value) >= ORDEN Then
+                    ORDEN = DGV3.Item(1, X).Value + 1
+                End If
+0
+            Next
+        End If
         Return ORDEN
     End Function
-
 
     Private Sub CBSUC_SelectedIndexChanged(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles CBSUC.SelectedIndexChanged
         CARGARUTAS()
@@ -164,101 +186,69 @@
     End Sub
     Private Sub QUITAR()
 
-        Dim DIA As Integer
-        DIA = CBD.SelectedIndex + 1
-        Dim SQLBORRA As New SqlClient.SqlCommand("DELETE FROM ITINERARIORUTA WHERE SUCURSAL='" + CLASUC(CBSUC.SelectedIndex) + "' AND RUTA=" + CLARUT(CBR.SelectedIndex) + " AND DIA=" + DIA.ToString + " ", frmPrincipal.CONX)
-        SQLBORRA.ExecuteNonQuery()
+        DGV3.Rows.RemoveAt(DGV3.CurrentRow.Index)
 
-
-
-        Dim SQLGUARDAR As New SqlClient.SqlCommand
-        SQLGUARDAR.Connection = frmPrincipal.CONX
-        SQLGUARDAR.CommandType = CommandType.StoredProcedure
-        SQLGUARDAR.CommandText = "[SPMUEVEQUITACLIENTEITINERARIO]"
-        SQLGUARDAR.Parameters.Add("@SUC", SqlDbType.VarChar)
-        SQLGUARDAR.Parameters.Add("@RUTA", SqlDbType.Int)
-        SQLGUARDAR.Parameters.Add("@DIA", SqlDbType.Int)
-        SQLGUARDAR.Parameters.Add("@CLIENTE", SqlDbType.Int)
-        SQLGUARDAR.Parameters.Add("@ORD", SqlDbType.Int)
-        For X = 0 To DGV3.Rows.Count - 1
-            SQLGUARDAR.Parameters("@SUC").Value = CLASUC(CBSUC.SelectedIndex)
-            SQLGUARDAR.Parameters("@RUTA").Value = CLARUT(CBR.SelectedIndex)
-            SQLGUARDAR.Parameters("@DIA").Value = DIA.ToString
-            SQLGUARDAR.Parameters("@CLIENTE").Value = DGV3.Item(2, X).Value
-            SQLGUARDAR.Parameters("@ORD").Value = X + 1
-            SQLGUARDAR.ExecuteNonQuery()
-        Next
-
-        Dim SGLEDITAAGENDA As New SqlClient.SqlCommand
-        SGLEDITAAGENDA.Connection = frmPrincipal.CONX
-        SGLEDITAAGENDA.CommandType = CommandType.StoredProcedure
-        SGLEDITAAGENDA.CommandText = "[SPREGENERADORAGENDAVISITA]"
-        SGLEDITAAGENDA.Parameters.Add("@SUC", SqlDbType.VarChar).Value = CLASUC(CBSUC.SelectedIndex)
-        SGLEDITAAGENDA.Parameters.Add("@DIA", SqlDbType.Int).Value = DIA.ToString
-        SGLEDITAAGENDA.Parameters.Add("@RUTA", SqlDbType.Int).Value = CLARUT(CBR.SelectedIndex)
-        SGLEDITAAGENDA.ExecuteNonQuery()
     End Sub
 
     Private Sub BTNNIVANT_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNNIVANT.Click
+
+
+        ' Verificar si la fila seleccionada no es la primera
         If DGV3.CurrentRow.Index = 0 Then
             Return
         End If
-        Dim FILA As Integer = DGV3.CurrentRow.Index ''FILA = A LA FILA SELECCIONADA
-        Dim PROXFILA As Integer = DGV3.CurrentRow.Index - 1 ''EN ESTE CASO LA FILA QUE SELECCIONASTE LA VA A SUBIR, A LA ACTUAL - 1
 
-        Dim FORIGEN As DataGridViewRow = DGV3.Rows(FILA)
-        Dim FDESTINO As DataGridViewRow = DGV3.Rows(PROXFILA)
+        ' Obtener el índice de la fila seleccionada y el índice de la fila destino
+        Dim filaActual As Integer = DGV3.CurrentRow.Index
+        Dim filaDestino As Integer = filaActual - 1
 
-        Dim DATAORIGEN As Object() = New Object(FORIGEN.Cells.Count - 1) {} ''CARGAR LOS VALORES DE LAS CELDAS A COPIAR
-        Dim DATADESTINO As Object() = New Object(FDESTINO.Cells.Count - 1) {}
+        ' Intercambiar las filas
+        Dim temp As DataGridViewRow = DGV3.Rows(filaActual)
+        DGV3.Rows.RemoveAt(filaActual)
+        DGV3.Rows.Insert(filaDestino, temp)
 
-        'HACER EL CAMBIO
-        For CONT = 0 To DATADESTINO.Length - 1
-            DATAORIGEN(CONT) = FORIGEN.Cells(CONT).Value
-            DATADESTINO(CONT) = FDESTINO.Cells(CONT).Value
+        ' Ajustar la selección a la nueva posición de la fila
+        DGV3.ClearSelection()
+        DGV3.Rows(filaDestino).Selected = True
+        DGV3.CurrentCell = DGV3.Rows(filaDestino).Cells(0)
+
+        ' Actualizar la columna "Orden" para que sea consecutiva
+        For i As Integer = 0 To DGV3.Rows.Count - 1
+            DGV3.Rows(i).Cells("ORDEN").Value = i + 1
         Next
-
-        For CONT = 0 To DATAORIGEN.Length - 1
-            DGV3.Rows(FILA).Cells(CONT).Value = DATADESTINO(CONT)
-            DGV3.Rows(FILA - 1).Cells(CONT).Value = DATAORIGEN(CONT)
-        Next
-
-        DGV3.CurrentCell = DGV3.Rows(PROXFILA).Cells(0)
-        'QUITAR()
-        'CARGAR()
     End Sub
     Private Sub BTNNIVPROX_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles BTNNIVPROX.Click
-        Dim FILA As Integer = DGV3.CurrentRow.Index ''FILA = A LA FILA SELECCIONADA
-        Dim PROXFILA As Integer = DGV3.CurrentRow.Index + 1 ''EN ESTE CASO LA FILA QUE SELECCIONASTE LA VA A BAJAR, A LA ACTUAL + 1
 
-        Dim FORIGEN As DataGridViewRow = DGV3.Rows(FILA)
-        Dim FDESTINO As DataGridViewRow = DGV3.Rows(PROXFILA)
+        ' Verificar si la fila seleccionada no es la última
+        If DGV3.CurrentRow.Index = DGV3.Rows.Count - 1 Then
+            Return
+        End If
 
-        Dim DATAORIGEN As Object() = New Object(FORIGEN.Cells.Count - 1) {} ''CARGAR LOS VALORES DE LAS CELDAS A COPIAR
-        Dim DATADESTINO As Object() = New Object(FDESTINO.Cells.Count - 1) {}
+        ' Obtener el índice de la fila seleccionada y el índice de la fila destino
+        Dim filaActual As Integer = DGV3.CurrentRow.Index
+        Dim filaDestino As Integer = filaActual + 1
 
-        'HACER EL CAMBIO
-        For CONT = 0 To DATADESTINO.Length - 1
-            DATAORIGEN(CONT) = FORIGEN.Cells(CONT).Value
-            DATADESTINO(CONT) = FDESTINO.Cells(CONT).Value
+        ' Intercambiar las filas
+        Dim temp As DataGridViewRow = DGV3.Rows(filaActual)
+        DGV3.Rows.RemoveAt(filaActual)
+        DGV3.Rows.Insert(filaDestino, temp)
+
+        ' Ajustar la selección a la nueva posición de la fila
+        DGV3.ClearSelection()
+        DGV3.Rows(filaDestino).Selected = True
+        DGV3.CurrentCell = DGV3.Rows(filaDestino).Cells(0)
+
+        ' Actualizar la columna "Orden" para que sea consecutiva
+        For i As Integer = 0 To DGV3.Rows.Count - 1
+            DGV3.Rows(i).Cells("ORDEN").Value = i + 1
         Next
 
-        For CONT = 0 To DATAORIGEN.Length - 1
-            DGV3.Rows(FILA).Cells(CONT).Value = DATADESTINO(CONT)
-            DGV3.Rows(FILA + 1).Cells(CONT).Value = DATAORIGEN(CONT)
-        Next
-        DGV3.CurrentCell = DGV3.Rows(PROXFILA).Cells(0)
-        'QUITAR()
-        'CARGAR()
     End Sub
     Private Sub Button1_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Button1.Click
         Dim CLIENTES As New frmClientes
         CLIENTES.ShowDialog()
         CARGACLIENTES()
     End Sub
-
-
-
 
     Private Sub CHECATABLA()
 
@@ -278,45 +268,56 @@
 
 
     Private Sub BTNAGREGAR_Click(sender As Object, e As EventArgs) Handles BTNAGREGAR.Click
-        If CBCLI.SelectedIndex = -1 Then
-            MessageBox.Show("Debe seleccionar un cliente", "Aviso", MessageBoxButtons.OK)
-            Exit Sub
-        End If
-        If CBCLI.Items.Count <= 0 Then
-            Return
-        End If
-        'CANDADO PARA VER SI CLIENTES YA FUE AGREGADO A LA RUTA
-
-        Dim X As Integer
-        For X = 0 To DGV3.Rows.Count - 1
-            If DGV3.Item(2, X).Value = CLACLI(CBCLI.SelectedIndex) Then
-                MessageBox.Show("El cliente ya fue agregado a la ruta", "Aviso", MessageBoxButtons.OK)
-                Exit Sub
-            End If
-        Next
-
-        AGREGAR()
-        CARGAR()
+        AGREGAR(CBCLI.Text, CLACLI(CBCLI.SelectedIndex))
         CHECATABLA()
     End Sub
 
 
 
     Private Sub BTNQUITAR_Click(sender As Object, e As EventArgs) Handles BTNQUITAR.Click
-        CLACLI.Add(DGV3.Item(2, DGV3.CurrentRow.Index).Value.ToString)
-        CBCLI.Items.Add(DGV3.Item(0, DGV3.CurrentRow.Index).Value.ToString)
-        DGV3.Rows.RemoveAt(DGV3.CurrentRow.Index)
-
-
         QUITAR()
-        CARGAR()
         CHECATABLA()
+    End Sub
+
+    Private Sub GUARDAR()
+        Dim DIA As Integer
+        DIA = CLADIA(CBD.SelectedIndex)
+        Dim SQLBORRA As New SqlClient.SqlCommand("DELETE FROM ITINERARIORUTA WHERE SUCURSAL='" + CLASUC(CBSUC.SelectedIndex) + "' AND RUTA=" + CLARUT(CBR.SelectedIndex) + " AND DIA=" + DIA.ToString + " ", frmPrincipal.CONX)
+        SQLBORRA.ExecuteNonQuery()
+
+        Dim SQLGUARDAR As New SqlClient.SqlCommand
+        SQLGUARDAR.Connection = frmPrincipal.CONX
+        SQLGUARDAR.CommandType = CommandType.StoredProcedure
+        SQLGUARDAR.CommandText = "[SPCONFIGITINERARIORUTA]"
+        SQLGUARDAR.Parameters.Add("@SUC", SqlDbType.VarChar)
+        SQLGUARDAR.Parameters.Add("@RUTA", SqlDbType.Int)
+        SQLGUARDAR.Parameters.Add("@DIA", SqlDbType.Int)
+        SQLGUARDAR.Parameters.Add("@CLIENTE", SqlDbType.Int)
+        SQLGUARDAR.Parameters.Add("@ORD", SqlDbType.Int)
+        For X = 0 To DGV3.Rows.Count - 1
+            SQLGUARDAR.Parameters("@SUC").Value = CLASUC(CBSUC.SelectedIndex)
+            SQLGUARDAR.Parameters("@RUTA").Value = CLARUT(CBR.SelectedIndex)
+            SQLGUARDAR.Parameters("@DIA").Value = DIA.ToString
+            SQLGUARDAR.Parameters("@CLIENTE").Value = DGV3.Item(2, X).Value
+            SQLGUARDAR.Parameters("@ORD").Value = DGV3.Item(1, X).Value
+            SQLGUARDAR.ExecuteNonQuery()
+        Next
+
+        Dim SGLEDITAAGENDA As New SqlClient.SqlCommand
+        SGLEDITAAGENDA.Connection = frmPrincipal.CONX
+        SGLEDITAAGENDA.CommandType = CommandType.StoredProcedure
+        SGLEDITAAGENDA.CommandText = "[SPREGENERADORAGENDAVISITA]"
+        SGLEDITAAGENDA.Parameters.Add("@SUC", SqlDbType.VarChar).Value = CLASUC(CBSUC.SelectedIndex)
+        SGLEDITAAGENDA.Parameters.Add("@DIA", SqlDbType.Int).Value = DIA.ToString
+        SGLEDITAAGENDA.Parameters.Add("@RUTA", SqlDbType.Int).Value = CLARUT(CBR.SelectedIndex)
+        SGLEDITAAGENDA.ExecuteNonQuery()
+
     End Sub
 
 
     Private Sub BTNGUARDAR_Click(sender As Object, e As EventArgs) Handles BTNGUARDAR.Click
-        QUITAR()
-        ' CARGAR()
+        GUARDAR()
+
         MessageBox.Show("La información agrego correctamente", "Listo", MessageBoxButtons.OK, MessageBoxIcon.Exclamation)
 
         If MSG.mensaje_confirmacion("¿Desea Cambiar otro orden?") <> 6 Then

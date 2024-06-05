@@ -46,6 +46,9 @@ Partial Class frmItinerarioRuta
         Me.LBLVENDEDOR = New System.Windows.Forms.Label()
         Me.CBCLI = New System.Windows.Forms.ComboBox()
         Me.BTNNIVANT = New System.Windows.Forms.Button()
+        Me.CLIENTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ORDEN = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CVECLIENTE = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.DGV3, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -166,8 +169,10 @@ Partial Class frmItinerarioRuta
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.DGV3.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.DGV3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
+        Me.DGV3.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CLIENTE, Me.ORDEN, Me.CVECLIENTE})
         Me.DGV3.Location = New System.Drawing.Point(29, 168)
         Me.DGV3.Name = "DGV3"
+        Me.DGV3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical
         Me.DGV3.Size = New System.Drawing.Size(553, 471)
         Me.DGV3.TabIndex = 1251
         '
@@ -317,6 +322,27 @@ Partial Class frmItinerarioRuta
         Me.BTNNIVANT.TabIndex = 1241
         Me.BTNNIVANT.UseVisualStyleBackColor = False
         '
+        'CLIENTE
+        '
+        Me.CLIENTE.HeaderText = "CLIENTE"
+        Me.CLIENTE.Name = "CLIENTE"
+        Me.CLIENTE.ReadOnly = True
+        Me.CLIENTE.Width = 400
+        '
+        'ORDEN
+        '
+        Me.ORDEN.HeaderText = "ORDEN"
+        Me.ORDEN.Name = "ORDEN"
+        Me.ORDEN.ReadOnly = True
+        Me.ORDEN.Width = 200
+        '
+        'CVECLIENTE
+        '
+        Me.CVECLIENTE.HeaderText = "CVECLIENTE"
+        Me.CVECLIENTE.Name = "CVECLIENTE"
+        Me.CVECLIENTE.ReadOnly = True
+        Me.CVECLIENTE.Visible = False
+        '
         'frmItinerarioRuta
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -377,4 +403,7 @@ Partial Class frmItinerarioRuta
     Friend WithEvents Label3 As Label
     Friend WithEvents LBLVENDEDOR As Label
     Friend WithEvents CBCLI As ComboBox
+    Friend WithEvents CLIENTE As DataGridViewTextBoxColumn
+    Friend WithEvents ORDEN As DataGridViewTextBoxColumn
+    Friend WithEvents CVECLIENTE As DataGridViewTextBoxColumn
 End Class
