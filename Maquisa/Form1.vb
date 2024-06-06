@@ -30,10 +30,11 @@
         Ciudad = "Mazatlán, Sin."
          IP = "structureserver2.noip.me"
         BD = "MAQUISA"
+        '  BD = "MAQUISAP"    ''PRUEBAS QUITAR
         USER = "MAROSILOCAL"
         PASS = "Loco*1234"
         Empresa = 1
-        VERSION = "1.12"
+        VERSION = "1.13"
         Sistema = "MAQUISA"
         'COLORFUENTE = My.Settings.COLORDEFAULT
         COLORFUENTE = Color.Black

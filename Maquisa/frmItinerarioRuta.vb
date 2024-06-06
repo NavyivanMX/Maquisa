@@ -153,7 +153,7 @@
                 If (DGV3.Item(1, X).Value) >= ORDEN Then
                     ORDEN = DGV3.Item(1, X).Value + 1
                 End If
-0
+
             Next
         End If
         Return ORDEN
