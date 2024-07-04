@@ -74,7 +74,7 @@ Public Class frmReporteMapa
                 If CBVEN.SelectedIndex = 0 Then
                     Return
                 End If
-                QUERY = " Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=CONVERT(VARCHAR(10),D.FECHA,108)+' ' + T.NOMBRE +' '+ISNULL(C.NOMBRE,''),D.ID
+                QUERY = " Select D.FECHA,D.LATITUD,D.LONGITUD,D.Icon,TTT=CONVERT(VARCHAR(10),D.FECHA,108)+' ' + T.NOMBRE +' '+ISNULL(C.NOMBRE,'')+' '+dbo.BIT2TEXT(17,D.TIEMPOREAL),D.ID
                 From GEOMARCAS D INNER JOIN TIPOSCHECK T
                 ON D.TipoCheckId=T.Clave LEFT JOIN CLIENTES C
                 ON D.ClientId=C.Clave Where VendedorId = " + LVEN(CBVEN.SelectedIndex) + " And FECHA >=@INI And FECHA<@FIN ORDER BY D.FECHA"
