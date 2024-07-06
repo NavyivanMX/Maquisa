@@ -24,7 +24,7 @@
     Private Sub CARGADATOS()
         Dim QUERY As String
         QUERY = "SELECT VISITA,VENDEDOR,CLIENTE, ORDEN, [RESULTA DOVISITA], [CONTACTOS CLIENTE]  "
-        ' QUERY = QUERY + "FROM [dbo].[VDETALLEAGENDA] WHERE RUTA=" + IDRUTA.ToString + " AND FECHA>='" + Fecha.ToString("dd/MM/yyyy") + "' AND FECHA<'" + Fecha.AddDays(1).ToString("dd/MM/yyyy") + "' ORDER BY ORDEN"
+
         QUERY = QUERY + "FROM [dbo].[VDETALLEAGENDA] WHERE RUTA=" + IDRUTA.ToString + " AND FECHA>= @INI  AND FECHA<@FIN  ORDER BY ORDEN"
         DGV.DataSource = BDLlenaTabla(QUERY, frmPrincipal.CadenaConexion, Fecha.Date, Fecha.Date.AddDays(1))
         DgvAjusteEncabezado(DGV, -1)

@@ -72,7 +72,8 @@
     Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
         Dim VCONTCLI As New frmContactoCliente
         'frmContactoCliente.MOSTRAR(DGV.Item(11, DGV.CurrentRow.Index).Value)
-        VCONTCLI.MOSTRAR(CLAVECLIENTE, DGV.Item(1, DGV.CurrentRow.Index).Value, DGV.Item(2, DGV.CurrentRow.Index).Value, DGV.Item(3, DGV.CurrentRow.Index).Value)
-
+        If DGV.CurrentRow IsNot Nothing Then
+            VCONTCLI.MOSTRAR(CLAVECLIENTE, DGV.Item(1, DGV.CurrentRow.Index).Value, DGV.Item(2, DGV.CurrentRow.Index).Value, DGV.Item(3, DGV.CurrentRow.Index).Value)
+        End If
     End Sub
 End Class
