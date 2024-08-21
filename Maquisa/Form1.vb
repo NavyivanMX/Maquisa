@@ -30,7 +30,7 @@
         Ciudad = "Mazatlán, Sin."
          IP = "structureserver2.noip.me"
         BD = "MAQUISA"
-        '  BD = "MAQUISAP"    ''PRUEBAS QUITAR
+        ' BD = "MAQUISAP"    ''PRUEBAS QUITAR
         USER = "MAROSILOCAL"
         PASS = "Loco*1234"
         Empresa = 1
